@@ -16,8 +16,12 @@ class CreateUsersTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('snapname', 100);
+			$table->string('picture')->nullable();
+			$table->tinyInteger('sex')->default(0); //0 = not known, 1 = male, 2 = female , 9 = not applicable
 			$table->text('description');
+			$table->string('email')->nullable();
 			$table->timestamps();
+			$table->softDeletes();
 		});
 	}
 
