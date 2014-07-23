@@ -24,11 +24,23 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment(array(
+$env = $app->detectEnvironment(function()
+{
+    $environment = getenv('APP_ENV');
+    if (strlen($environment) === 0) {
+        if (strpos(__DIR__, '/home/forge/' . 'dev.tipszonen.se') === 0) {
+            $environment = 'development';
+        } elseif (strpos(__DIR__, '/home/forge/tipszonen.se') === 0) {
+            $environment = 'production';
+        }
+    }
+    if (strlen($environment) === 0) {
+        $environment = 'local';
+    }
 
-	'local' => array('homestead'),
+    return $environment;
 
-));
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -55,7 +67,7 @@ $app->bindInstallPaths(require __DIR__.'/paths.php');
 */
 
 $framework = $app['path.base'].
-                 '/vendor/laravel/framework/src';
+    '/vendor/laravel/framework/src';
 
 require $framework.'/Illuminate/Foundation/start.php';
 
