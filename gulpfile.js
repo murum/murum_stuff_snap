@@ -24,7 +24,7 @@ var lessDir = 'app/assets/less';
 var targetCSSDir = 'public/css';
 
 //javascript directories
-var coffeeDir = 'app/assets/coffee';
+var jsDir = 'app/assets/js';
 var targetJSDir = 'public/js';
 
 var componentsDir = 'public/components';
@@ -41,9 +41,9 @@ gulp.task('less', function() {
 
 /* coffee compile */
 gulp.task('js', function() {
-    return gulp.src(coffeeDir + '/**/*.js')
+    return gulp.src(jsDir + '/**/*.js')
         .pipe(concat('main.js'))
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest(targetJSDir))
         .pipe(notify('JS compiled, prefixed, and minified.'));
 });
@@ -89,7 +89,7 @@ gulp.task('js-libs', function() {
 /* Watcher */
 gulp.task('watch', function() {
     gulp.watch(lessDir + '/**/*.less', ['less']);
-    gulp.watch(coffeeDir + '/**/*.js', ['js']);
+    gulp.watch(jsDir + '/**/*.js', ['js']);
     gulp.watch('images-orig/**', ['images']);
     gulp.watch('app/**/*.php', ['phpunit']);
 });
