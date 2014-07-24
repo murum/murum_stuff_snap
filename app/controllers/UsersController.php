@@ -41,20 +41,9 @@ class UsersController extends BaseController {
                 $user->sex = Input::get('sex');
             }
 
-            if (Input::hasFile('image')) {
-
-                $extension = Input::file('image')->getClientOriginalExtension();
-
-                $destinationPath = 'uploads/';
-                $fileName = md5(uniqid(rand(), true) . date('Y-m-d H:i:s')) . $extension;
-
-                $url = $destinationPath . $fileName;
-
-                Input::file('image')->move($destinationPath, $fileName);
-
-                $user->picture = $url;
+            if (Input::has('image')) {
+                $user->picture = Input::get('image');
             }
-
             if( $user->save() ) {
                 return Redirect::to('/')->with('message', 'Thanks for registering!');
             } else {

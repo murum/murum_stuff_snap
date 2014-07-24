@@ -1,4 +1,4 @@
-{{ Form::open(['route' => ['users.store'], 'files' => true, 'class' => 'form form-horizontal']) }}
+{{ Form::open(['route' => ['users.store'], 'files' => true, 'class' => 'form form-horizontal form-user-create']) }}
 <div class="form-group">
     <div class="col-xs-12">
         {{ Form::label('snapname', 'Your snapchat username', ['class' => 'control-label']) }}
@@ -42,11 +42,11 @@
     </div>
 </div>
 
-<div class="form-group">
+<div class="form-group hidden">
     <div class="col-xs-12">
-        {{ Form::label('birthday', 'Your birthday', ['class' => 'control-label']) }}
-        <input type="date" name="birthday" id="birthday" class="form-control" />
-        {{ $errors->first('birthday', '<span class="text-danger">:message</span>') }}
+        {{ Form::label('age', 'Your age', ['class' => 'control-label']) }}
+        {{ Form::text('age', null, ['class' => 'form-control']) }}
+        {{ $errors->first('age', '<span class="text-danger">:message</span>') }}
     </div>
 </div>
 
@@ -66,14 +66,8 @@
     </div>
 </div>
 
-<div class="form-group">
-    <div class="col-xs-12">
-        {{ Form::label('image', 'Picture of you', ['class' => 'control-label']) }}
-        {{ Form::file('image', ['class' => 'form-control']) }}
-    </div>
-</div>
-
 <div id="coupon-submit-container">
+    {{ Form::hidden('image') }}
     {{ Form::submit('Send', ['class' => 'btn btn-success']) }}
 </div>
 {{ Form::close() }}

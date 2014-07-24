@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Letssnap.com</title>
+    {{ HTML::style('/css/libs.css') }}
     {{ HTML::style('/css/main.css') }}
 </head>
 <body>

@@ -78,12 +78,24 @@ gulp.task('phpunit', function() {
 gulp.task('js-libs', function() {
     var libs = [
         componentsDir + '/jquery/dist/jquery.js',
-        componentsDir + '/bootstrap/dist/js/bootstrap.js'
+        componentsDir + '/bootstrap/dist/js/bootstrap.js',
+        componentsDir + '/jcrop/js/jquery.jcrop.js',
+        componentsDir + '/bootstrap-fileinput/js/fileinput.js',
     ]
     return gulp.src(libs)
         .pipe(concat('libs.js'))
         .pipe(uglify())
         .pipe(gulp.dest(targetJSDir))
+})
+
+gulp.task('css-libs', function() {
+    var libs = [
+        componentsDir + '/jcrop/css/jquery.jcrop.min.css',
+        componentsDir + '/bootstrap-fileinput/css/fileinput.min.css',
+    ]
+    return gulp.src(libs)
+        .pipe(concat('libs.css'))
+        .pipe(gulp.dest(targetCSSDir))
 })
 
 /* Watcher */
@@ -95,4 +107,4 @@ gulp.task('watch', function() {
 });
 
 /* Default Task */
-gulp.task('default', ['less', 'js-libs' , 'js', 'phpunit', 'watch']);
+gulp.task('default', ['less', 'js-libs', 'css-libs' , 'js', 'phpunit', 'watch']);
