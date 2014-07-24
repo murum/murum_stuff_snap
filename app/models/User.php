@@ -6,6 +6,8 @@ class User extends Eloquent {
         'snapname' => 'required',
         'description' => 'required',
         'birthday' => 'date',
+        'sex' => 'numeric|in:0,1,2,9',
+        'image' => 'image|size:3000',
     );
 
 }
