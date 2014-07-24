@@ -12,6 +12,6 @@
 */
 
 Route::get('/', array('as' => 'home', 'uses' => 'UsersController@index'));
-Route::get('users/create', 'UsersController@create');
-Route::get('user/{username}', 'UsersController@show');
-Route::post('users', 'UsersController@store');
+Route::get('users/create', array('as' => 'users.create', 'uses' => 'UsersController@create') );
+Route::get('user/{username}', array('as' => 'users.show', 'uses' => 'UsersController@show') );
+Route::post('users/create', array('as' => 'users.store', 'uses' => 'UsersController@store') );

@@ -1,0 +1,1 @@
+<h2>{{ $user->snapname }}</h2>

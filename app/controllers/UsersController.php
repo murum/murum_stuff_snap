@@ -52,10 +52,12 @@ class UsersController extends BaseController {
 
             }
 
-            $user->save();
-
-            return Redirect::to('/')->with('message', 'Thanks for registering!');
+            if( $user->save() ) {
+                return Redirect::back()->with('message', 'Thanks for registering!');
+            } else {
+                return Redirect::back()->withInput()->with(['error' => 'Something went wrong in the save process of the user']);
+            }
         }
-        return Redirect::to('users/create')->withErrors($validator);
+        return Redirect::back()->withInput()->withErrors($validator);
     }
 }
