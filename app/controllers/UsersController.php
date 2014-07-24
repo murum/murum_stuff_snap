@@ -22,10 +22,12 @@ class UsersController extends BaseController {
 
         $user = User::where('snapname', '=', $username)->firstOrFail();
 
-        return View::make('users.show');
+        return View::make('users.show')->with('user', $user);
     }
 
     public function store() {
+
+
 
     }
 
