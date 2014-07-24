@@ -1,6 +1,17 @@
 body {
   margin: 0;
-  padding-top: 70px;
+
+  @media screen and (max-width: @screen-lg-min) {
+    font-size: 15px;
+  }
+
+  @media screen and (max-width: @screen-md-min) {
+    font-size: 13px;
+  }
+
+  @media screen and (max-width: @screen-sm-min) {
+    font-size: 11px;
+  }
 }
 
 div.container h1:first-of-type {

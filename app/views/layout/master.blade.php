@@ -6,6 +6,7 @@
     {{ HTML::style('/css/main.css') }}
 </head>
 <body>
+
 @include('layout.includes.master.nav')
 
 @include('partials/_flash')
@@ -18,6 +19,8 @@
         </div>
     </div>
 </div>
+
+@include('layout.includes.footer')
 
 {{ HTML::script('/js/libs.js') }}
 {{ HTML::script('/js/main.js') }}

@@ -3,7 +3,7 @@
 class UsersController extends BaseController {
 
     public function index() {
-        $users = User::orderBy('created_at')->paginate(15);
+        $users = User::orderBy('created_at', 'DESC')->paginate(12);
         return View::make('users.index')->with('users', $users);
     }
 
@@ -37,11 +37,15 @@ class UsersController extends BaseController {
                 $user->instagram = Input::get('instagram');
             }
 
+            if( Input::has('sex') ) {
+                $user->sex = Input::get('sex');
+            }
+
             if (Input::hasFile('image')) {
 
                 $extension = Input::file('image')->getClientOriginalExtension();
 
-                $destinationPath = public_path() . '/uploads/';
+                $destinationPath = 'uploads/';
                 $fileName = md5(uniqid(rand(), true) . date('Y-m-d H:i:s')) . $extension;
 
                 $url = $destinationPath . $fileName;
@@ -49,11 +53,10 @@ class UsersController extends BaseController {
                 Input::file('image')->move($destinationPath, $fileName);
 
                 $user->picture = $url;
-
             }
 
             if( $user->save() ) {
-                return Redirect::back()->with('message', 'Thanks for registering!');
+                return Redirect::to('/')->with('message', 'Thanks for registering!');
             } else {
                 return Redirect::back()->withInput()->with(['error' => 'Something went wrong in the save process of the user']);
             }

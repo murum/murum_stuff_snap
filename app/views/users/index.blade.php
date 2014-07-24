@@ -1,8 +1,16 @@
 @extends('layout.master')
 
 @section('content')
-    <h1>Users</h1>
-    @foreach($users as $user)
-        @include('users.partials.user')
-    @endforeach
+<div class="row">
+    <div class="users">
+        @foreach($users as $user)
+            @include('users.partials.user')
+        @endforeach
+    </div>
+</div>
+<div class="row">
+    <div class="users-links text-center">
+        {{ $users->links() }}
+    </div>
+</div>
 @stop

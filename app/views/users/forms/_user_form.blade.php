@@ -25,20 +25,20 @@
 
 <div class="form-group">
     <div class="col-xs-12">
-        {{ Form::label('gender', 'Your gender', ['class' => 'control-label']) }}
+        {{ Form::label('sex', 'Your gender', ['class' => 'control-label']) }}
     </div>
     <div class="col-xs-12">
         <label> Male:
-            {{ Form::checkbox('gender', 'male') }}
+            {{ Form::radio('sex', '1') }}
         </label>
     </div>
     <div class="col-xs-12">
         <label> Female:
-            {{ Form::checkbox('gender', 'female') }}
+            {{ Form::radio('sex', '2') }}
         </label>
     </div>
     <div class="col-xs-12">
-        {{ $errors->first('gender', '<span class="text-danger">:message</span>') }}
+        {{ $errors->first('sex', '<span class="text-danger">:message</span>') }}
     </div>
 </div>
 
