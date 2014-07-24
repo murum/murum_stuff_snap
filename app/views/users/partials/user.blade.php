@@ -15,7 +15,7 @@
         </div>
         <hr class="users-item-divider" />
         <div class="users-item-age">
-            Age: {{ $user->get_age() }}
+            <?php /* Age: {{ $user->age }} */ ?>
         </div>
         <div class="users-item-description">
             <p>
