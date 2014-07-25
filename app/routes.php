@@ -18,3 +18,5 @@ Route::post('users/create', array('as' => 'users.store', 'uses' => 'UsersControl
 
 Route::post('images/create', array('as' => 'images.store', 'uses' => 'ImagesController@store') );
 Route::post('images/update', array('as' => 'images.update', 'uses' => 'ImagesController@update') );
+
+Route::get('search', 'SearchController@search');
