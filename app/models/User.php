@@ -4,7 +4,7 @@ class User extends Eloquent {
 
     public static $rules = array(
         'snapname' => 'required',
-        'description' => 'required',
+        'description' => 'required|max:170',
         'sex' => 'numeric|in:0,1,2,9',
     );
 
