@@ -26,11 +26,27 @@ function progressHandlingFunction(e){
 }
 
 $(function() {
+    // Enable selectpickers
+    $('.selectpicker').selectpicker();
+
+    $('a.toggle-additional-user-fields').on('click', function(e) {
+        e.preventDefault();
+
+        $('a.toggle-additional-user-fields').show();
+        $(this).hide();
+        $('div.additional-user-fields').toggleClass('hidden');
+
+    })
 
     $('input#image').fileinput({
         showPreview: false,
-        showRemove: false
+        showRemove: false,
+        showUpload: false
     });
+
+    $('input#image').on('change', function() {
+        $('form.image-form').trigger('submit');
+    })
 
     $('form.image-form').on('submit', function(e) {
         e.preventDefault();

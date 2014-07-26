@@ -4,7 +4,7 @@
 <div class="row">
     <div class="users">
         @foreach($users as $user)
-            @include('users.partials.user')
+        @include('users.partials.user')
         @endforeach
     </div>
 </div>
