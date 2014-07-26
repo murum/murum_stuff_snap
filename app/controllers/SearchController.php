@@ -18,7 +18,7 @@ class SearchController extends BaseController {
             $users = $users->where('age', '>=', Input::get('maxAge'));
         }
 
-        if (Input::has('sex')) {
+        if (Input::has('sex') && Input::get('sex') !== "0") {
             $users = $users->where('sex', '=', Input::get('sex'));
         }
 
