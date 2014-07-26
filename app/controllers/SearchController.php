@@ -8,25 +8,23 @@ class SearchController extends BaseController {
 
     public function search() {
 
-        $users = DB::table('users');
+        $query = User::query();
 
         if (Input::has('minAge') && Input::has('maxAge')) {
-            $users = $users->whereBetween('age', array(Input::get('minAge'), Input::get('maxAge')));
+            $query->whereBetween('age', array(Input::get('minAge'), Input::get('maxAge')));
         } else if (Input::has('minAge')) {
-            $users = $users->where('age', '>=', Input::get('minAge'));
+            $query->where('age', '>=', Input::get('minAge'));
         } else if (Input::has('maxAge')) {
-            $users = $users->where('age', '>=', Input::get('maxAge'));
+            $query->where('age', '>=', Input::get('maxAge'));
         }
 
         if (Input::has('sex') && Input::get('sex') !== "0") {
-            $users = $users->where('sex', '=', Input::get('sex'));
+            $query->where('sex', '=', Input::get('sex'));
         }
 
-        $users = $users->paginate(15);
-        foreach($users as $user) {
-            dd();
-        }
+        $users = $query->paginate(15);
 
         return View::make('search.result', compact('users'));
+
     }
 }
