@@ -81,6 +81,7 @@ gulp.task('js-libs', function() {
         componentsDir + '/bootstrap/dist/js/bootstrap.js',
         componentsDir + '/jcrop/js/jquery.jcrop.js',
         componentsDir + '/bootstrap-fileinput/js/fileinput.js',
+        componentsDir + '/bootstrap-select/bootstrap-select.js',
     ]
     return gulp.src(libs)
         .pipe(concat('libs.js'))
@@ -92,6 +93,7 @@ gulp.task('css-libs', function() {
     var libs = [
         componentsDir + '/jcrop/css/jquery.jcrop.min.css',
         componentsDir + '/bootstrap-fileinput/css/fileinput.min.css',
+        componentsDir + '/bootstrap-select/bootstrap-select.min.css',
     ]
     return gulp.src(libs)
         .pipe(concat('libs.css'))

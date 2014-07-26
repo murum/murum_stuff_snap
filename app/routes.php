@@ -19,4 +19,25 @@ Route::post('users/create', array('as' => 'users.store', 'uses' => 'UsersControl
 Route::post('images/create', array('as' => 'images.store', 'uses' => 'ImagesController@store') );
 Route::post('images/update', array('as' => 'images.update', 'uses' => 'ImagesController@update') );
 
-Route::get('search', 'SearchController@search');
+Route::get('search', array(
+    'as' => 'search.index',
+    'uses' => 'SearchController@index'
+));
+
+Route::post('search', array(
+    'as' => 'search.post',
+    'uses' => 'SearchController@search'
+));
+
+Route::get('about', array(
+    'as' => 'static.about',
+    'uses' => 'StaticController@about'
+));
+Route::get('rules', array(
+    'as' => 'static.rules',
+    'uses' => 'StaticController@rules'
+));
+Route::get('contact', array(
+    'as' => 'static.contact',
+    'uses' => 'StaticController@contact'
+));

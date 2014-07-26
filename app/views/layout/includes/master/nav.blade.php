@@ -22,16 +22,16 @@
                     {{ link_to_route('users.create', 'Add') }}
                 </li>
                 <li>
-                    {{ link_to_route('users.create', 'Search') }}
+                    {{ link_to_route('search.index', 'Search') }}
                 </li>
                 <li>
-                    {{ link_to_route('users.create', 'About let\'s snap') }}
+                    {{ link_to_route('static.about', 'About let\'s snap') }}
                 </li>
                 <li>
-                    {{ link_to_route('users.create', 'Rules') }}
+                    {{ link_to_route('static.rules', 'Rules') }}
                 </li>
                 <li>
-                    {{ link_to_route('users.create', 'Contact us') }}
+                    {{ link_to_route('static.contact', 'Contact us') }}
                 </li>
 
                 <li class="hidden dropdown">

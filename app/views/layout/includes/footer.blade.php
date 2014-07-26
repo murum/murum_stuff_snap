@@ -12,7 +12,7 @@
                 </p>
                 <ul class="footer-links">
                     <li>
-                        {{ link_to_route('users.create', 'Contact us') }}
+                        {{ link_to_route('static.contact', 'Contact us') }}
                     </li>
                 </ul>
             </div>
