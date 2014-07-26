@@ -25,8 +25,8 @@ class UsersController extends BaseController {
             $user->snapname = Input::get('snapname');
             $user->description = Input::get('description');
 
-            if (Input::has('birthday')) {
-                $user->birthday = Input::get('birthday');
+            if (Input::has('age')) {
+                $user->age = Input::get('age');
             }
 
             if (Input::has('kik')) {
@@ -44,6 +44,7 @@ class UsersController extends BaseController {
             if (Input::has('image')) {
                 $user->picture = Input::get('image');
             }
+
             if( $user->save() ) {
                 return Redirect::to('/')->with('message', 'Thanks for registering!');
             } else {

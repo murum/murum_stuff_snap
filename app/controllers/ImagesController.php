@@ -7,7 +7,7 @@ class ImagesController extends BaseController
         $extension = Input::file('image')->getClientOriginalExtension();
 
         $destinationPath = 'uploads/';
-        $fileName = md5(uniqid(rand(), true) . date('Y-m-d H:i:s')) . $extension;
+        $fileName = md5(uniqid(rand(), true) . date('Y-m-d H:i:s')) . '.'.$extension;
 
         $url = $destinationPath . $fileName;
 
@@ -26,8 +26,11 @@ class ImagesController extends BaseController
         $img_r = imagecreatefromjpeg($src);
         $dst_r = ImageCreateTrueColor($targ_w, $targ_h);
 
-        imagecopyresampled($dst_r, $img_r, 0, 0, Input::get('x'), Input::get('y'),
-            $targ_w, $targ_h, Input::get('w'), Input::get('h'));
+        list($width) = getimagesize($src);
+        $ratio = $width / Input::get('image-width');
+
+        imagecopyresampled($dst_r, $img_r, 0, 0, Input::get('x') * $ratio, Input::get('y') * $ratio,
+            $targ_w, $targ_h, Input::get('w') * $ratio, Input::get('h') * $ratio);
 
         imagejpeg($dst_r, $src, $jpeg_quality);
         return Response::json(['url' => $src]);

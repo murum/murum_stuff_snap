@@ -32,12 +32,12 @@
                 <span class="text-danger">*</span>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-4">
-                <label> Male:
+                <label> Male
                     {{ Form::radio('sex', '1') }}
                 </label>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-4">
-                <label> Female:
+                <label> Female
                     {{ Form::radio('sex', '2') }}
                 </label>
             </div>
