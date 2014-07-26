@@ -6,6 +6,15 @@
             @else
                 {{ HTML::image('images/placeholder.png', 'Placeholder') }}
             @endif
+            <ul class="users-item-usernames">
+                <li>S: {{$user->snapname}}</li>
+                @if($user->kik)
+                    <li>K: {{ $user->kik }}</li>
+                @endif
+                @if($user->instagram)
+                    <li>I: {{$user->instagram}}</li>
+                @endif
+            </ul>
         </div>
         <div class="users-item-name">
             {{ $user->snapname }}
