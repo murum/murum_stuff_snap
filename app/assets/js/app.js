@@ -43,7 +43,8 @@ $(function() {
 
     $('input#image').fileinput({
         showPreview: false,
-        showRemove: false
+        showRemove: false,
+        showUpload: false
     });
 
     $('input#image').on('change', function() {
