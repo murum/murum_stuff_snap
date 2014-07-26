@@ -23,6 +23,9 @@ class SearchController extends BaseController {
         }
 
         $users = $users->paginate(15);
+        foreach($users as $user) {
+            dd();
+        }
 
         return View::make('search.result', compact('users'));
     }
