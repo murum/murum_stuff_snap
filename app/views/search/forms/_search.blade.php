@@ -2,7 +2,7 @@
 <div class="form-group">
     <div class="col-xs-12">
         {{ Form::label('sex', 'Sex', ['class' => 'control-label']) }}
-        {{ Form::select('sex', ['1' => 'Male', '2' => 'Female'], null, ['class' => 'form-control selectpicker']) }}
+        {{ Form::select('sex', ['0' => 'Both', '1' => 'Male', '2' => 'Female'], null, ['class' => 'form-control selectpicker']) }}
         {{ $errors->first('sex', '<span class="text-danger">:message</span>') }}
     </div>
 </div>
