@@ -10,10 +10,10 @@
         We don't really have a age restriction just yet, but we recommend that you're above 12 years old to post on this page.
     </li>
     <li class="list-group-item">
-        Pictures that are inappropriate as in naked, undressed or dare will be deleted
+        Pictures that is inappropriate e.g. naked, stripped or daring will be deleted.
     </li>
     <li class="list-group-item">
-        Advertising on posts / cards is completely prohibited
+        Advertising on posts / cards is completely prohibited, and will be deleted
     </li>
     <li class="list-group-item">
         Hacking or trying to hack is not allowed.
