@@ -7,7 +7,13 @@
     <meta name="description" content="Find snapchat friends to snap with. Let's snap is a new website to find and discover the worlds snapchat usernames girls and boys are all welcome!">
     <meta name="keywords" content="snapchat, chat, friends, find, mobile, kik, instagram">
 
-    <title>Letssnap.com</title>
+    <meta property="og:title" content="Find Snapchat friends - Let's snap" />
+    <meta property="og:url" content="http://letssnap.com"/>
+    <meta property="og:site_name" content="Lets's snap"/>
+    <meta property="og:description" content="Find snapchat friends to snap with. Let's snap is a new website to find and discover the worlds snapchat usernames girls and boys are all welcome!">
+    <meta property="og:type" content="website"/>
+
+    <title>Find Snapchat friends - Let's snap</title>
     {{ HTML::style('/css/libs.css') }}
     {{ HTML::style('/css/main.css') }}
 </head>
