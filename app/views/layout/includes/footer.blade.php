@@ -14,6 +14,9 @@
                     <li>
                         {{ link_to_route('static.contact', 'Contact us') }}
                     </li>
+                    <li>
+                        <a href="https://www.facebook.com/letssnappa" target="_blank">Facebook</a>
+                    </li>
                 </ul>
             </div>
         </div>

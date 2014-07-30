@@ -33,6 +33,9 @@
                 <li>
                     {{ link_to_route('static.contact', 'Contact us') }}
                 </li>
+                <li>
+                    <a href="https://www.facebook.com/letssnappa" target="_blank">Facebook</a>
+                </li>
 
                 <li class="hidden dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>

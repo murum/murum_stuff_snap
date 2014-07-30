@@ -13,19 +13,22 @@
         Pictures that is inappropriate e.g. naked, stripped or daring will be deleted.
     </li>
     <li class="list-group-item">
-        Advertising on posts / cards is completely prohibited, and will be deleted
+        Advertising on posts / cards is completely prohibited, and will be deleted.
     </li>
     <li class="list-group-item">
         Hacking or trying to hack is not allowed.
     </li>
     <li class="list-group-item">
-        Requests about naked picture is prohibited
+        Requests about naked picture is prohibited.
     </li>
     <li class="list-group-item">
         Please keep your privacy (such as address, name) private.
     </li>
     <li class="list-group-item">
-        The team of Let'ssnap do not take any responsibility whatsoever that users put up. We delete in after rules as time allows
+        The team of Let's snap do not take any responsibility whatsoever that users put up. We delete in after rules as time allows.
+    </li>
+    <li class="list-group-item">
+        We'll notice you if the rules are changed, but it's your responsibility to update your knowledge about the changes.
     </li>
 </ul>
 @stop

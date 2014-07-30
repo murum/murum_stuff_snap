@@ -39,7 +39,7 @@
     </div>
     <div class="row hidden cropper-buttons">
         <div class="col-xs-12 col-sm-4 col-md-offset-1 col-md-3">
-            <a id="skip-crop" class="btn btn-lg btn-block btn-danger">
+            <a class="btn btn-lg btn-block btn-danger skip-crop">
                 Skip crop
             </a>
         </div>
