@@ -13,8 +13,6 @@ class BaseController extends Controller {
 		{
 			$this->layout = View::make($this->layout);
 		}
-        
-        dd(ini_get('upload_max_filesize'));
 	}
 
 }
