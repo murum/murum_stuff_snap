@@ -24,6 +24,7 @@ class UsersController extends BaseController {
 
             $user->snapname = Input::get('snapname');
             $user->description = Input::get('description');
+            $user->ip_address = Request::getClientIp();
 
             if (Input::has('age')) {
                 $user->age = Input::get('age');
