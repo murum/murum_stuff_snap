@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta name="description" content="Find snapchat friends to snap with. Let's snap is a new website to find and discover the worlds snapchat usernames girls and boys are all welcome!">
+    <meta name="keywords" content="snapchat, chat, friends, find, mobile, kik, instagram">
+
     <title>Letssnap.com</title>
     {{ HTML::style('/css/libs.css') }}
     {{ HTML::style('/css/main.css') }}
