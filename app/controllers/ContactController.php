@@ -16,12 +16,11 @@ class ContactController extends BaseController {
         }))
         {
             Flash::success('An email was sent! We\'ll respond as soon as possible, we try to answer all mails within 24h');
-            Redirect::back();
+            return Redirect::back();
         } else
         {
-            dd(Flash);
             Flash::error('Something went wrong in the sending process, please send us a mail direct from your email.');
-            Redirect::back()->withInput();
+            return Redirect::back()->withInput();
         }
     }
 }

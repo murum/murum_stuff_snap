@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <title>Letssnap.com</title>
     {{ HTML::style('/css/libs.css') }}
     {{ HTML::style('/css/main.css') }}

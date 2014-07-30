@@ -7,12 +7,20 @@
                 {{ HTML::image('images/placeholder.png', 'Placeholder') }}
             @endif
             <ul class="users-item-usernames">
-                <li>S: {{$user->snapname}}</li>
+                <li>
+                    <i class="fa fa-snapchat"></i>
+                    {{$user->snapname}}
+                </li>
                 @if($user->kik)
-                    <li>K: {{ $user->kik }}</li>
+                    <li>
+                        <i class="fa fa-kik"></i>{{ $user->kik }}
+                    </li>
                 @endif
                 @if($user->instagram)
-                    <li>I: {{$user->instagram}}</li>
+                    <li>
+                        <i class="fa fa-instagram"></i>
+                        {{$user->instagram}}
+                    </li>
                 @endif
             </ul>
         </div>

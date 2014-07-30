@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('content')
-<div class="row">
+<div class="row row-margin">
     <div class="col-xs-12 col-sm-offset-1 col-sm-10">
         <div class="create-card">
             {{ link_to_route('users.create', 'Want more snapchat friends? - Create a card now!', null, ['class' => 'btn btn-lg btn-block btn-primary']) }}
@@ -20,7 +20,7 @@
         {{ $users->links() }}
     </div>
 </div>
-<div class="row">
+<div class="row row-margin">
     <div class="col-xs-12 col-sm-offset-1 col-sm-10">
         {{ link_to_route('users.create', 'Want more snapchat friends? - Create a card now!', null, ['class' => 'btn btn-lg btn-block btn-primary']) }}
     </div>
