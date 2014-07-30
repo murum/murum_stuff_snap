@@ -3,7 +3,7 @@
     <div class="col-xs-12 col-sm-4">
         {{ Form::label('snapname', 'Your snapchat username', ['class' => 'control-label']) }}
         <span class="text-danger">*</span>
-        {{ Form::text('snapname', null, ['class' => 'form-control', 'required' => true]) }}
+        {{ Form::text('snapname', null, ['class' => 'form-control', 'required' => true, 'maxlength' => '15']) }}
         {{ $errors->first('snapname', '<span class="text-danger">:message</span>') }}
         <a href="#" class="btn btn-sm btn-primary btn-block small toggle-additional-user-fields">Show additional fields</a>
 
@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     {{ Form::label('instagram', 'Your instagram username', ['class' => 'control-label']) }}
-                    {{ Form::text('instagram', null, ['class' => 'form-control']) }}
+                    {{ Form::text('instagram', null, ['class' => 'form-control', 'maxlength' => '30']) }}
                     {{ $errors->first('instagram', '<span class="text-danger">:message</span>') }}
                 </div>
 
