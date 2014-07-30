@@ -121,9 +121,9 @@ $(function() {
                     aspectRatio: 255/172
                 });
 
-                setTimeout(function() {
+                $('img#image-cropper').on('load', function() {
                     $("div.image-cropper-container").toggleClass("hidden");
-                }, 250);
+                })
             },
             // Form data
             data: formData,
