@@ -5,7 +5,7 @@
         <span class="text-danger">*</span>
         {{ Form::text('snapname', null, ['class' => 'form-control', 'required' => true, 'maxlength' => '15']) }}
         {{ $errors->first('snapname', '<span class="text-danger">:message</span>') }}
-        <a href="#" class="btn btn-sm btn-primary btn-block small toggle-additional-user-fields">Show additional fields</a>
+        <a href="#" class="btn btn-primary btn-block toggle-additional-user-fields">Add Instagram and KIK usernames</a>
 
         <div class="additional-user-fields hidden">
             <div class="row">
@@ -19,7 +19,7 @@
                     {{ Form::label('kik', 'Your kik username', ['class' => 'control-label']) }}
                     {{ Form::text('kik', null, ['class' => 'form-control']) }}
                     {{ $errors->first('kik', '<span class="text-danger">:message</span>') }}
-                    <a href="#" class="btn btn-sm btn-primary btn-block small toggle-additional-user-fields">Hide additional fields</a>
+                    <a href="#" class="btn btn-primary btn-block toggle-additional-user-fields">Hide Instagram and KIK usernames</a>
                 </div>
             </div>
         </div>
