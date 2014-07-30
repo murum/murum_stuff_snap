@@ -12,6 +12,7 @@ class ImagesController extends BaseController
         $url = $destinationPath . $fileName;
 
         Input::file('image')->move($destinationPath, $fileName);
+        image_fix_orientation($url);
 
         return Response::json(['url' => $url]);
     }
