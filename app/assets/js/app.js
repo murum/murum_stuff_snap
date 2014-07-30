@@ -123,7 +123,7 @@ $(function() {
 
                 setTimeout(function() {
                     $("div.image-cropper-container").toggleClass("hidden");
-                }, 50);
+                }, 250);
             },
             // Form data
             data: formData,
