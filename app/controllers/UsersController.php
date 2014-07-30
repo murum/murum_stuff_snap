@@ -46,11 +46,14 @@ class UsersController extends BaseController {
             }
 
             if( $user->save() ) {
-                return Redirect::to('/')->with('message', 'Thanks for registering!');
+                Flash::success('Your card was created!');
+                return Redirect::to('/');
             } else {
-                return Redirect::back()->withInput()->with(['error' => 'Something went wrong in the save process of the user']);
+                Flash::error('Something went wrong in the save process of the card, please try again!');
+                return Redirect::back()->withInput();
             }
         }
+        Flash::error('Validation errors. You\'ll also need to recreate your photo');
         return Redirect::back()->withInput()->withErrors($validator);
     }
 }

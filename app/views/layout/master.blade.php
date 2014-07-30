@@ -10,10 +10,10 @@
 
 @include('layout.includes.master.nav')
 
-@include('partials/_flash')
-@include('partials/_errors')
-
 <div class="container">
+    @include('partials/_flash')
+    @include('partials/_errors')
+
     <div class="row content">
         <div class="col-xs-12">
             @yield('content')

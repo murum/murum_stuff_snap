@@ -37,7 +37,13 @@ Route::get('rules', array(
     'as' => 'static.rules',
     'uses' => 'StaticController@rules'
 ));
+
 Route::get('contact', array(
     'as' => 'static.contact',
     'uses' => 'StaticController@contact'
+));
+
+Route::post('contact', array(
+    'as' => 'contact.post',
+    'uses' => 'ContactController@contact'
 ));

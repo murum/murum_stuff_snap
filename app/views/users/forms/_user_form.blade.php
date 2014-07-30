@@ -49,7 +49,7 @@
     <div class="col-xs-12 col-sm-6 col-md-4">
         {{ Form::label('age', 'Your age', ['class' => 'control-label']) }}
         <span class="text-danger">*</span>
-        {{ Form::text('age', null, ['class' => 'form-control']) }}
+        {{ Form::text('age', null, ['class' => 'form-control', 'required' => true]) }}
         {{ $errors->first('age', '<span class="text-danger">:message</span>') }}
     </div>
 </div>
@@ -58,7 +58,7 @@
     <div class="col-xs-12">
         {{ Form::label('description', 'About me', ['class' => 'control-label']) }}
         <span class="text-danger">*</span>
-        {{ Form::textarea('description', null, ['class' => 'form-control']) }}
+        {{ Form::textarea('description', null, ['class' => 'form-control', 'required' => true]) }}
         {{ $errors->first('description', '<span class="text-danger">:message</span>') }}
     </div>
 </div>
@@ -67,8 +67,8 @@
     <div class="col-xs-12">
         <label>
             <span class="text-danger">*</span>
-            I accept the rules
-            {{ Form::checkbox('rules', '1', null,  ['id' => 'name']) }}
+            I accept the <a href="{{ route('static.rules') }}" target="_blank">rules</a>
+            {{ Form::checkbox('rules', '1', null,  ['id' => 'name', 'required' => true]) }}
         </label>
     </div>
 </div>

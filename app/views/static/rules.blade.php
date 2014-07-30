@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('content')
-<h1>Rules to use Let'ssnap</h1>
+<h1>Rules to use Let's snap</h1>
 <ul class="list-group">
     <li class="list-group-item">
         Any username that contains any form of racism, sexual or associated with anything inappropriate such as drugs will be blocked and deleted.
