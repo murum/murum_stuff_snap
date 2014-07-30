@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <link rel="icon" type="image/png" href="images/favicon.png">
     <meta name="description" content="Find snapchat friends to snap with. Let's snap is a new website to find and discover the worlds snapchat usernames girls and boys are all welcome!">
     <meta name="keywords" content="snapchat, chat, friends, find, mobile, kik, instagram">
