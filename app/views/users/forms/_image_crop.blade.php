@@ -13,17 +13,15 @@
                     <img id="image-preview" src="" alt=""/>
                 </div>
                 <div class="users-item-name">
-                    Examplename
                 </div>
                 <div class="users-item-gender female }}">
                 </div>
                 <hr class="users-item-divider" />
                 <div class="users-item-age">
-                    Age: XX
+                    Age:
                 </div>
                 <div class="users-item-description">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi beatae corporis cupiditate.
                     </p>
                 </div>
             </div>
