@@ -36,3 +36,13 @@ Route::post('contact', array(
     'as' => 'contact.post',
     'uses' => 'ContactController@contact'
 ));
+
+Route::get('feedback', array(
+    'as' => 'static.feedback',
+    'uses' => 'StaticController@feedback'
+));
+
+Route::post('feedback', array(
+    'as' => 'feedback.post',
+    'uses' => 'StaticController@send_feedback'
+));

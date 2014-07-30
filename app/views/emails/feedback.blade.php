@@ -28,8 +28,11 @@
                             <tr>
                                 <td>
                                     <h1>Feedback</h1>
-                                    <p>Sändare: {{$name}} ({{ $email }})</p>
+
+                                    <p>Sändare: {{ $email }}</p>
+
                                     <h2>Meddelande</h2>
+
                                     <p>{{ $message_text }}</p>
                                 </td>
                             </tr>
@@ -41,7 +44,7 @@
                 <tr>
                     <td>
                         <p>
-                            Avsändare var {{$name}} ({{ $email }})
+                            Avsändare var {{ $email }}
                         </p>
                     </td>
                 </tr>

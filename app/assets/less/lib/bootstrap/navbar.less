@@ -1,3 +1,7 @@
+.navbar {
+  border: none;
+}
+
 // Brand/project name
 .navbar-brand {
   padding: 0 @navbar-padding-horizontal;
@@ -12,5 +16,29 @@
 .navbar-nav {
   > li > a {
     text-transform: uppercase;
+  }
+
+  > li:first-child > a {
+    background: @brand-success;
+    margin-right: 1em;
+    padding-right: 2em;
+    padding-left: 2em;
+
+    &:hover {
+      background: darken(@brand-success, 5%);
+    }
+  }
+
+  > li:last-child > a {
+    background: @brand-info;
+    color: @gray-dark;
+    margin-left: 1em;
+    padding-right: 2em;
+    padding-left: 2em;
+
+    &:hover {
+      background: darken(@brand-info, 5%);
+      color: @gray-dark;
+    }
   }
 }

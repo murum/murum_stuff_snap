@@ -33,9 +33,6 @@
                 <li>
                     {{ link_to_route('static.contact', 'Contact us') }}
                 </li>
-                <li>
-                    <a href="https://www.facebook.com/letssnapofficial" target="_blank">Facebook</a>
-                </li>
 
                 <li class="hidden dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -48,6 +45,14 @@
                         <li><a href="#">Separated link</a></li>
                         <li><a href="#">One more separated link</a></li>
                     </ul>
+                </li>
+
+                <li>
+                    <a href="https://www.facebook.com/letssnapofficial" target="_blank">Facebook</a>
+                </li>
+
+                <li>
+                    {{ link_to_route('static.feedback', 'Feedback') }}
                 </li>
             </ul>
         </div><!--/.nav-collapse -->
