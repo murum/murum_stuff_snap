@@ -134,6 +134,13 @@ $(function() {
         });
     });
 
+    $('li.nav-item-search a').on('click', function(e) {
+        e.preventDefault();
+
+        $(this).parent().toggleClass('active');
+        $('div.search-form').toggleClass('hidden');
+    });
+
     $('input[name="snapname"]').on('keyup', function() {
         $('div.users-item-name').text($(this).val());
     });

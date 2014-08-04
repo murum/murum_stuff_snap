@@ -20,6 +20,7 @@
 <body>
 
 @include('layout.includes.master.nav')
+@include('layout.includes.master.search')
 
 <div class="container">
     @include('partials/_flash')

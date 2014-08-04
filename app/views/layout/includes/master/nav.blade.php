@@ -21,7 +21,7 @@
                 <li class="nav-item-add">
                     {{ link_to_route('users.create', 'Add') }}
                 </li>
-                <li>
+                <li class="nav-item-search">
                     {{ link_to_route('search.index', 'Search') }}
                 </li>
                 <li>
