@@ -4,7 +4,7 @@
             @if( $user->has_picture() )
                 {{ HTML::image($user->picture, $user->snapname) }}
             @else
-                {{ HTML::image('images/placeholder.png', 'Placeholder') }}
+                {{ HTML::image('images/placeholder_sv.png', 'Placeholder') }}
             @endif
             <ul class="users-item-usernames">
                 <li>
@@ -32,7 +32,7 @@
         </div>
         <hr class="users-item-divider" />
         <div class="users-item-age">
-            Age: {{ $user->age }}
+            {{ Lang::get('letssnap.age') }}: {{ $user->age }}
         </div>
         <div class="users-item-description">
             <p>

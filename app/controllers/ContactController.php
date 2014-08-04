@@ -19,11 +19,11 @@ class ContactController extends BaseController {
         });
 
         if(count(Mail::failures()) > 0){
-            Flash::error('Something went wrong in the sending process, please send us a mail direct from your email.');
+            Flash::error(Lang::get('messages.error.mail'));
             return Redirect::back()->withInput();
         }
 
-        Flash::success('An email was sent! We\'ll respond as soon as possible, we try to answer all mails within 24h');
+        Flash::success(Lang::get('messages.success.contact_mail'));
         return Redirect::back();
     }
 }

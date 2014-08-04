@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
+                <span class="sr-only">{{ Lang::get('letssnap.nav.utils.toggle') }}</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -19,16 +19,16 @@
                 @else
                 @endif
                 <li class="nav-item-add">
-                    {{ link_to_route('users.create', 'Add') }}
+                    {{ link_to_route('users.create', Lang::get('letssnap.nav.add')) }}
                 </li>
                 <li class="nav-item-search">
-                    {{ link_to_route('search.index', 'Search') }}
+                    {{ link_to_route('search.index', Lang::get('letssnap.nav.search')) }}
                 </li>
                 <li>
-                    {{ link_to_route('static.about', 'About let\'s snap') }}
+                    {{ link_to_route('static.about', Lang::get('letssnap.nav.about')) }}
                 </li>
                 <li>
-                    {{ link_to_route('static.rules', 'Rules') }}
+                    {{ link_to_route('static.rules', Lang::get('letssnap.nav.rules')) }}
                 </li>
 
                 <li class="hidden dropdown">
@@ -45,7 +45,7 @@
                 </li>
 
                 <li class="nav-item-feedback">
-                    {{ link_to_route('static.feedback', 'Feedback') }}
+                    {{ link_to_route('static.feedback', Lang::get('letssnap.nav.feedback')) }}
                 </li>
 
                 <li class="nav-item-facebook">

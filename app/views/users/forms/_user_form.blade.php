@@ -2,7 +2,7 @@
     {{ Form::open(['route' => ['images.store'], 'files' => true, 'class' => 'form form-horizontal image-form']) }}
     <div class="form-group">
         <div class="col-xs-12 col-sm-8">
-            {{ Form::label('image', 'Add image (optional)', ['class' => 'control-label']) }}
+            {{ Form::label('image', Lang::get('letssnap.label_add_image') . ' ' . Lang::get('letssnap.optional'), ['class' => 'control-label']) }}
             {{ Form::file('image', ['class' => 'form-control']) }}
         </div>
         <div class="col-xs-12 col-sm-4 image-form-modify hidden">
@@ -17,7 +17,7 @@
 
         {{-- Snapchat user --}}
         <div class="col-xs-12 col-sm-8">
-            {{ Form::label('snapname', 'Your snapchat username', ['class' => 'control-label']) }}
+            {{ Form::label('snapname', Lang::get('letssnap.label_snapname'), ['class' => 'control-label']) }}
             <span class="text-danger">*</span>
             {{ Form::text('snapname', null, ['class' => 'form-control', 'required' => true, 'maxlength' => '15']) }}
             {{ $errors->first('snapname', '<span class="text-danger">:message</span>') }}
@@ -25,7 +25,7 @@
 
         {{-- AGE --}}
         <div class="col-xs-12 col-sm-8 col-md-4">
-            {{ Form::label('age', 'Your age', ['class' => 'control-label']) }}
+            {{ Form::label('age', Lang::get('letssnap.label_age'), ['class' => 'control-label']) }}
             <span class="text-danger">*</span>
             {{ Form::text('age', null, ['class' => 'form-control', 'required' => true]) }}
             {{ $errors->first('age', '<span class="text-danger">:message</span>') }}
@@ -34,7 +34,7 @@
     <div class="form-group">
         {{-- Instagram user --}}
         <div class="col-xs-12 col-sm-8">
-            {{ Form::label('instagram', 'Your instagram username (optional)', ['class' => 'control-label']) }}
+            {{ Form::label('instagram', Lang::get('letssnap.label_instagram') . ' ' . Lang::get('letssnap.optional'), ['class' => 'control-label']) }}
             {{ Form::text('instagram', null, ['class' => 'form-control', 'maxlength' => '30']) }}
             {{ $errors->first('instagram', '<span class="text-danger">:message</span>') }}
         </div>
@@ -43,12 +43,18 @@
         <div class="col-xs-12 col-sm-4">
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <label> Male
+                    <label>
+                        <div>
+                            {{ Lang::get('letssnap.male') }}
+                        </div>
                         {{ Form::radio('sex', '1') }}
                     </label>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4">
-                    <label> Female
+                    <label>
+                        <div>
+                            {{ Lang::get('letssnap.female') }}
+                        </div>
                         {{ Form::radio('sex', '2') }}
                     </label>
                 </div>
@@ -60,7 +66,7 @@
     </div>
     <div class="form-group">
         <div class="col-xs-12 col-sm-8">
-            {{ Form::label('kik', 'Your kik username (optional)', ['class' => 'control-label']) }}
+            {{ Form::label('kik', Lang::get('letssnap.label_kik') . ' ' . Lang::get('letssnap.optional'), ['class' => 'control-label']) }}
             {{ Form::text('kik', null, ['class' => 'form-control']) }}
             {{ $errors->first('kik', '<span class="text-danger">:message</span>') }}
         </div>
@@ -68,7 +74,7 @@
 
     <div class="form-group">
         <div class="col-xs-12">
-            {{ Form::label('description', 'About me', ['class' => 'control-label']) }}
+            {{ Form::label('description', Lang::get('letssnap.label_about'), ['class' => 'control-label']) }}
             <span class="text-danger">*</span>
             {{ Form::textarea('description', null, ['class' => 'form-control', 'rows' => 3, 'required' => true]) }}
             {{ $errors->first('description', '<span class="text-danger">:message</span>') }}
@@ -80,13 +86,16 @@
             <label>
                 <span class="text">
                     <span class="text-danger">*</span>
-                    I accept the <a href="{{ route('static.rules') }}" target="_blank">rules</a>
+                    {{ Lang::get('letssnap.label_rules') }}
+                    <a href="{{ route('static.rules') }}" target="_blank">
+                        {{ Lang::get('letssnap.rules_text')}}
+                    </a>
                 </span>
                 {{ Form::checkbox('rules', '1', null,  ['id' => 'name', 'required' => true]) }}
             </label>
         </div>
     </div>
     {{ Form::hidden('image') }}
-    {{ Form::submit('Add card to wall', ['class' => 'btn btn-lg btn-success']) }}
+    {{ Form::submit(Lang::get('letssnap.add_card_to_wall_button'), ['class' => 'btn btn-lg btn-success']) }}
     {{ Form::close() }}
 </div>

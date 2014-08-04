@@ -39,11 +39,11 @@ class StaticController extends BaseController
         });
 
         if(count(Mail::failures()) > 0){
-            Flash::error('Something went wrong in the sending process, please send us a mail direct from your email.');
+            Flash::error(Lang::get('messages.error.mail'));
             return Redirect::back()->withInput();
         }
 
-        Flash::success('An email was sent! Thanks for letting us know your thoughts on this website');
+        Flash::success(Lang::get('messages.success.feedback_mail'));
         return Redirect::back();
     }
 }

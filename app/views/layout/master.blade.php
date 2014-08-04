@@ -1,24 +1,23 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ App::getLocale() }}">
 <head>
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">-->
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <meta name="description" content="Find snapchat friends to snap with. Let's snap is a new website to find and discover the worlds snapchat usernames girls and boys are all welcome!">
-    <meta name="keywords" content="snapchat, chat, friends, find, mobile, kik, instagram">
+    <meta name="description" content="{{ Lang::get('letssnap.meta.description') }}">
+    <meta name="keywords" content="{{ Lang::get('letssnap.meta.keywords') }}">
 
-    <meta property="og:title" content="Find Snapchat friends - Let's snap" />
-    <meta property="og:url" content="http://letssnap.com"/>
-    <meta property="og:site_name" content="Lets's snap"/>
-    <meta property="og:description" content="Find snapchat friends to snap with. Let's snap is a new website to find and discover the worlds snapchat usernames girls and boys are all welcome!">
+    <meta property="og:title" content="{{ Lang::get('letssnap.meta.og.title') }}" />
+    <meta property="og:url" content="{{ Lang::get('letssnap.meta.og.url') }}"/>
+    <meta property="og:site_name" content="{{ Lang::get('letssnap.meta.og.site_name') }}"/>
+    <meta property="og:description" content="{{ Lang::get('letssnap.meta.og.description') }}">
     <meta property="og:type" content="website"/>
 
-    <title>Find Snapchat friends - Let's snap</title>
+    <title>{{ Lang::get('letssnap.meta.title') }}</title>
     {{ HTML::style('/css/libs.css') }}
     {{ HTML::style('/css/main.css') }}
 </head>
 <body>
-
 @include('layout.includes.master.nav')
 @include('layout.includes.master.search')
 

@@ -18,7 +18,7 @@
                 </div>
                 <hr class="users-item-divider" />
                 <div class="users-item-age">
-                    Age: <span class="users-item-age-value"></span>
+                    {{ Lang::get('letssnap.age') }}: <span class="users-item-age-value"></span>
                 </div>
                 <div class="users-item-description">
                     <p>

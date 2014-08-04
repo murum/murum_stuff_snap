@@ -1,34 +1,36 @@
 @extends('layout.master')
 
 @section('content')
-<h1>Rules to use Let's snap</h1>
+<h1>
+    {{ Lang::get('letssnap.rules.header') }}
+</h1>
 <ul class="list-group">
     <li class="list-group-item">
-        Any username that contains any form of racism, sexual or associated with anything inappropriate such as drugs will be blocked and deleted.
+        {{ Lang::get('letssnap.rules.one') }}
     </li>
     <li class="list-group-item">
-        We don't really have a age restriction just yet, but we recommend that you're above 12 years old to post on this page.
+        {{ Lang::get('letssnap.rules.two') }}
     </li>
     <li class="list-group-item">
-        Pictures that is inappropriate e.g. naked, stripped or daring will be deleted.
+        {{ Lang::get('letssnap.rules.three') }}
     </li>
     <li class="list-group-item">
-        Advertising on posts / cards is completely prohibited, and will be deleted.
+        {{ Lang::get('letssnap.rules.four') }}
     </li>
     <li class="list-group-item">
-        Hacking or trying to hack is not allowed.
+        {{ Lang::get('letssnap.rules.five') }}
     </li>
     <li class="list-group-item">
-        Requests about naked picture is prohibited.
+        {{ Lang::get('letssnap.rules.six') }}
     </li>
     <li class="list-group-item">
-        Please keep your privacy (such as address, name) private.
+        {{ Lang::get('letssnap.rules.seven') }}
     </li>
     <li class="list-group-item">
-        The team of Let's snap do not take any responsibility whatsoever that users put up. We delete in after rules as time allows.
+        {{ Lang::get('letssnap.rules.eight') }}
     </li>
     <li class="list-group-item">
-        We'll notice you if the rules are changed, but it's your responsibility to update your knowledge about the changes.
+        {{ Lang::get('letssnap.rules.nine') }}
     </li>
 </ul>
 @stop
