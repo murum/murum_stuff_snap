@@ -1,6 +1,5 @@
 function showPreview(coords)
 {
-
     var rx = 255 / coords.w;
     var ry = 172 / coords.h;
     var imgHeight = $('img#image-cropper').height();
@@ -63,38 +62,23 @@ $(function() {
     $('input#image').fileinput({
         showPreview: false,
         showRemove: false,
-        showUpload: false
+        showUpload: false,
+        browseLabel: 'Add image',
+        browseIcon: ''
     });
 
     $('input#image').on('change', function() {
         $('form.image-form').trigger('submit');
     });
 
+    $('button#modify-image').on('click', function() {
+        $('div.image-cropper').removeClass('hidden');
+        $('div.user-create-forms').addClass('hidden');
+    });
+
     $('a#reupload-image').on('click', function() {
         if(confirm('Are you sure you want to reset your image?'))
             $('form.image-form').trigger('submit');
-    });
-
-    $("a.skip-image").on("click", function() {
-        $(".step-image").toggleClass("hidden");
-
-        if( $(".step-fields").length) {
-            $(".step-fields").toggleClass("hidden");
-        }
-    });
-
-    $("a.skip-crop").on("click", function() {
-        $(".step-crop").toggleClass("hidden");
-
-        if($(".step-fields").length) {
-            $(".step-fields").toggleClass("hidden");
-        }
-    });
-
-    $("a.show-crop").on('click', function() {
-        $("div.image-cropper-container").toggleClass("hidden");
-        $("div.cropper-buttons").toggleClass("hidden");
-        $("div.cropper-buttons-first").toggleClass("hidden");
     });
 
     $('form.image-form').on('submit', function(e) {
@@ -121,10 +105,7 @@ $(function() {
                     JcropAPI.destroy();
                 }
 
-                $('div.step-image').addClass('hidden');
-                $('div.step-crop').removeClass('hidden');
-                $("div.cropper-buttons").addClass("hidden");
-                $("div.cropper-buttons-first").removeClass("hidden");
+                $('div.image-form-modify').removeClass('hidden');
 
                 $('img#image-cropper')
                     .attr('src', '/'+data.url)
@@ -141,8 +122,8 @@ $(function() {
                 });
 
                 $('img#image-cropper').on('load', function() {
-                    $("div.image-cropper-container").toggleClass("hidden");
-                })
+                    $(this).css({width: '100%', height: 'auto'});
+                });
             },
             // Form data
             data: formData,
@@ -151,7 +132,32 @@ $(function() {
             contentType: false,
             processData: false
         });
-    })
+    });
+
+    $('input[name="snapname"]').on('keyup', function() {
+        $('div.users-item-name').text($(this).val());
+    });
+
+    $('input[name="age"]').on('keyup', function() {
+        $('span.users-item-age-value').text($(this).val());
+    });
+
+    $('textarea[name="description"]').on('keyup', function() {
+        $('div.users-item-description p').text($(this).val());
+    });
+
+    $('input[name="sex"]').on('change', function() {
+        switch($(this).val()) {
+            case '1':
+                $('div.users-item-gender').addClass('male');
+                $('div.users-item-gender').removeClass('female');
+                break;
+            case '2':
+                $('div.users-item-gender').addClass('female');
+                $('div.users-item-gender').removeClass('male');
+                break;
+        };
+    });
 
     $('form.image-form-update').on('submit', function(e) {
         e.preventDefault();
@@ -167,12 +173,11 @@ $(function() {
             url: url,  //Server script to process data
             type: method,
             success: function(data) {
-                $('input[name="image"]', 'form.form-user-create').val(data.url);
-                $(".step-fields").removeClass("hidden");
-                $(".step-crop").addClass("hidden");
+                $('div.image-cropper').addClass('hidden');
+                $('div.user-create-forms').removeClass('hidden');
             },
             // Form data
             data: formData
         });
     });
-})
+});

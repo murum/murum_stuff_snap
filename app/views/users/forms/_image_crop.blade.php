@@ -1,4 +1,4 @@
-<div class="image-cropper">
+<div class="image-cropper hidden">
     <div class="row">
         <div class="image-cropper-container">
             <div class="col-xs-12 col-sm-offset-1 col-sm-6 col-md-7">

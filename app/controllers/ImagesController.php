@@ -24,7 +24,25 @@ class ImagesController extends BaseController
         $jpeg_quality = 75;
 
         $src = Input::get('image-url');
-        $img_r = imagecreatefromjpeg($src);
+
+        $path = url().'/'.$src;
+        $headers = get_headers($path, 1);
+
+        switch ($headers['Content-Type'])
+        {
+            case 'image/jpeg':
+                $img_r = imagecreatefromjpeg($src);
+                break;
+            case 'image/gif':
+                $img_r = imagecreatefromgif($src);
+                break;
+            case 'image/png':
+                $img_r = imagecreatefrompng($src);
+                break;
+            default:
+                die('Invalid image type');
+        }
+
         $dst_r = ImageCreateTrueColor($targ_w, $targ_h);
 
         list($width) = getimagesize($src);
