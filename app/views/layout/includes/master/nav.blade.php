@@ -18,7 +18,7 @@
                 @if(Auth::guest())
                 @else
                 @endif
-                <li>
+                <li class="nav-item-add">
                     {{ link_to_route('users.create', 'Add') }}
                 </li>
                 <li>
@@ -29,9 +29,6 @@
                 </li>
                 <li>
                     {{ link_to_route('static.rules', 'Rules') }}
-                </li>
-                <li>
-                    {{ link_to_route('static.contact', 'Contact us') }}
                 </li>
 
                 <li class="hidden dropdown">
@@ -47,12 +44,18 @@
                     </ul>
                 </li>
 
-                <li>
-                    <a href="https://www.facebook.com/letssnapofficial" target="_blank">Facebook</a>
+                <li class="nav-item-feedback">
+                    {{ link_to_route('static.feedback', 'Feedback') }}
                 </li>
 
-                <li>
-                    {{ link_to_route('static.feedback', 'Feedback') }}
+                <li class="nav-item-facebook">
+                    <a href="https://www.facebook.com/letssnapofficial" target="_blank">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                </li>
+
+                <li class="nav-item-contact">
+                    <a href="{{ route('static.contact') }}"><i class="fa fa-envelope-o"></i></a>
                 </li>
             </ul>
         </div><!--/.nav-collapse -->

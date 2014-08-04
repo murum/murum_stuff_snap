@@ -22,6 +22,14 @@ function showPreview(coords)
     $('input[name="image-height"]', 'form.image-form-update').val(imgHeight);
 }
 
+function preloader() {
+    if (document.images) {
+        var img1 = new Image();
+
+        img1.src = "/images/logo-animate.gif";
+    }
+}
+
 function progressHandlingFunction(e){
     if(e.lengthComputable){
         $('progress').attr({value:e.loaded,max:e.total});
@@ -29,6 +37,17 @@ function progressHandlingFunction(e){
 }
 
 $(function() {
+    preloader();
+
+    $(".navbar-brand img").hover(
+        function() {
+            $(this).attr("src", "/images/logo-animate.gif");
+        },
+        function() {
+            $(this).attr("src", "/images/logo.png");
+        }
+    );
+
     // Enable selectpickers
     $('.selectpicker').selectpicker();
 

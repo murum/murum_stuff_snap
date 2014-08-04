@@ -24,27 +24,54 @@
     }
   }
 
-  > li:first-child > a {
+  > li.nav-item-add > a {
     background: @brand-success;
-    margin-right: 0.5em;
-    padding-right: 1.5em;
-    padding-left: 1.5em;
 
     &:hover {
       background: darken(@brand-success, 5%);
     }
+
+    &:before {
+      content: "";
+      width: 26px;
+      height: 25px;
+      display: block;
+      float: left;
+      margin-right: 10px;
+      position: relative;
+      top: -2px;
+      background: url('../images/add-icon.png');
+    }
   }
 
-  > li:last-child > a {
+  > li.nav-item-feedback > a {
     background: @brand-info;
-    color: @gray-dark;
-    margin-left: 0.5em;
-    padding-right: 1.5em;
-    padding-left: 1.5em;
 
     &:hover {
       background: darken(@brand-info, 5%);
-      color: @gray-dark;
     }
+  }
+
+  > li.nav-item-contact > a {
+    background: lighten(@brand-info, 10%);
+    color: @gray-darker;
+
+    &:hover {
+      background: lighten(@brand-info, 5%);
+      color: @gray-darker;
+    }
+  }
+
+  > li.nav-item-facebook > a {
+    background: @brand-fb;
+
+    &:hover {
+      background: darken(@brand-fb, 5%);
+    }
+  }
+
+  > li > a > i.fa {
+    font-size: 1.33em;
+    line-height: 0.75em;
   }
 }
