@@ -19,7 +19,7 @@ return array(
     'optional' => '(frivilligt)',
 
     'done' => "Jag är klar",
-    'add_card_to_wall_button' => "Skicka kortet till väggen",
+    'add_card_to_wall_button' => "Publicera kortet!",
     'create_card_button_text' => "Vill du ha fler snapchat vänner? - Skapa ett kort direkt!",
 
     'nav' => array(
