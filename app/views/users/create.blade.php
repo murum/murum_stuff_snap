@@ -2,7 +2,31 @@
 
 @section('content')
     <h1>Add a card to the wall</h1>
-
+    <div class="row">
+        <div class="col-xs-12 col-sm-8">
+            @include('users.forms._user_form_new')
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-offset-1 col-md-3">
+            <div class="users-item users-item-{{ rand(1,4) }}">
+                <div class="users-item-image">
+                    <img id="image-preview" src="" alt=""/>
+                </div>
+                <div class="users-item-name">
+                </div>
+                <div class="users-item-gender female }}">
+                </div>
+                <hr class="users-item-divider" />
+                <div class="users-item-age">
+                    Age:
+                </div>
+                <div class="users-item-description">
+                    <p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--
 <div class="row step-image">
     <div class="col-xs-12">
         <h2>Choose image</h2>
@@ -22,4 +46,5 @@
         @include('users.forms._user_form')
     </div>
 </div>
+-->
 @stop
