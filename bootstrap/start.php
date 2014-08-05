@@ -28,9 +28,17 @@ $env = $app->detectEnvironment(function()
 {
     $environment = getenv('APP_ENV');
     if (strlen($environment) === 0) {
-        if (strpos(__DIR__, '/home/forge/' . 'dev.letssnap.com') === 0) {
+        if (
+            strpos(__DIR__, '/home/forge/' . 'dev.letssnap.com') === 0
+            ||
+            strpos(__DIR__, '/home/forge/' . 'dev.letssnap.se') === 0
+        ) {
             $environment = 'dev';
-        } elseif (strpos(__DIR__, '/home/forge/' . 'letssnap.com') === 0) {
+        } elseif (
+            strpos(__DIR__, '/home/forge/' . 'letssnap.com') === 0
+            ||
+            strpos(__DIR__, '/home/forge/' . 'letssnap.se') === 0
+        ) {
             $environment = 'production';
         }
     }
