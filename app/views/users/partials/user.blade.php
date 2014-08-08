@@ -25,7 +25,7 @@
             </ul>
         </div>
         <div class="users-item-name">
-            {{ $user->snapname }}
+            <i class="fa fa-snapchat-black"></i>{{ $user->snapname }}
         </div>
         <div class="users-item-gender {{ $user->get_gender() }}">
             {{ $user->get_gender() }}
