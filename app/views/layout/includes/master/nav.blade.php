@@ -21,7 +21,10 @@
                 <li class="nav-item-add">
                     {{ link_to_route('users.create', Lang::get('letssnap.nav.add')) }}
                 </li>
-                <li class="nav-item-search">
+                <li class="hidden-xs nav-item-search">
+                    {{ link_to_route('search.index', Lang::get('letssnap.nav.search')) }}
+                </li>
+                <li class="visible-xs">
                     {{ link_to_route('search.index', Lang::get('letssnap.nav.search')) }}
                 </li>
                 <li>
