@@ -36,7 +36,11 @@
       height: 144px;
     }
 
-    @media screen and (max-width: @screen-sm-min) {
+    @media (max-width: 768px) and (min-width: 600px) {
+      height: 207px;
+    }
+
+    @media screen and (max-width: 599px) {
       height: 107px;
     }
 
@@ -101,6 +105,12 @@
     height: 1px;
     border: none;
     outline: none;
+    display: block;
+    width: 114%;
+
+    @media (max-width: 768px) and (min-width: 600px) {
+      width: 109%;
+    }
   }
 
   .users-item-age {

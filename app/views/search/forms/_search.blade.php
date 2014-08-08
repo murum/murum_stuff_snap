@@ -11,8 +11,8 @@
         -
         {{ Form::text('maxAge', null, ['maxlength' => '3', 'class' => 'form-control']) }}
     </div>
-    <div class="col-xs-2">
-        <button type="submit" class="btn btn-block btn-success btn-search">
+    <div class="col-xs-2 text-right">
+        <button type="submit" class="btn btn-success btn-search">
             <i class="fa fa-search"></i>
         </button>
     </div>

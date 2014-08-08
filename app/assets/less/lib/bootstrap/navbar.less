@@ -55,6 +55,8 @@
   > li.nav-item-contact > a {
     background: lighten(@brand-info, 10%);
     color: @gray-darker;
+    width: @navbar-height;
+    text-align: center;
 
     &:hover {
       background: lighten(@brand-info, 5%);
@@ -64,6 +66,8 @@
 
   > li.nav-item-facebook > a {
     background: @brand-fb;
+    width: @navbar-height;
+    text-align: center;
 
     &:hover {
       background: darken(@brand-fb, 5%);
@@ -71,7 +75,7 @@
   }
 
   > li > a > i.fa {
-    font-size: 1.33em;
+    font-size: 1.5em;
     line-height: 0.75em;
   }
 }
