@@ -1,4 +1,4 @@
-<div class="search-form hidden">
+<div class="search-form hidden-custom">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">

@@ -50,15 +50,6 @@ $(function() {
     // Enable selectpickers
     $('.selectpicker').selectpicker();
 
-    $('a.toggle-additional-user-fields').on('click', function(e) {
-        e.preventDefault();
-
-        $('a.toggle-additional-user-fields').show();
-        $(this).hide();
-        $('div.additional-user-fields').toggleClass('hidden');
-
-    });
-
     $('input#image').fileinput({
         showPreview: false,
         showRemove: false,
@@ -138,7 +129,7 @@ $(function() {
         e.preventDefault();
 
         $(this).parent().toggleClass('active');
-        $('div.search-form').toggleClass('hidden');
+        $('div.search-form').toggleClass('hidden-custom',1000);
     });
 
     $('input[name="snapname"]').on('keyup', function() {
