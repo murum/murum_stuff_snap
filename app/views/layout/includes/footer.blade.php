@@ -1,4 +1,4 @@
-<div class="footer">
+<div class="footer hidden-xs">
     <div class="container">
         <div class="col-xs-12 col-sm-4">
             <a href="{{ route('home') }}">

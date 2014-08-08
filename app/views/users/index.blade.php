@@ -22,7 +22,9 @@
 </div>
 <div class="row row-margin">
     <div class="col-xs-12 col-sm-offset-1 col-sm-10">
-        {{ link_to_route('users.create', Lang::get('letssnap.create_card_button_text'), null, ['class' => 'btn btn-lg btn-block btn-primary']) }}
+        <div class="create-card">
+            {{ link_to_route('users.create', Lang::get('letssnap.create_card_button_text'), null, ['class' => 'btn btn-lg btn-block btn-primary']) }}
+        </div>
     </div>
 </div>
 @stop

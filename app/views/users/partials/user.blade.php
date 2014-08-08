@@ -1,4 +1,4 @@
-<div class="col-xs-6 col-sm-4 col-md-3">
+<div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-4 col-md-3">
     <div class="users-item users-item-{{ rand(1,4) }}">
         <div class="users-item-image">
             @if( $user->has_picture() )
