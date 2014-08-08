@@ -14,7 +14,7 @@ return array(
     'label_age' => "Din ålder",
     'label_instagram' => 'Ditt instagram konto',
     'label_kik' => 'Ditt kik konto',
-    'label_about' => 'Vad söker du?',
+    'label_about' => 'Beskriv dig och vad du söker.',
     'label_rules' => 'Jag accepterar',
     'optional' => '(frivilligt)',
 
