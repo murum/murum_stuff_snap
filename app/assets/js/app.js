@@ -129,7 +129,7 @@ $(function() {
         e.preventDefault();
 
         $(this).parent().toggleClass('active');
-        $('div.search-form').toggleClass('hidden-custom',1000);
+        $('div.search-form').toggleClass('hidden',1000);
     });
 
     $('input[name="snapname"]').on('keyup', function() {

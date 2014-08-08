@@ -9,14 +9,6 @@
   position: absolute;
   top: @navbar-height;
 
-  overflow: hidden;
-
-  transition: all 0.3s ease;
-
-  &.hidden-custom {
-    height: 0;
-  }
-
   label {
     color: #fff;
   }
@@ -36,6 +28,10 @@
     font-size: 0.875em;
     -webkit-box-shadow: none;
     box-shadow: none;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   .dropdown-menu {
