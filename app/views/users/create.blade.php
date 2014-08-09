@@ -1,7 +1,8 @@
 @extends('layout.master')
 
 @section('content')
-    <h1>Add a card to the wall</h1>
+    <h1>
+        {{ Lang::get('letssnap.headers.create_card') }}</h1>
     <div class="row">
         <div class="col-xs-12 col-sm-8">
             @include('users.forms._user_form')
