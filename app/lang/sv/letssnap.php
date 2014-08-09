@@ -42,7 +42,7 @@ return array(
         'title' => "Hitta snapchat vänner - Let's snap",
         'og' => array(
             'title' => "Hitta snapchat vänner - Let's snap",
-            'url' => "http://letssnap.com",
+            'url' => "http://letssnap.se",
             'site_name' => "Let's snap",
             'description' => "Hitta snapchat vänner att snappa med, Let's snap är en ny webbplats för att hitta hela världens snapchat användare både tjejer och killar är välkomna!",
         )
