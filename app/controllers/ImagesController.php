@@ -11,6 +11,10 @@ class ImagesController extends BaseController
 
         $url = $destinationPath . $fileName;
 
+        if (false === getimagesize(Input::file('image'))) {
+            return Response::json(['success' => false]);
+        }
+
         Input::file('image')->move($destinationPath, $fileName);
         image_fix_orientation($url);
 
@@ -41,6 +45,10 @@ class ImagesController extends BaseController
                 break;
             default:
                 die('Invalid image type');
+        }
+
+        if (false === getimagesize($img_r)) {
+            return Response::json(['success' => false]);
         }
 
         $dst_r = ImageCreateTrueColor($targ_w, $targ_h);
