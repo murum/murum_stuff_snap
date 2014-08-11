@@ -61,8 +61,8 @@ class UsersController extends BaseController {
     public function post_bump() {
         $snapname = Input::get('bump_snapname');
         $user = User::whereSnapname($snapname)->get()->last();
-        if($user) {
 
+        if($user) {
             // If the bump were made with 1 day... there's to early for a bump
             $next_bump = $user->updated_at->modify('+1 day');
             $now = new DateTime();
@@ -79,7 +79,7 @@ class UsersController extends BaseController {
             } else {
                 Flash::error(Lang::get('messages.bump.server_error'));
             }
-
+        } else {
             Flash::error(Lang::get('messages.bump.no_user'));
         }
         return Redirect::to('/');
