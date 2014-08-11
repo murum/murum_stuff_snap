@@ -8,6 +8,19 @@ class UsersController extends BaseController {
     }
 
     public function create() {
+        if(
+            Request::getClientIp() == '109.58.145.73'
+            ||
+            Request::getClientIp() == '78.72.85.42'
+            ||
+            Request::getClientIp() == '46.195.125.40'
+            ||
+            Request::getClientIp() == '90.141.181.66'
+        ) {
+            Flash::error(Lang::get('messages.error.create_banned'));
+            return Redirect::to('/');
+        }
+
         return View::make('users.create');
     }
 

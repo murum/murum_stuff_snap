@@ -5,6 +5,7 @@ return array(
         'mail' => "Something went wrong in the sending process, please send us a mail direct from your email.",
         'validation' => "Validation errors.",
         'create_card_fail_save' => "Something went wrong in the save process of the card, please try again!",
+        'create_banned' => 'You\'re banned from creating cards'
     ),
     'success' => array(
         'contact_mail' => "An email was sent! We'll respond as soon as possible, we try to answer all mails within 24h.",
