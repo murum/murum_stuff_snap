@@ -28,6 +28,12 @@
 
     <div class="row content">
         <div class="col-xs-12">
+            <div class="alert alert-info">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <p>
+                    Tyvärr så har vissa bilder försvunnit ifrån servern. Ifall ni sedan tidigare hade gjort ett inlägg på sidan och saknar nu ert kort får ni gärna skapa ett nytt kort! Ber hemskt mycket om ursäkt för att det inträffade.
+                </p>
+            </div>
             @yield('content')
         </div>
     </div>
