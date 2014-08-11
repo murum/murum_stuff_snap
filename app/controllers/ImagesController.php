@@ -12,7 +12,7 @@ class ImagesController extends BaseController
         $url = $destinationPath . $fileName;
 
         if (false === getimagesize(Input::file('image'))) {
-            die('Something went wrong.');
+            return Response::json(['success' => false]);
         }
 
         Input::file('image')->move($destinationPath, $fileName);
@@ -48,7 +48,7 @@ class ImagesController extends BaseController
         }
 
         if (false === getimagesize($img_r)) {
-            die('Something went wrong.');
+            return Response::json(['success' => false]);
         }
 
         $dst_r = ImageCreateTrueColor($targ_w, $targ_h);
