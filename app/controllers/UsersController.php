@@ -3,7 +3,7 @@
 class UsersController extends BaseController {
 
     public function index() {
-        $users = User::orderBy('created_at', 'DESC')->paginate(12);
+        $users = User::orderBy('updated_at', 'DESC')->paginate(12);
         return View::make('users.index')->with('users', $users);
     }
 
@@ -56,5 +56,32 @@ class UsersController extends BaseController {
         }
         Flash::error(Lang::get('messages.error.validation'));
         return Redirect::back()->withInput()->withErrors($validator);
+    }
+
+    public function post_bump() {
+        $snapname = Input::get('bump_snapname');
+        $user = User::whereSnapname($snapname)->get()->last();
+        if($user) {
+
+            // If the bump were made with 1 day... there's to early for a bump
+            $next_bump = $user->updated_at->modify('+1 day');
+            $now = new DateTime();
+            if($next_bump >= $now->format('Y-m-d H:i:s')) {
+                Flash::error(Lang::get('messages.bump.already_bumped') . $next_bump);
+                return Redirect::to('/');
+            }
+
+
+            $user->bumps += 1;
+            if($user->save()){
+                Flash::success(Lang::get('messages.bump.success'));
+                return Redirect::to('/');
+            } else {
+                Flash::error(Lang::get('messages.bump.server_error'));
+            }
+
+            Flash::error(Lang::get('messages.bump.no_user'));
+        }
+        return Redirect::to('/');
     }
 }

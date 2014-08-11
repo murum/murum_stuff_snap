@@ -13,5 +13,11 @@ return array(
     ),
     'info' => array(
 
-    )
+    ),
+    'bump' => array(
+        'success' => 'Ditt senaste kort blev bumpat',
+        'server_error' => 'Systemfel, vänligen försök igen. Ifall felet kvarstår vänligen maila till oss.',
+        'no_user' => 'Det finns inget kort med angivet snapnamn',
+        'already_bumped' => 'Kortet har bumpats för mindre än 24 timmar sedan. Du kan bumpa kortet igen: ',
+    ),
 );

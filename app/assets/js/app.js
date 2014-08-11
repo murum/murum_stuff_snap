@@ -130,6 +130,13 @@ $(function() {
 
         $(this).parent().toggleClass('active');
         $('div.search-form').toggleClass('hidden',1000);
+    })
+
+    $('li.nav-item-bump a').on('click', function(e) {
+        e.preventDefault();
+
+        $(this).parent().toggleClass('active');
+        $('div.bump-form').toggleClass('hidden',1000);
     });
 
     $('input[name="snapname"]').on('keyup', function() {

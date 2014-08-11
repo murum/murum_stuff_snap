@@ -21,6 +21,21 @@
                 <li class="nav-item-add">
                     {{ link_to_route('users.create', Lang::get('letssnap.nav.add')) }}
                 </li>
+
+                <li class="hidden-xs nav-item-bump">
+                    <a href="{{ route('users.bump') }}">
+                        <i class="small fa fa-refresh"></i>
+                        {{ Lang::get('letssnap.nav.bump') }}
+                    </a>
+                </li>
+
+                <li class="visible-xs">
+                    <a href="{{ route('users.bump') }}">
+                        <i class="small fa fa-refresh"></i>
+                        {{ Lang::get('letssnap.nav.bump') }}
+                    </a>
+                </li>
+
                 <li class="hidden-xs nav-item-search">
                     {{ link_to_route('search.index', Lang::get('letssnap.nav.search')) }}
                 </li>

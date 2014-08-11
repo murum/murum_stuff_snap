@@ -1,0 +1,42 @@
+.bump-form {
+  background: @primary-dark;
+  color: @gray-light;
+  height: @navbar-height;
+  line-height: @navbar-height;
+  z-index: 9999;
+
+  width: 100%;
+  position: fixed;
+  top: @navbar-height;
+
+  label {
+    color: #fff;
+  }
+
+  .form-control {
+    height: @navbar-height * 0.8;
+    line-height: @navbar-height * 0.8;
+    border-radius: 0;
+    background: @primary-darker;
+    color: @gray-light;
+    border: 0;
+    padding: 0 25px 0 12px;
+    outline: none;
+    text-transform: uppercase;
+    font-size: 0.875em;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .btn-bump {
+    height: @navbar-height;
+    font-size: 1.5em;
+    border-radius: 0;
+    width: (@navbar-height * 2);
+    float: right;
+  }
+}

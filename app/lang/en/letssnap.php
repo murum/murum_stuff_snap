@@ -24,6 +24,7 @@ return array(
 
     'nav' => array(
         'add' => 'Add',
+        'bump' => 'Bump',
         'search' => 'Search',
         'about' => 'About let\'s snap',
         'rules' => 'Rules',
@@ -49,6 +50,9 @@ return array(
     ),
     'search' => array(
         'age' => "Age",
+    ),
+    'bump' => array(
+        'submit' => 'Bump it!'
     ),
     'gender' => array(
         'both' => 'Any gender',

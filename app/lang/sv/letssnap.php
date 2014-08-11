@@ -24,6 +24,7 @@ return array(
 
     'nav' => array(
         'add' => 'Skapa',
+        'bump' => 'Bumpa',
         'search' => 'Sök',
         'about' => 'Om let\'s snap',
         'rules' => 'Regler',
@@ -49,6 +50,9 @@ return array(
     ),
     'search' => array(
         'age' => "Ålder",
+    ),
+    'bump' => array(
+        'submit' => 'Bumpa'
     ),
     'gender' => array(
         'both' => 'Båda könen',

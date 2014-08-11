@@ -4,6 +4,8 @@ Route::get('/', array('as' => 'home', 'uses' => 'UsersController@index'));
 Route::get('users/create', array('as' => 'users.create', 'uses' => 'UsersController@create') );
 Route::get('user/{username}', array('as' => 'users.show', 'uses' => 'UsersController@show') );
 Route::post('users/create', array('as' => 'users.store', 'uses' => 'UsersController@store') );
+Route::get('users/bump', array('as' => 'users.bump', 'uses' => 'UsersController@post_bump') );
+Route::post('users/bump', array('as' => 'users.bump', 'uses' => 'UsersController@post_bump') );
 
 Route::post('images/create', array('as' => 'images.store', 'uses' => 'ImagesController@store') );
 Route::post('images/update', array('as' => 'images.update', 'uses' => 'ImagesController@update') );
@@ -22,6 +24,7 @@ Route::get('about', array(
     'as' => 'static.about',
     'uses' => 'StaticController@about'
 ));
+
 Route::get('rules', array(
     'as' => 'static.rules',
     'uses' => 'StaticController@rules'
