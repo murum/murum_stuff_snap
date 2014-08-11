@@ -7,13 +7,16 @@ class ImagesController extends BaseController
         $extension = Input::file('image')->getClientOriginalExtension();
 
         $destinationPath = 'uploads/';
-        $fileName = md5(uniqid(rand(), true) . date('Y-m-d H:i:s')) . '.'.$extension;
+        $fileName = md5(uniqid(rand(), true) . date('Y-m-d H:i:s')) . '.' . $extension;
 
         $url = $destinationPath . $fileName;
 
-        if (false === getimagesize(Input::file('image'))) {
-            return Response::json(['success' => false]);
+        $pixel = $this->getPixels(Input::file('image'));
+
+        if ($pixel["width"] < 4 || $pixel["height"] < 4) {
+            die('Invalid');
         }
+
 
         Input::file('image')->move($destinationPath, $fileName);
         image_fix_orientation($url);
@@ -29,11 +32,10 @@ class ImagesController extends BaseController
 
         $src = Input::get('image-url');
 
-        $path = url().'/'.$src;
+        $path = url() . '/' . $src;
         $headers = get_headers($path, 1);
 
-        switch ($headers['Content-Type'])
-        {
+        switch ($headers['Content-Type']) {
             case 'image/jpeg':
                 $img_r = imagecreatefromjpeg($src);
                 break;
@@ -46,10 +48,12 @@ class ImagesController extends BaseController
             default:
                 die('Invalid image type');
         }
+        $pixel = $this->getPixels($img_r);
 
-        if (false === getimagesize($img_r)) {
-            return Response::json(['success' => false]);
+        if ($pixel["width"] < 4 || $pixel["height"] < 4) {
+            die('Invalid');
         }
+
 
         $dst_r = ImageCreateTrueColor($targ_w, $targ_h);
 
@@ -62,4 +66,11 @@ class ImagesController extends BaseController
         imagejpeg($dst_r, $src, $jpeg_quality);
         return Response::json(['url' => $src]);
     }
+
+    protected function getPixels($getImage)
+    {
+        list($width, $height) = getImageSize($getImage);
+        return array("width" => $width, "height" => $height);
+    }
+
 }
