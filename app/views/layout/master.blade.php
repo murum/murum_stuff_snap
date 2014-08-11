@@ -31,7 +31,7 @@
             <div class="alert alert-info">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                 <p>
-                    Tyvärr har vi blivit ett mål för onda personer efter helgens stora framgångar och någon har lyckats göra intrång och förstört samtliga bilder. Vi har därför valt att lägga till "Ledsen, ingen bild" för samtliga kort. Vi hoppas att ni har överseende med detta och laddar upp nya kort. <br />För mer information vänligen kontakta oss.
+                    Tyvärr så har det skett ett misstag av en av administratörerna så att vi tyvärr har blivit av med samtliga bilder, vi ber så hemskt mycket om ursäkt för detta och hoppas att ni fortsätter ladda upp nya kort. Vänligen kontakta oss för mer information.
                 </p>
             </div>
             @yield('content')
