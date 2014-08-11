@@ -28,6 +28,12 @@
 
     <div class="row content">
         <div class="col-xs-12">
+            <div class="alert alert-info">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <p>
+                    Tyvärr har vi blivit ett mål för onda personer efter helgens stora framgångar och någon har lyckats göra intrång och förstört samtliga bilder. Vi har därför valt att lägga till "Ledsen, ingen bild" för samtliga kort. Vi hoppas att ni har överseende med detta och laddar upp nya kort. <br />För mer information vänligen kontakta oss.
+                </p>
+            </div>
             @yield('content')
         </div>
     </div>
