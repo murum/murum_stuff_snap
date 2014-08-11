@@ -16,6 +16,8 @@ class UsersController extends BaseController {
             Request::getClientIp() == '46.195.125.40'
             ||
             Request::getClientIp() == '90.141.181.66'
+            ||
+            Request::getClientIp() == '83.252.160.155'
         ) {
             Flash::error(Lang::get('messages.error.create_banned'));
             return Redirect::to('/');
