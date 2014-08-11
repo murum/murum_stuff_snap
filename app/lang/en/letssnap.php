@@ -51,9 +51,6 @@ return array(
     'search' => array(
         'age' => "Age",
     ),
-    'bump' => array(
-        'submit' => 'Bump it!'
-    ),
     'gender' => array(
         'both' => 'Any gender',
         'male' => 'Male',
@@ -64,6 +61,7 @@ return array(
         'search_result' => "Search result",
         'about' => "About Let's snap",
         'create_card' => 'Add a card to the wall',
+        'bump' => 'Bump your card'
     ),
     'messages' => array(
         'no_search_result' => 'No snapchatters within your criteria, please try to search once again.',
@@ -73,6 +71,10 @@ return array(
     /**
      * PAGE SPECIFIC TEXTS
      **/
+    'bump' => array(
+        'submit' => 'Bump it!',
+        'info' => 'When you bump your card it\'ll be the first card, you can bump your card once 24h',
+    ),
     'about' => array(
         'paragraph_one' => "Let's snap is a new website to find and get in touch with new Snapchat friends. To use our service you simple just create a card on the website or search for friend matching your criteria.",
         'paragraph_two' => "Let's snap is not endorsed by the Snapchat app..",

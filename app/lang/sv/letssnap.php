@@ -51,9 +51,6 @@ return array(
     'search' => array(
         'age' => "Ålder",
     ),
-    'bump' => array(
-        'submit' => 'Bumpa'
-    ),
     'gender' => array(
         'both' => 'Båda könen',
         'male' => 'Kille',
@@ -63,7 +60,8 @@ return array(
         'search' => "Sök bland andra snappare",
         'search_result' => "Sökresultat",
         'about' => "Om Let's snap",
-        'create_card' => 'Skapa ett kort till Let\'s snap'
+        'create_card' => 'Skapa ett kort till Let\'s snap',
+        'bump' => 'Bumpa ditt kort till startsidan'
     ),
     'messages' => array(
         'no_search_result' => 'Inga snappare hittades för dina kriterier, vänligen sök igen.',
@@ -73,6 +71,10 @@ return array(
     /**
      * PAGE SPECIFIC TEXTS
      **/
+    'bump' => array(
+        'submit' => 'Bumpa',
+        'info' => 'När du bumpar ditt kort så hamnar det först av alla, man kan bumpa max en gång om dagen',
+    ),
     'about' => array(
         'paragraph_one' => "Let's snap är en ny webbplats för att hitta och komma i kontakt med nya Snapchat vänner. För att använda vår sida så är det bara att skapa ett kort på sidan eller söka efter vänner som matchar just dina kriterier.",
         'paragraph_two' => "Let's snap är inte sponsrad eller någonting ifrån Snapchat skaparna.",

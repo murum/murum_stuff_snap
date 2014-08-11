@@ -58,6 +58,10 @@ class UsersController extends BaseController {
         return Redirect::back()->withInput()->withErrors($validator);
     }
 
+    public function get_bump() {
+        return View::make('bump.bump');
+    }
+
     public function post_bump() {
         $snapname = Input::get('bump_snapname');
         $user = User::whereSnapname($snapname)->get()->last();
