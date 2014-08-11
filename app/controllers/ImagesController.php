@@ -11,9 +11,12 @@ class ImagesController extends BaseController
 
         $url = $destinationPath . $fileName;
 
-        if (false === getimagesize(Input::file('image'))) {
-            die('Something went wrong.');
-        }
+$pixel = $this->getPixels(Input::file('image'));
+
+if($pixel["width"] < 4 || $pixel["height"] < 4){
+   die('Invalid');
+}
+
 
         Input::file('image')->move($destinationPath, $fileName);
         image_fix_orientation($url);
@@ -47,9 +50,12 @@ class ImagesController extends BaseController
                 die('Invalid image type');
         }
 
-        if (false === getimagesize($img_r)) {
-            die('Something went wrong.');
+         $pixel = $this->getPixels($img_r);
+
+if($pixel["width"] < 4 || $pixel["height"] < 4){
+            die('Invalid');
         }
+
 
         $dst_r = ImageCreateTrueColor($targ_w, $targ_h);
 
@@ -62,4 +68,11 @@ class ImagesController extends BaseController
         imagejpeg($dst_r, $src, $jpeg_quality);
         return Response::json(['url' => $src]);
     }
+
+        protected function getPixels($getImage)
+    {
+        list($width, $height) = getImageSize($getImage);
+        return array("width"=>$width, "height"=>$height);
+    }
+    
 }
