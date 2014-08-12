@@ -24,6 +24,9 @@ return array(
     'add_card_to_wall_button' => "Add card to wall",
     'create_card_button_text' => "Want more snapchat friends? - Create a card now!",
 
+    'previous' => 'Previous',
+    'next' => 'Next',
+
     'nav' => array(
         'add' => 'Add',
         'bump' => 'Bump',

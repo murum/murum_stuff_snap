@@ -30,8 +30,6 @@
             {{ Form::text('age', null, ['class' => 'form-control', 'required' => true]) }}
             {{ $errors->first('age', '<span class="text-danger">:message</span>') }}
         </div>
-    </div>
-    <div class="form-group">
         {{-- Instagram user --}}
         <div class="col-xs-12 col-sm-8">
             {{ Form::label('instagram', Lang::get('letssnap.label_instagram') . ' ' . Lang::get('letssnap.optional'), ['class' => 'control-label']) }}
@@ -41,17 +39,17 @@
 
         {{-- Gender --}}
         <div class="col-xs-12 col-sm-4">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <label>
+            <div class="form-group">
+                <div class="col-xs-6 col-sm-6 col-md-4">
+                    <label class="control-label">
                         <div>
                             {{ Lang::get('letssnap.male') }}
                         </div>
                         {{ Form::radio('sex', '1') }}
                     </label>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <label>
+                <div class="col-xs-6 col-sm-6 col-md-4">
+                    <label class="control-label">
                         <div>
                             {{ Lang::get('letssnap.female') }}
                         </div>
@@ -63,16 +61,11 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="form-group">
         <div class="col-xs-12 col-sm-8">
             {{ Form::label('kik', Lang::get('letssnap.label_kik') . ' ' . Lang::get('letssnap.optional'), ['class' => 'control-label']) }}
             {{ Form::text('kik', null, ['class' => 'form-control']) }}
             {{ $errors->first('kik', '<span class="text-danger">:message</span>') }}
         </div>
-    </div>
-
-    <div class="form-group">
         <div class="col-xs-12">
             {{ Form::label('description', Lang::get('letssnap.label_about'), ['class' => 'control-label']) }}
             <span class="text-danger">*</span>
@@ -96,6 +89,11 @@
         </div>
     </div>
     {{ Form::hidden('image') }}
-    {{ Form::submit(Lang::get('letssnap.add_card_to_wall_button'), ['class' => 'btn btn-lg btn-success']) }}
+        <div class="visible-xs">
+            {{ Form::submit(Lang::get('letssnap.add_card_to_wall_button'), ['class' => 'btn btn-block btn-lg btn-success']) }}
+        </div>
+        <div class="hidden-xs">
+            {{ Form::submit(Lang::get('letssnap.add_card_to_wall_button'), ['class' => 'btn btn-lg btn-success']) }}
+        </div>
     {{ Form::close() }}
 </div>

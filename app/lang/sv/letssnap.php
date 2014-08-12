@@ -24,6 +24,9 @@ return array(
     'add_card_to_wall_button' => "Publicera kortet!",
     'create_card_button_text' => "Vill du ha fler snapchat vänner? - Skapa ett kort direkt!",
 
+    'previous' => 'Föregående',
+    'next' => 'Nästa',
+
     'nav' => array(
         'add' => 'Skapa',
         'bump' => 'Bumpa',
