@@ -56,5 +56,23 @@
 
 </script>
 
+
+<script>
+
+$(function() {
+
+ $("li.nav-item-search a").on("click", function(e) {
+        $("div.bump-form").toggleClass("hidden", 1e3);
+        e.preventDefault(), $(this).parent().toggleClass("active"), $("div.search-form").toggleClass("hidden", 1e3);
+    });
+
+     $("li.nav-item-bump a").on("click", function(e) {
+        e.preventDefault(), $(this).parent().toggleClass("active"), $("div.bump-form").toggleClass("hidden", 1e3);
+    });
+
+});
+
+</script>
+
 </body>
 </html>
