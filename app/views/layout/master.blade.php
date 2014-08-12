@@ -62,7 +62,7 @@
 $(function() {
 
  $("li.nav-item-search a").on("click", function(e) {
-        $("div.bump-form").toggleClass("hidden", 1e3);
+        $("div.bump-form").hide();
         e.preventDefault(), $(this).parent().toggleClass("active"), $("div.search-form").toggleClass("hidden", 1e3);
     });
 
