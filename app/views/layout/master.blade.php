@@ -28,12 +28,6 @@
 
     <div class="row content">
         <div class="col-xs-12">
-            <div class="alert alert-info">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <p>
-                    Tyvärr så har vissa bilder försvunnit ifrån servern. Ifall ni sedan tidigare hade gjort ett inlägg på sidan och saknar nu ert kort får ni gärna skapa ett nytt kort! Ber hemskt mycket om ursäkt för att det inträffade.
-                </p>
-            </div>
             @yield('content')
         </div>
     </div>
@@ -53,24 +47,6 @@
 
     ga('create', 'UA-53331685-1', 'auto');
     ga('send', 'pageview');
-
-</script>
-
-
-<script>
-
-$(function() {
-
- $("li.nav-item-search a").on("click", function(e) {
-        $("div.bump-form").hide();
-        e.preventDefault(), $(this).parent().toggleClass("active"), $("div.search-form").toggleClass("hidden", 1e3);
-    });
-
-     $("li.nav-item-bump a").on("click", function(e) {
-        e.preventDefault(), $(this).parent().toggleClass("active"), $("div.bump-form").toggleClass("hidden", 1e3);
-    });
-
-});
 
 </script>
 
