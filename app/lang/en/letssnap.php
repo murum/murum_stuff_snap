@@ -8,6 +8,7 @@ return array(
     'male' => 'Male',
     'female' => 'Female',
     'rules_text' => 'Rules',
+    'crop' => 'Crop',
 
     'label_add_image' => "Add image",
     'label_snapname' => "Your snapchat username",
@@ -16,6 +17,7 @@ return array(
     'label_kik' => 'Your kik username',
     'label_about' => 'About me',
     'label_rules' => 'I accept the',
+    'label_modify' => 'Modify',
     'optional' => '(optional)',
 
     'done' => "I'm done",

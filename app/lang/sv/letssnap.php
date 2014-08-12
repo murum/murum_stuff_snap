@@ -8,6 +8,7 @@ return array(
     'male' => 'Kille',
     'female' => 'Tjej',
     'rules_text' => 'reglerna',
+    'crop' => 'Beskär',
 
     'label_add_image' => "Bild",
     'label_snapname' => "Ditt snapchat namn",
@@ -16,6 +17,7 @@ return array(
     'label_kik' => 'Ditt kik konto',
     'label_about' => 'Beskriv dig och vad du söker.',
     'label_rules' => 'Jag accepterar',
+    'label_modify' => 'Modifera',
     'optional' => '(frivilligt)',
 
     'done' => "Jag är klar",

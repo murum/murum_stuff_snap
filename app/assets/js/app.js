@@ -50,11 +50,11 @@ $(function() {
     // Enable selectpickers
     $('.selectpicker').selectpicker();
 
-    $('input#image').fileinput({
+    var fileInput = $('input#image').fileinput({
         showPreview: false,
         showRemove: false,
         showUpload: false,
-        browseLabel: 'Add image',
+        browseLabel: 'Välj bild',
         browseIcon: ''
     });
 
@@ -91,30 +91,34 @@ $(function() {
             },
             //Ajax events
             success: function(data) {
-                var JcropAPI = $('img#image-cropper').data('Jcrop');
-                if(JcropAPI) {
-                    JcropAPI.destroy();
+                if(data.success) {
+                    var JcropAPI = $('img#image-cropper').data('Jcrop');
+                    if(JcropAPI) {
+                        JcropAPI.destroy();
+                    }
+
+                    $('div.image-form-modify').removeClass('hidden');
+
+                    $('img#image-cropper')
+                        .attr('src', '/'+data.url)
+                        .show();
+
+                    $('img#image-preview').attr('src', '/'+data.url);
+                    $('input[name="image-url"]', 'form.image-form-update').val(data.url);
+                    $('input[name="image"]', 'form.form-user-create').val(data.url);
+
+                    $('img#image-cropper').Jcrop({
+                        onChange: showPreview,
+                        onSelect: showPreview,
+                        aspectRatio: 255/172
+                    });
+
+                    $('img#image-cropper').on('load', function() {
+                        $(this).css({width: '100%', height: 'auto'});
+                    });
+                } else {
+                    fileInput.fileinput('reset');
                 }
-
-                $('div.image-form-modify').removeClass('hidden');
-
-                $('img#image-cropper')
-                    .attr('src', '/'+data.url)
-                    .show();
-
-                $('img#image-preview').attr('src', '/'+data.url);
-                $('input[name="image-url"]', 'form.image-form-update').val(data.url);
-                $('input[name="image"]', 'form.form-user-create').val(data.url);
-
-                $('img#image-cropper').Jcrop({
-                    onChange: showPreview,
-                    onSelect: showPreview,
-                    aspectRatio: 255/172
-                });
-
-                $('img#image-cropper').on('load', function() {
-                    $(this).css({width: '100%', height: 'auto'});
-                });
             },
             // Form data
             data: formData,
@@ -127,6 +131,8 @@ $(function() {
 
     $('li.nav-item-search a').on('click', function(e) {
         e.preventDefault();
+        $('div.bump-form').addClass('hidden',1000);
+        $('li.nav-item-bump').removeClass('active');
 
         $(this).parent().toggleClass('active');
         $('div.search-form').toggleClass('hidden',1000);
@@ -134,6 +140,9 @@ $(function() {
 
     $('li.nav-item-bump a').on('click', function(e) {
         e.preventDefault();
+
+        $('div.search-form').addClass('hidden',1000);
+        $('li.nav-item-search').removeClass('active');
 
         $(this).parent().toggleClass('active');
         $('div.bump-form').toggleClass('hidden',1000);

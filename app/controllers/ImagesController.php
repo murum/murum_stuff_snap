@@ -4,24 +4,40 @@ class ImagesController extends BaseController
 {
     public function store()
     {
-        $extension = Input::file('image')->getClientOriginalExtension();
+        $valid_exts = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
+        $max_size = 10000 * 1024; // max file size (1mbit)
 
-        $destinationPath = 'uploads/';
-        $fileName = md5(uniqid(rand(), true) . date('Y-m-d H:i:s')) . '.' . $extension;
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $file = Input::file('image');
+            // get uploaded file extension
+            //$ext = $file['extension'];
+            $ext = $file->guessClientExtension();
+            // get size
+            $size = $file->getClientSize();
+            if (in_array($ext, $valid_exts) AND $size < $max_size) {
+                // move uploaded file from temp to uploads directory
+                $extension = Input::file('image')->getClientOriginalExtension();
 
-        $url = $destinationPath . $fileName;
+                $destinationPath = 'uploads/';
+                $fileName = md5(uniqid(rand(), true) . date('Y-m-d H:i:s')) . '.' . $extension;
 
-        $pixel = $this->getPixels(Input::file('image'));
+                $url = $destinationPath . $fileName;
 
-        if ($pixel["width"] < 4 || $pixel["height"] < 4) {
-            die('Invalid');
+                $pixel = $this->getPixels(Input::file('image'));
+
+                if ($pixel["width"] < 4 || $pixel["height"] < 4) {
+                    die('Invalid');
+                }
+
+
+                Input::file('image')->move($destinationPath, $fileName);
+                image_fix_orientation($url);
+
+                return Response::json(['success' => true, 'url' => $url]);
+            } else {
+                return Response::json(['success' => false]);
+            }
         }
-
-
-        Input::file('image')->move($destinationPath, $fileName);
-        image_fix_orientation($url);
-
-        return Response::json(['url' => $url]);
     }
 
     public function update()
@@ -46,14 +62,8 @@ class ImagesController extends BaseController
                 $img_r = imagecreatefrompng($src);
                 break;
             default:
-                die('Invalid image type');
+                return Response::json(['success' => false]);
         }
-        $pixel = $this->getPixels($img_r);
-
-        if ($pixel["width"] < 4 || $pixel["height"] < 4) {
-            die('Invalid');
-        }
-
 
         $dst_r = ImageCreateTrueColor($targ_w, $targ_h);
 
