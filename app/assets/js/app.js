@@ -102,12 +102,12 @@ $(function() {
                     $('div.image-form-modify').removeClass('hidden');
 
                     $('img#image-cropper')
-                        .attr('src', '/'+data.url)
+                        .attr('src', '/uploads/'+data.url)
                         .show();
 
-                    $('img#image-preview').attr('src', '/'+data.url);
+                    $('img#image-preview').attr('src', '/uploads/'+data.url);
                     $('input[name="image-url"]', 'form.image-form-update').val(data.url);
-                    $('input[name="image"]', 'form.form-user-create').val(data.url);
+                    $('input[name="image"]', 'form.form-user-create').val('/uploads/'+data.url);
 
                     $('img#image-cropper').Jcrop({
                         onChange: showPreview,

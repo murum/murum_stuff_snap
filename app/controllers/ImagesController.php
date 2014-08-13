@@ -29,10 +29,10 @@ class ImagesController extends BaseController
                     // move uploaded file from temp to uploads directory
                     $extension = Input::file('image')->getClientOriginalExtension();
 
-                    $destinationPath = 'uploads/';
                     $fileName = md5(uniqid(rand(), true) . date('Y-m-d H:i:s')) . '.' . $extension;
 
-                    $url = $destinationPath . $fileName;
+                    $destination_path = base_path() . '/card_images';
+                    $url = '/uploads/'.$fileName;
 
                     $pixel = $this->getPixels(Input::file('image'));
 
@@ -40,11 +40,10 @@ class ImagesController extends BaseController
                         die('Invalid');
                     }
 
+                    Input::file('image')->move($destination_path, $fileName);
+                    image_fix_orientation($destination_path . '/' .$fileName);
 
-                    Input::file('image')->move($destinationPath, $fileName);
-                    image_fix_orientation($url);
-
-                    return Response::json(['success' => true, 'url' => $url]);
+                    return Response::json(['success' => true, 'url' => $fileName]);
                 } else {
                     return Response::json(['success' => false, 'message' => Lang::get('messages.error.image_unknown')]);
                 }
@@ -61,19 +60,37 @@ class ImagesController extends BaseController
         $targ_h = 172 * 1.2;
         $jpeg_quality = 75;
 
-        $src = Input::get('image-url');
+        $path = url() . '/uploads/'.Input::get('image-url');
+        $src = base_path() . '/card_images/'.Input::get('image-url');
 
-        $path = url() . '/' . $src;
-        $headers = get_headers($path, 1);
+        $headers = pathinfo($path);
 
-        switch ($headers['Content-Type']) {
-            case 'image/jpeg':
+        switch ($headers['extension']) {
+            case 'jpeg':
                 $img_r = imagecreatefromjpeg($src);
                 break;
-            case 'image/gif':
+            case 'jpg':
+                $img_r = imagecreatefromjpeg($src);
+                break;
+            case 'JPG':
+                $img_r = imagecreatefromjpeg($src);
+                break;
+            case 'JPEG':
+                $img_r = imagecreatefromjpeg($src);
+                break;
+            case 'gif':
+                $img_r = imagecreatefromgif($src);
+                break;
+            case 'GIF':
                 $img_r = imagecreatefromgif($src);
                 break;
             case 'image/png':
+                $img_r = imagecreatefrompng($src);
+                break;
+            case 'png':
+                $img_r = imagecreatefrompng($src);
+                break;
+            case 'PNG':
                 $img_r = imagecreatefrompng($src);
                 break;
             default:
@@ -89,8 +106,42 @@ class ImagesController extends BaseController
             $targ_w, $targ_h, Input::get('w') * $ratio, Input::get('h') * $ratio);
 
         imagejpeg($dst_r, $src, $jpeg_quality);
-        return Response::json(['url' => $src]);
+        return Response::json(['url' => $path]);
     }
+
+    public function get_image($filename) {
+        // Append the filename to the path where our images are located
+        $path = base_path() . '/card_images/'. $filename;
+
+        // Initialize an instance of Symfony's File class.
+        // This is a dependency of Laravel so it is readily available.
+        $file = new Symfony\Component\HttpFoundation\File\File($path);
+
+        // Make a new response out of the contents of the file
+        // Set the response status code to 200 OK
+        $response = Response::make(
+            File::get($path),
+            200
+        );
+
+        // If the mimetype is not an image make the Content-Type to text/plain
+        $MIME = array('image/gif', 'image/jpeg', 'image/png');
+        $fileMIME = $file->getMimeType();
+        if( ! in_array($fileMIME, $MIME) ) {
+            $fileMIME = 'text/plain';
+        }
+
+        // Modify our output's header.
+        // Set the content type to the mime of the file.
+        // In the case of a .jpeg this would be image/jpeg
+        $response->header(
+            'Content-Type',
+            $fileMIME
+        );
+
+        return $response;
+    }
+
 
     protected function getPixels($getImage)
     {

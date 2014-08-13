@@ -50,3 +50,8 @@ Route::post('feedback', array(
     'as' => 'feedback.post',
     'uses' => 'StaticController@send_feedback'
 ));
+
+Route::get(
+    '/uploads/{file}',
+    'ImagesController@get_image'
+);

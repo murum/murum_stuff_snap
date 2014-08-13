@@ -39,6 +39,8 @@ $env = $app->detectEnvironment(function()
             ||
             strpos(__DIR__, '/home/forge/' . 'letssnap.se') === 0
         ) {
+            ini_set('error_reporting', 0);
+            ini_set('register_globals', 'Off');
             $environment = 'production';
         }
     }
