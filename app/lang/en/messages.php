@@ -6,7 +6,7 @@ return array(
         'validation' => "Validation errors.",
         'create_card_fail_save' => "Something went wrong in the save process of the card, please try again!",
         'create_banned' => 'You\'re banned from creating cards',
-        'ip_used' => 'You already have a card registered to your IP in the last 24h, you can create a new card @',
+        'ip_used' => 'You already have a card registered in the last 24h, you can create a new card @',
         'image_mimetype' => 'You tried to upload an file that\'s not a valid image type. Please use JPG, GIF, PNG',
         'image_unknown' => 'The server could not complete your request, please try again later'
     ),
