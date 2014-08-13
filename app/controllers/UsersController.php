@@ -32,45 +32,51 @@ class UsersController extends BaseController {
     }
 
     public function store() {
-        $validator = Validator::make(Input::all(), User::$rules);
+        if( Common::ipIsFree() ) {
+            $validator = Validator::make(Input::all(), User::$rules);
 
-        if ($validator->passes()) {
-            $user = new User;
+            if ($validator->passes()) {
+                $user = new User;
 
-            $user->snapname = Input::get('snapname');
-            $user->description = Input::get('description');
-            $user->ip_address = Request::getClientIp();
+                $user->snapname = Input::get('snapname');
+                $user->description = Input::get('description');
+                $user->ip_address = Request::getClientIp();
 
-            if (Input::has('age')) {
-                $user->age = Input::get('age');
+                if (Input::has('age')) {
+                    $user->age = Input::get('age');
+                }
+
+                if (Input::has('kik')) {
+                    $user->kik = Input::get('kik');
+                }
+
+                if (Input::has('instagram')) {
+                    $user->instagram = Input::get('instagram');
+                }
+
+                if( Input::has('sex') ) {
+                    $user->sex = Input::get('sex');
+                }
+
+                if (Input::has('image')) {
+                    $user->picture = Input::get('image');
+                }
+
+                if( $user->save() ) {
+                    Flash::success(Lang::get('messages.success.created_card'));
+                    return Redirect::to('/');
+                } else {
+                    Flash::error(Lang::get('message.error.create_card_fail_save'));
+                    return Redirect::back()->withInput();
+                }
             }
-
-            if (Input::has('kik')) {
-                $user->kik = Input::get('kik');
-            }
-
-            if (Input::has('instagram')) {
-                $user->instagram = Input::get('instagram');
-            }
-
-            if( Input::has('sex') ) {
-                $user->sex = Input::get('sex');
-            }
-
-            if (Input::has('image')) {
-                $user->picture = Input::get('image');
-            }
-
-            if( $user->save() ) {
-                Flash::success(Lang::get('messages.success.created_card'));
-                return Redirect::to('/');
-            } else {
-                Flash::error(Lang::get('message.error.create_card_fail_save'));
-                return Redirect::back()->withInput();
-            }
+            Flash::error(Lang::get('messages.error.validation'));
+            return Redirect::back()->withInput()->withErrors($validator);
+        } else {
+            $user = Common::getUserByBusyIP();
+            Flash::error( Lang::get('messages.error.ip_used') . ' ' .$user->created_at->modify('+1 day'));
+            return Redirect::home();
         }
-        Flash::error(Lang::get('messages.error.validation'));
-        return Redirect::back()->withInput()->withErrors($validator);
     }
 
     public function get_bump() {

@@ -5,7 +5,10 @@ return array(
         'mail' => "Någonting gick fel vid skickandet, vänligen skicka oss ett mail direkt genom vår e-post adress.",
         'validation' => "Validerings fel.",
         'create_card_fail_save' => "Någonting gick fel i sparningen av kortet, vänligen försök igen!",
-        'create_banned' => 'Du är bannad från att skapa nya kort'
+        'create_banned' => 'Du är bannad från att skapa nya kort',
+        'ip_used' => 'Du har ett kort registrerat till din ip inom 24h, du kan skapa ett nytt kort klockan:',
+        'image_mimetype' => 'Du försökte ladda upp en ogiltig bildtyp, vänligen använd JPG, GIF, PNG',
+        'image_unknown' => 'Servern kunde inte slutföra din förfrågan, vänligen försök igen, ifall felet kvar står vänligen kontakta administratören.'
     ),
     'success' => array(
         'contact_mail' => "Ditt mail blev skickat! Vi försöker att svara dig så snart som möjligt, vi försöker att svara alla mail inom 24 timmar.",

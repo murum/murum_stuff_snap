@@ -92,6 +92,8 @@ $(function() {
             //Ajax events
             success: function(data) {
                 if(data.success) {
+                    $('div.ajax-error').remove();
+
                     var JcropAPI = $('img#image-cropper').data('Jcrop');
                     if(JcropAPI) {
                         JcropAPI.destroy();
@@ -117,7 +119,22 @@ $(function() {
                         $(this).css({width: '100%', height: 'auto'});
                     });
                 } else {
+                    if( ! $('div.ajax-error').length ) {
+                        var $errors = '<div class="alert alert-danger ajax-error">'+data.message+'</div>';
+                        $($errors).insertBefore(that);
+                    } else {
+                        $('div.ajax-error').html(data.message);
+                    }
+
                     fileInput.fileinput('reset');
+                }
+            },
+            error: function() {
+                if( ! $('div.ajax-error').length ) {
+                    var $errors = '<div class="alert alert-danger ajax-error">Systemfel med bilden, förmodligen är bilden för stor</div>';
+                    $($errors).insertBefore(that);
+                } else {
+                    $('div.ajax-error').html('Systemfel med bilden, förmodligen är bilden för stor');
                 }
             },
             // Form data
