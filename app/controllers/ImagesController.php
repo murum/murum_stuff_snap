@@ -7,6 +7,14 @@ class ImagesController extends BaseController
         $valid_exts = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
         $max_size = 10000 * 1024; // max file size (1mbit)
 
+        // Check mimetype
+        $MIME = array('image/gif', 'image/jpeg', 'image/png');
+        $uploadedMIME = Input::file('image')->getMimeType();
+
+        if (!in_array($uploadedMIME, $MIME)) {
+            return Response::json(['success' => false]);
+        }
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $file = Input::file('image');
             // get uploaded file extension
