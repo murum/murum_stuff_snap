@@ -146,20 +146,8 @@ $(function() {
         });
     });
 
-    $('li.nav-item-search a').on('click', function(e) {
-        e.preventDefault();
-        $('div.bump-form').addClass('hidden',1000);
-        $('li.nav-item-bump').removeClass('active');
-
-        $(this).parent().toggleClass('active');
-        $('div.search-form').toggleClass('hidden',1000);
-    })
-
     $('li.nav-item-bump a').on('click', function(e) {
         e.preventDefault();
-
-        $('div.search-form').addClass('hidden',1000);
-        $('li.nav-item-search').removeClass('active');
 
         $(this).parent().toggleClass('active');
         $('div.bump-form').toggleClass('hidden',1000);

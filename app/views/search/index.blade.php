@@ -4,5 +4,5 @@
 <h1>
     {{ Lang::get('letssnap.headers.search') }}
 </h1>
-    @include('search.forms._search')
+@include('search.forms._search')
 @stop
