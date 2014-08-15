@@ -67,7 +67,8 @@ return array(
         'search_result' => "Sökresultat",
         'about' => "Om Let's snap",
         'create_card' => 'Skapa ett kort till Let\'s snap',
-        'bump' => 'Bumpa ditt kort till startsidan'
+        'bump' => 'Bumpa ditt kort till startsidan',
+        'filter_cards' => 'Filtrera kort'
     ),
     'messages' => array(
         'no_search_result' => 'Inga snappare hittades för dina kriterier, vänligen sök igen.',

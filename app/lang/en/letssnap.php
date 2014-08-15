@@ -67,7 +67,8 @@ return array(
         'search_result' => "Search result",
         'about' => "About Let's snap",
         'create_card' => 'Add a card to the wall',
-        'bump' => 'Bump your card'
+        'bump' => 'Bump your card',
+        'filter_cards' => 'Filter cards'
     ),
     'messages' => array(
         'no_search_result' => 'No snapchatters within your criteria, please try to search once again.',
