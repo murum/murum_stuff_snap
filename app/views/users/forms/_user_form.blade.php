@@ -5,9 +5,11 @@
             {{ Form::label('image', Lang::get('letssnap.label_add_image') . ' ' . Lang::get('letssnap.optional'), ['class' => 'control-label']) }}
             {{ Form::file('image', ['class' => 'form-control']) }}
         </div>
-        <div class="col-xs-12 col-sm-4 image-form-modify hidden">
-            <label class="control-label">{{ Lang::get('letssnap.label_modify') }}</label>
-            <button type="button" class="btn btn-sm btn-block btn-success" id="modify-image">{{ Lang::get('letssnap.crop') }}</button>
+        <div class="visible-md visible-lg">
+            <div class="col-xs-12 col-sm-4 image-form-modify hidden">
+                <label class="control-label">{{ Lang::get('letssnap.label_modify') }}</label>
+                <button type="button" class="btn btn-sm btn-block btn-success" id="modify-image">{{ Lang::get('letssnap.crop') }}</button>
+            </div>
         </div>
     </div>
     {{ Form::close() }}

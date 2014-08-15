@@ -21,6 +21,7 @@ return array(
     'optional' => '(optional)',
 
     'done' => "I'm done",
+    'undo_crop' => 'Undo cropping',
     'add_card_to_wall_button' => "Add card to wall",
     'create_card_button_text' => "Want more snapchat friends? - Create a card now!",
 

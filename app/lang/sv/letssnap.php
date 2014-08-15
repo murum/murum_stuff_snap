@@ -21,6 +21,7 @@ return array(
     'optional' => '(frivilligt)',
 
     'done' => "Jag är klar",
+    'undo_crop' => 'Ångra beskärning',
     'add_card_to_wall_button' => "Publicera kortet!",
     'create_card_button_text' => "Vill du ha fler snapchat vänner? - Skapa ett kort direkt!",
 
