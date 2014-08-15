@@ -6,7 +6,6 @@
 
   border-radius: 6px;
   margin-bottom: @navbar-margin-bottom;
-  overflow: hidden;
 
   label {
     color: #fff;
@@ -42,11 +41,16 @@
   }
 
   .search-form-age {
-    margin-right: 33px;
+    margin-right: 33.333px;
 
     @media screen and (min-width: @screen-md-max) {
+      margin-right: 33.733px;
       width: 56.3333333%;
     }
+  }
+
+  div.bootstrap-select button.dropdown-toggle:focus {
+    outline: none !important;
   }
 
   .dropdown-menu {
@@ -70,7 +74,7 @@
   .btn-search {
     height: @navbar-height;
     font-size: 1.5em;
-    border-radius: 0;
+    border-radius: 0 6px 6px 0;
     width: @navbar-height;
     float: right;
   }
