@@ -65,11 +65,23 @@ $(function() {
     $('button#modify-image').on('click', function() {
         $('div.image-cropper').removeClass('hidden');
         $('div.user-create-forms').addClass('hidden');
-    });
 
-    $('a#reupload-image').on('click', function() {
-        if(confirm('Are you sure you want to reset your image?'))
-            $('form.image-form').trigger('submit');
+
+        var JcropAPI = $('img#image-cropper').data('Jcrop');
+        if(JcropAPI) {
+            JcropAPI.destroy();
+        }
+
+        // Make image be max 100%
+        setTimeout(function() {
+            $('img#image-cropper').Jcrop({
+                onChange: showPreview,
+                onSelect: showPreview,
+                aspectRatio: 255/172
+            });
+
+            $('img#image-cropper').css({width: '100%', height: 'auto'});
+        }, 500);
     });
 
     $('form.image-form').on('submit', function(e) {
@@ -94,11 +106,6 @@ $(function() {
                 if(data.success) {
                     $('div.ajax-error').remove();
 
-                    var JcropAPI = $('img#image-cropper').data('Jcrop');
-                    if(JcropAPI) {
-                        JcropAPI.destroy();
-                    }
-
                     $('div.image-form-modify').removeClass('hidden');
 
                     $('img#image-cropper')
@@ -108,16 +115,6 @@ $(function() {
                     $('img#image-preview').attr('src', '/uploads/'+data.url);
                     $('input[name="image-url"]', 'form.image-form-update').val(data.url);
                     $('input[name="image"]', 'form.form-user-create').val('/uploads/'+data.url);
-
-                    $('img#image-cropper').Jcrop({
-                        onChange: showPreview,
-                        onSelect: showPreview,
-                        aspectRatio: 255/172
-                    });
-
-                    $('img#image-cropper').on('load', function() {
-                        $(this).css({width: '100%', height: 'auto'});
-                    });
                 } else {
                     if( ! $('div.ajax-error').length ) {
                         var $errors = '<div class="alert alert-danger ajax-error">'+data.message+'</div>';
@@ -131,10 +128,10 @@ $(function() {
             },
             error: function() {
                 if( ! $('div.ajax-error').length ) {
-                    var $errors = '<div class="alert alert-danger ajax-error">Systemfel med bilden, förmodligen är bilden för stor</div>';
+                    var $errors = '<div class="alert alert-danger ajax-error">Systemerror</div>';
                     $($errors).insertBefore(that);
                 } else {
-                    $('div.ajax-error').html('Systemfel med bilden, förmodligen är bilden för stor');
+                    $('div.ajax-error').html('Systemerror');
                 }
             },
             // Form data
@@ -178,6 +175,12 @@ $(function() {
         };
     });
 
+    $("button.skip-crop").on('click', function() {
+        $('div.image-cropper').addClass('hidden');
+        $('div.user-create-forms').removeClass('hidden');
+        $('div.image-form-modify').removeClass('hidden');
+    });
+
     $('form.image-form-update').on('submit', function(e) {
         e.preventDefault();
         if ($("div.jcrop-hline").width() == 0) {
@@ -194,6 +197,7 @@ $(function() {
             success: function(data) {
                 $('div.image-cropper').addClass('hidden');
                 $('div.user-create-forms').removeClass('hidden');
+                $('div.image-form-modify').addClass('hidden');
             },
             // Form data
             data: formData

@@ -6,7 +6,7 @@ class ImagesController extends BaseController
     {
         $ip_is_ok = Common::ipIsFree();
 
-        if ($ip_is_ok) {
+        if ( ! $ip_is_ok) {
             $valid_exts = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
             $max_size = 10000 * 1024; // max file size (1mbit)
 
@@ -15,6 +15,19 @@ class ImagesController extends BaseController
             $uploadedMIME = Input::file('image')->getMimeType();
 
             if (!in_array($uploadedMIME, $MIME)) {
+                return Response::json(['success' => false, 'message' => Lang::get('messages.error.image_mimetype')]);
+            }
+
+            // Laravel Validation of file and size.
+            $input = Input::all();
+            $rules = array(
+                'file' => 'image|max:3000',
+            );
+
+            $validation = Validator::make($input, $rules);
+
+            if ($validation->fails())
+            {
                 return Response::json(['success' => false, 'message' => Lang::get('messages.error.image_mimetype')]);
             }
 
@@ -97,7 +110,7 @@ class ImagesController extends BaseController
                 return Response::json(['success' => false]);
         }
 
-        $dst_r = ImageCreateTrueColor($targ_w, $targ_h);
+        $dst_r = imagecreatetruecolor($targ_w, $targ_h);
 
         list($width) = getimagesize($src);
         $ratio = $width / Input::get('image-width');
@@ -105,7 +118,36 @@ class ImagesController extends BaseController
         imagecopyresampled($dst_r, $img_r, 0, 0, Input::get('x') * $ratio, Input::get('y') * $ratio,
             $targ_w, $targ_h, Input::get('w') * $ratio, Input::get('h') * $ratio);
 
-        imagejpeg($dst_r, $src, $jpeg_quality);
+        switch ($headers['extension']) {
+            case 'jpeg':
+                imagejpeg($dst_r, $src, $jpeg_quality);
+                break;
+            case 'jpg':
+                imagejpeg($dst_r, $src, $jpeg_quality);
+                break;
+            case 'JPG':
+                imagejpeg($dst_r, $src, $jpeg_quality);
+                break;
+            case 'JPEG':
+                imagejpeg($dst_r, $src, $jpeg_quality);
+                break;
+            case 'gif':
+                imagegif($dst_r, $src);
+                break;
+            case 'GIF':
+                imagegif($dst_r, $src);
+                break;
+            case 'image/png':
+                imagepng($dst_r, $src, $jpeg_quality);
+                break;
+            case 'png':
+                imagepng($dst_r, $src, $jpeg_quality);
+                break;
+            case 'PNG':
+                imagepng($dst_r, $src, $jpeg_quality);
+                break;
+        }
+
         return Response::json(['url' => $path]);
     }
 

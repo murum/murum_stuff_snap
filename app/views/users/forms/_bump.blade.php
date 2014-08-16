@@ -12,7 +12,6 @@
 
     <div class="hidden-sm hidden-xs col-xs-12 col-sm-12 col-md-2 text-right">
         <button type="submit" class="btn btn-success btn-bump">
-            <i class="fa fa-refresh"></i>
             {{ Lang::get('letssnap.bump.submit') }}
         </button>
     </div>

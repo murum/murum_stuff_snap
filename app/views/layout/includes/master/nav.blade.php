@@ -24,7 +24,6 @@
 
                 <li class="hidden-xs hidden-sm nav-item-bump">
                     <a href="{{ route('users.bump') }}">
-                        <i class="small fa fa-refresh"></i>
                         {{ Lang::get('letssnap.nav.bump') }}
                     </a>
                 </li>

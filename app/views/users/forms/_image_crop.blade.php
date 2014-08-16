@@ -9,7 +9,7 @@
         </div>
     </div>
     <div class="row cropper-buttons">
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12">
             {{ Form::open(['route' => ['images.update'], 'class' => 'form form-horizontal image-form-update']) }}
             {{ Form::hidden('image-url') }}
             {{ Form::hidden('image-width') }}
@@ -18,9 +18,14 @@
             {{ Form::hidden('y') }}
             {{ Form::hidden('w') }}
             {{ Form::hidden('h') }}
-            <button type="submit" class="btn btn-block btn-success">
-                {{ Lang::get('letssnap.done') }}
-            </button>
+            <div class="btn-group">
+                <button type="submit" class="btn btn-success">
+                    {{ Lang::get('letssnap.done') }}
+                </button>
+                <button type="button" class="btn btn-danger skip-crop">
+                    {{ Lang::get('letssnap.undo_crop') }}
+                </button>
+            </div>
             {{ Form::close() }}
         </div>
     </div>
