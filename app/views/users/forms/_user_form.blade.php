@@ -5,7 +5,7 @@
             {{ Form::label('image', Lang::get('letssnap.label_add_image') . ' ' . Lang::get('letssnap.optional'), ['class' => 'control-label']) }}
             {{ Form::file('image', ['class' => 'form-control']) }}
         </div>
-        <div class="visible-md visible-lg">
+        <div>
             <div class="col-xs-12 col-sm-4 image-form-modify hidden">
                 <label class="control-label">{{ Lang::get('letssnap.label_modify') }}</label>
                 <button type="button" class="btn btn-sm btn-block btn-success" id="modify-image">{{ Lang::get('letssnap.crop') }}</button>
@@ -92,10 +92,10 @@
     </div>
     {{ Form::hidden('image') }}
         <div class="visible-xs">
-            {{ Form::submit(Lang::get('letssnap.add_card_to_wall_button'), ['class' => 'btn btn-block btn-lg btn-success']) }}
+            {{ Form::submit(Lang::get('letssnap.add_card_to_wall_button'), ['class' => 'btn btn-block btn-lg btn-success btn-publish']) }}
         </div>
         <div class="hidden-xs">
-            {{ Form::submit(Lang::get('letssnap.add_card_to_wall_button'), ['class' => 'btn btn-lg btn-success']) }}
+            {{ Form::submit(Lang::get('letssnap.add_card_to_wall_button'), ['class' => 'btn btn-lg btn-success btn-publish']) }}
         </div>
     {{ Form::close() }}
 </div>
