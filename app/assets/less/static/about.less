@@ -1,0 +1,63 @@
+div.about {
+  h3 {
+    text-transform: uppercase;
+    margin: 0 0 15px;
+
+  }
+  p {
+    font-weight: 300;
+    margin: 0 0 5px;
+  }
+
+  div.about-text {
+    padding: 30px 0 50px;
+
+    background-color: #eee;
+  }
+
+  div.about-team {
+    padding: 30px 0 45px;
+    background-color: #fff;
+
+    div.about-team-person {
+      float: left;
+      width: 33.3333333%;
+      padding: 0 40px;
+      @media (max-width: @screen-sm-max) and (min-width: @screen-sm-min){
+        padding: 0 15px;
+      }
+      @media (max-width: @screen-sm-min) {
+        width: 100%;
+        padding: 0 45px;
+        margin: 0 0 30px;
+        
+        img {
+          width: 100%;
+        }
+      }
+
+      box-sizing: border-box;
+
+      h4 {
+        text-transform: uppercase;
+
+        margin: 20px 0 5px;
+      }
+
+      h5 {
+        text-transform: uppercase;
+        margin: 0 0;
+        font-weight: 300;
+      }
+    }
+  }
+
+  div.about-get-started {
+    padding: 30px 0;
+
+    img {
+      max-width: 100%;
+      margin: 0 0 30px;
+    }
+  }
+}

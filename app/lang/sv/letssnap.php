@@ -83,11 +83,10 @@ return array(
         'info' => 'När du bumpar ditt kort så hamnar det först av alla, man kan bumpa max en gång om dagen',
     ),
     'about' => array(
-        'paragraph_one' => "Let's snap är en ny webbplats för att hitta och komma i kontakt med nya Snapchat vänner. För att använda vår sida så är det bara att skapa ett kort på sidan eller söka efter vänner som matchar just dina kriterier.",
-        'paragraph_two' => "Let's snap är inte sponsrad eller någonting ifrån Snapchat skaparna.",
+        'paragraph_one' => "Let's snap är en ny webbplats för att hitta och komma i kontakt med nya Snapchat vänner.",
+        'paragraph_two' => 'För att använda vår sida så är det bara att skapa ett kort på sidan eller söka efter vänner som matchar just dina kriterier.',
+        'paragraph_three' => "Let's snap är inte sponsrad eller någonting ifrån Snapchat skaparna.",
         'header_team' => "Teamet bakom Let's snap",
-        'team_paragraph_one' => "",
-        'header_sidebar' => "Kom igång",
         'create_card_text' => "Skapa ditt första kort nu!",
     ),
     'contact' => array(

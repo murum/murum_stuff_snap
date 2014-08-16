@@ -32,6 +32,10 @@
     </div>
 </div>
 
+<div class="content-full">
+    @yield('content_full')
+</div>
+
 @include('layout.includes.footer')
 
 {{ HTML::script('/js/libs.js') }}
