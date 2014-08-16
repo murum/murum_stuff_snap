@@ -29,4 +29,13 @@
             {{ Form::close() }}
         </div>
     </div>
+    <div class="row visible-xs">
+        <div class="col-xs-12">
+            <div class="alert alert-info">
+                <p>
+                    {{ Lang::get('letssnap.mobile_crop_text') }}
+                </p>
+            </div>
+        </div>
+    </div>
 </div>

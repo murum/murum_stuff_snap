@@ -22,6 +22,7 @@ return array(
 
     'done' => "Jag är klar",
     'undo_crop' => 'Ångra beskärning',
+    'mobile_crop_text' => 'Beskärningsytan visas inte korrekt på telefonen, vänligen se så att kortet här nedanför ser bra ut. Användarna kommer att se bilden så som det visas i förhandsvisningen.',
     'add_card_to_wall_button' => "Publicera kortet!",
     'create_card_button_text' => "Vill du ha fler snapchat vänner? - Skapa ett kort direkt!",
 

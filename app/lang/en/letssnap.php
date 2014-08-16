@@ -22,6 +22,7 @@ return array(
 
     'done' => "I'm done",
     'undo_crop' => 'Undo cropping',
+    'mobile_crop_text' => 'The cropping function isn\'t showing up correctly on the image. Please check that this preview is looking good since that\'s what the users will see.',
     'add_card_to_wall_button' => "Add card to wall",
     'create_card_button_text' => "Want more snapchat friends? - Create a card now!",
 
@@ -83,11 +84,10 @@ return array(
         'info' => 'When you bump your card it\'ll be the first card, you can bump your card once 24h',
     ),
     'about' => array(
-        'paragraph_one' => "Let's snap is a new website to find and get in touch with new Snapchat friends. To use our service you simple just create a card on the website or search for friend matching your criteria.",
-        'paragraph_two' => "Let's snap is not endorsed by the Snapchat app..",
-        'header_team' => "The team behind Let's snap",
-        'team_paragraph_one' => "We're three driven people from Sweden who likes to program and design who saw a need for this type of service",
-        'header_sidebar' => "Get started",
+        'paragraph_one' => "Let's snap is a new website to find and get in touch with new Snapchat friends.",
+        'paragraph_two' => 'To use our service you simple just create a card on the website or search for friend matching your criteria.',
+        'paragraph_three' => "Let's snap is not endorsed by the Snapchat app.",
+        'header_team' => "The Let's snap team",
         'create_card_text' => "Create your first card now!",
     ),
     'contact' => array(
