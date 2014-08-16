@@ -28,9 +28,8 @@
                     </a>
                 </li>
 
-                <li class="visible-xs visible-sm">
+                <li class="visible-xs visible-sm nav-item-bump-mobile">
                     <a href="{{ route('users.bump') }}">
-                        <i class="small fa fa-refresh"></i>
                         {{ Lang::get('letssnap.nav.bump') }}
                     </a>
                 </li>

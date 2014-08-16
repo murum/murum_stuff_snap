@@ -15,7 +15,7 @@
 
     <title>{{ Lang::get('letssnap.meta.title') }}</title>
     {{ HTML::style('/css/libs.css') }}
-    {{ HTML::style('/css/main.css') }}
+    {{ HTML::style('/css/main.css?v=1_1') }}
 </head>
 <body>
 @include('layout.includes.master.nav')
