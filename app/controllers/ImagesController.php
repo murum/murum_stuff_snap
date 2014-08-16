@@ -6,7 +6,7 @@ class ImagesController extends BaseController
     {
         $ip_is_ok = Common::ipIsFree();
 
-        if ( ! $ip_is_ok) {
+        if ( $ip_is_ok ) {
             $valid_exts = array('jpeg', 'jpg', 'png', 'gif'); // valid extensions
             $max_size = 10000 * 1024; // max file size (1mbit)
 
