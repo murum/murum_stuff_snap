@@ -35,6 +35,12 @@ $env = $app->detectEnvironment(function()
         ) {
             $environment = 'dev';
         } elseif (
+            strpos(__DIR__, '/home/forge/' . 'test.letssnap.com') === 0
+            ||
+            strpos(__DIR__, '/home/forge/' . 'test.letssnap.se') === 0
+        ) {
+            $environment = 'test';
+        } elseif (
             strpos(__DIR__, '/home/forge/' . 'letssnap.com') === 0
             ||
             strpos(__DIR__, '/home/forge/' . 'letssnap.se') === 0
