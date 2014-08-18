@@ -25,6 +25,8 @@
     @include('partials/_flash')
     @include('partials/_errors')
 
+    @include('partials/_top_ad')
+
     <div class="row content">
         <div class="col-xs-12">
             @yield('content')
@@ -34,6 +36,13 @@
 
 <div class="content-full">
     @yield('content_full')
+</div>
+
+<div class="container">
+    @include('partials/_bottom_ad')
+    <div class="row">
+        <div class="col-xs-12"></div>
+    </div>
 </div>
 
 @include('layout.includes.footer')

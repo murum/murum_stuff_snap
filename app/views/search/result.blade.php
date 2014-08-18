@@ -1,6 +1,11 @@
 @extends('layout.master')
 
 @section('content')
+
+<div class="hidden-xs hidden-sm">
+    @include('layout.includes.master.search')
+</div>
+
 <h1>
     {{ Lang::get('letssnap.headers.search_result') }}
 </h1>
@@ -20,6 +25,5 @@
     <div class="alert alert-info">
         {{ Lang::get('letssnap.messages.no_search_result') }}
     </div>
-    @include('search.forms._search')
 @endif
 @stop
