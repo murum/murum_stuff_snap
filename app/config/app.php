@@ -122,7 +122,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
-        'Letssnap\Notifications\FlashServiceProvider'
+        'Letssnap\Notifications\FlashServiceProvider',
+        'Yangqi\Htmldom\HtmldomServiceProvider'
 	),
 
 	/*
@@ -191,6 +192,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
         'Debugbar'        => 'Barryvdh\Debugbar\Facade',
         'Flash'           => 'Letssnap\Notifications\Flash',
+        'Htmldom'         => 'Yangqi\Htmldom\Htmldom'
 	),
 
 );

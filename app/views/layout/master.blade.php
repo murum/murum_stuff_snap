@@ -48,6 +48,7 @@
 @include('layout.includes.footer')
 
 {{ HTML::script('/js/libs.js') }}
+<script src="http://cdn.kik.com/kik/1.0.9/kik.js"></script>
 {{ HTML::script('/js/main.js') }}
 
 @if ( URL::to('/') == 'http://letssnap.se' || URL::to('/') == 'http://www.letssnap.se' )

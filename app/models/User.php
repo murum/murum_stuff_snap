@@ -32,4 +32,17 @@ class User extends Eloquent {
         return 'not_applicable';
     }
 
+    public function get_image() {
+        if($this->picture) {
+            return $this->picture;
+        } elseif( $this->kik ) {
+            $html = new Htmldom('http://kik.com/u/'.$this->kik);
+            foreach($html->find('img') as $element) {
+                return $element->src;
+            }
+        } else {
+            return false;
+        }
+    }
+
 }

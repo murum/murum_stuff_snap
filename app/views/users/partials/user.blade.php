@@ -2,7 +2,7 @@
     <div class="users-item users-item-{{ rand(1,4) }}">
         <div class="users-item-image">
             @if( $user->has_picture() )
-                {{ HTML::image($user->picture, $user->snapname) }}
+                {{ HTML::image($user->get_image(), $user->snapname) }}
             @else
                 {{ HTML::image('images/placeholder_sv.png', 'Placeholder') }}
             @endif
