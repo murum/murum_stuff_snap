@@ -14,6 +14,10 @@ class User extends Eloquent {
         return !empty($this->picture);
     }
 
+    public function has_picture_or_kik() {
+        return (!empty($this->picture) || !empty($this->kik));
+    }
+
     public function get_age() {
         //explode the date to get month, day and year
         $birthDate = explode("-", $this->birthday);

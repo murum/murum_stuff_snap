@@ -1,3 +1,10 @@
+.users {
+  .col-xs-12 {
+    @media screen and (max-width: @screen-sm-min) {
+      padding: 0;
+    }
+  }
+}
 .users-item {
   background: #fff;
   padding: 1em;
@@ -21,66 +28,165 @@
     border-color: @brand-danger;
   }
 
+  @media screen and (max-width: @screen-sm-min) {
+    padding: 0;
+    margin: 0;
+
+    div.col-xs-5,
+    div.col-xs-7,
+    div.col-xs-12 {
+      padding: 0;
+    }
+
+    div.col-xs-7 {
+      padding-right: 15px;
+    }
+
+    div.row {
+      margin: 0;
+    }
+  }
+
   .users-item-image {
     position: relative;
-    margin: -1em -1em 0 -1em;
-    height: 172px;
+    padding: 10px;
+    text-align: center;
     overflow: hidden;
-    border-bottom: 1px solid rgba(0,0,0,.15);
-
-    @media screen and (max-width: @screen-lg-min) {
-      height: 139px;
-    }
-
-    @media screen and (max-width: @screen-md-min) {
-      height: 144px;
-    }
-
-    @media (max-width: 768px) and (min-width: 600px) {
-      height: 207px;
-    }
-
-    @media screen and (max-width: 599px) {
-      height: 158px;
-    }
 
     img {
-      width: 100%;
-    }
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
 
-    &:hover {
-      .users-item-usernames {
-        display: block;
-      }
-    }
-    .users-item-usernames {
-      display: none;
-      margin: 0;
-      padding: 10%;
-      position: absolute;
-      list-style: none;
-      top: 0;
-      left: 0;
-      background: rgba(42, 54, 59,.8);
-      color: #fff;
-      height: 100%;
-      width: 100%;
+      border: 5px solid #fff;
+      box-shadow: 0 0 8px @brand-primary;
 
-      li {
-        line-height: 2.5em;
+      @media screen and (max-width: @screen-sm-min) {
+        margin-top: 15px;
+        margin-bottom: 20px;
+        height: 80px;
+        width: 80px;
       }
     }
   }
 
   .users-item-name {
-    height: 52px;
-    line-height: 52px;
+    height: 40px;
+    line-height: 40px;
     text-transform: uppercase;
-    font-size: 0.875em;
-    float: left;
-    font-weight: 700;
+    color: @brand-primary;
+    font-size: 0.825em;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 30px;
+
+    border-bottom: 1px solid rgba(0,0,0,.15);
+
+    @media screen and (max-width: @screen-sm-min) {
+      height: 30px;
+      line-height: 30px;
+      border-bottom: none;
+      margin-top: 5px;
+      margin-bottom: 5px;
+
+      text-align: left;
+    }
   }
 
+  .users-item-description {
+    color: @brand-primary;
+    font-weight: 400;
+    font-size: 0.825em;
+    text-align: center;
+
+    p {
+      word-break: break-word;
+      margin: 0;
+      height: 126px;
+      overflow-y: hidden;
+
+      @media screen and (max-width: @screen-sm-min) {
+        text-align: left;
+        height: auto;
+      }
+    }
+  }
+
+  .users-item-usernames {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      width: 27.333333%;
+      margin: 0 3%;
+      float: left;
+      text-align: center;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,.15);
+      overflow: hidden;
+
+      @media screen and (max-width: @screen-sm-min) {
+        width: 33.3333333%;
+        margin: 0;
+        padding: 0;
+        border-bottom: 0;
+        border-left: none;
+
+        border-radius: 0;
+
+        &:nth-child(3) {
+          border-right: none;
+        }
+      }
+
+      a {
+        display: block;
+
+        @media screen and (max-width: @screen-sm-min) {
+          height: 40px;
+          line-height: 43px;
+        }
+
+        .fa {
+          font-size: 20px;
+          color: #01062e;
+
+          &.fa-snapchat-black {
+            width: 20px;
+            height: 19px;
+          }
+
+          &.fa-kik-black {
+            width: 17px;
+            height: 20px;
+            position: relative;
+            top: 2px;
+            left: 2px;
+          }
+        }
+
+        &:hover {
+          background: @brand-primary;
+
+          .fa {
+            font-size: 20px;
+            color: #fff;
+
+            &.fa-snapchat-black {
+              background-image: url("../images/snapchat.png");
+            }
+
+            &.fa-kik-black {
+              background-image: url("../images/kik.png");
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /*
   .users-item-gender {
     background: #000;
     width: 44px;
@@ -99,40 +205,11 @@
     }
   }
 
-  .users-item-divider {
-    margin: 0 -1em 0.25em -1em;
-    background: rgba(0,0,0,.15);
-    height: 1px;
-    border: none;
-    outline: none;
-    display: block;
-    width: 114%;
-    clear: both;
-
-    @media (max-width: 768px) and (min-width: 600px) {
-      width: 109%;
-    }
-  }
-
   .users-item-age {
     margin: 0.75em 0 0.25em;
     font-size: 0.875em;
     font-weight: 700;
     text-transform: uppercase;
   }
-
-  .users-item-description {
-    font-weight: 300;
-    font-size: 1em;
-    p {
-      word-break: break-word;
-      margin: 0;
-      height: 156px;
-      overflow-y: hidden;
-
-      @media screen and (max-width: @screen-sm-min) {
-        height: 86px;
-      }
-    }
-  }
+  */
 }

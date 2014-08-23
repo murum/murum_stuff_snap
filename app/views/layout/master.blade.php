@@ -16,6 +16,8 @@
     <title>{{ Lang::get('letssnap.meta.title') }}</title>
     {{ HTML::style('/css/libs.css') }}
     {{ HTML::style('/css/main.css?v=1_1') }}
+
+    {{ HTML::script('//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js') }}
 </head>
 <body>
 @include('layout.includes.master.nav')

@@ -203,4 +203,24 @@ $(function() {
             data: formData
         });
     });
+
+    // Set of card usernames boxes
+    if( ! isMobile.phone ) {
+        $('ul.users-item-usernames li').each(function () {
+            $(this).css({
+                "height": (parseInt($(this).width()) + parseInt($(this).css('padding-left')) + parseInt($(this).css('padding-right'))),
+                "line-height": (parseInt($(this).width()) + parseInt($(this).css('padding-left')) + parseInt($(this).css('padding-right')) + 3) + 'px',
+            });
+        });
+
+        $(window).resize(function () {
+            $('ul.users-item-usernames li').each(function () {
+                $(this).css({
+                    "height": (parseInt($(this).width()) + parseInt($(this).css('padding-left')) + parseInt($(this).css('padding-right'))),
+                    "line-height": (parseInt($(this).width()) + parseInt($(this).css('padding-left')) + parseInt($(this).css('padding-right')) + 3) + 'px',
+                });
+            });
+        });
+    }
+
 });

@@ -82,7 +82,8 @@ gulp.task('js-libs', function() {
         componentsDir + '/jcrop/js/jquery.jcrop.js',
         componentsDir + '/bootstrap-fileinput/js/fileinput.js',
         componentsDir + '/bootstrap-select/bootstrap-select.js',
-        componentsDir + '/jquery-infinite-scroll/jquery-infinitescroll.js'
+        componentsDir + '/jquery-infinite-scroll/jquery-infinitescroll.js',
+        componentsDir + '/isMobile/isMobile.js'
     ]
     return gulp.src(libs)
         .pipe(concat('libs.js'))

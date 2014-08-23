@@ -17,7 +17,7 @@
 </div>
 
 
-<div class="visible-xs">
+<div class="visible-xs top-ad">
     <div class="row row-margin">
         <div class="col-xs-12">
             <div class="text-center">

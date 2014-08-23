@@ -7,6 +7,7 @@
     "jcrop": "~0.9.12",
     "bootstrap-fileinput": "~1.8.0",
     "bootstrap-select": "~1.5.4",
-    "jquery-infinite-scroll": "~2.0.2"
+    "jquery-infinite-scroll": "~2.0.2",
+    "isMobile": "~0.3.2"
   }
 }
