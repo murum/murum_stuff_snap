@@ -209,7 +209,7 @@ $(function() {
         $('ul.users-item-usernames li').each(function () {
             $(this).css({
                 "height": (parseInt($(this).width()) + parseInt($(this).css('padding-left')) + parseInt($(this).css('padding-right'))),
-                "line-height": (parseInt($(this).width()) + parseInt($(this).css('padding-left')) + parseInt($(this).css('padding-right')) + 3) + 'px',
+                "line-height": (parseInt($(this).width()) + parseInt($(this).css('padding-left')) + parseInt($(this).css('padding-right'))) + 'px',
             });
         });
 
@@ -217,7 +217,7 @@ $(function() {
             $('ul.users-item-usernames li').each(function () {
                 $(this).css({
                     "height": (parseInt($(this).width()) + parseInt($(this).css('padding-left')) + parseInt($(this).css('padding-right'))),
-                    "line-height": (parseInt($(this).width()) + parseInt($(this).css('padding-left')) + parseInt($(this).css('padding-right')) + 3) + 'px',
+                    "line-height": (parseInt($(this).width()) + parseInt($(this).css('padding-left')) + parseInt($(this).css('padding-right'))) + 'px',
                 });
             });
         });

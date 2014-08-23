@@ -32,14 +32,14 @@
         <ul class="users-item-usernames row">
           <li>
             <a target="_blank" href="https://www.snapchat.com/{{ $user->snapname }}">
-              <i class="fa fa-snapchat-black"></i>
+              <i class="icon icon-snapchaticon"></i>
             </a>
           </li>
 
           @if($user->kik)
           <li>
             <a target="_blank" href="http://kik.com/u/open/{{ $user->kik }}">
-              <i class="fa fa-kik-black"></i>
+              <i class="icon icon-kikicon"></i>
             </a>
           </li>
           @endif
@@ -47,7 +47,7 @@
           @if($user->instagram)
             <li>
               <a target="_blank" href="http://instagram.com/{{ $user->instagram }}">
-                <i class="fa fa-instagram"></i>
+                <i class="icon icon-instagramicon"></i>
               </a>
             </li>
           @endif

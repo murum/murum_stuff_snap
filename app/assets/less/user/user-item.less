@@ -145,41 +145,20 @@
 
         @media screen and (max-width: @screen-sm-min) {
           height: 40px;
-          line-height: 43px;
+          line-height: 40px;
         }
 
-        .fa {
+        .icon {
           font-size: 20px;
           color: #01062e;
-
-          &.fa-snapchat-black {
-            width: 20px;
-            height: 19px;
-          }
-
-          &.fa-kik-black {
-            width: 17px;
-            height: 20px;
-            position: relative;
-            top: 2px;
-            left: 2px;
-          }
         }
 
         &:hover {
           background: @brand-primary;
 
-          .fa {
-            font-size: 20px;
+          .icon {
+            font-size: 18px;
             color: #fff;
-
-            &.fa-snapchat-black {
-              background-image: url("../images/snapchat.png");
-            }
-
-            &.fa-kik-black {
-              background-image: url("../images/kik.png");
-            }
           }
         }
       }
