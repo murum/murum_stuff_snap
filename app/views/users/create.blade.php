@@ -13,15 +13,60 @@
             {{{ Lang::get('letssnap.image_provided_by_kik') }}}
           </div>
             <div class="users-item users-item-{{ rand(1,4) }}">
-                <div class="users-item-image">
-                    <img id="image-preview" src="/images/placeholder_sv.png" alt=""/>
+              <div class="row">
+
+
+                <div class="col-xs-5 col-sm-12">
+                  <div class="users-item-image">
+                      <img id="image-preview" src="/images/placeholder_sv.png" alt=""/>
+                  </div>
                 </div>
-                <div class="users-item-name">
+
+
+                <div class="col-xs-7 col-sm-12">
+                  <div class="users-item-name">
+                    <i class="icon icon-transgender"></i>
+                    <span class="users-item-name-text">
+                      <span class="users-item-name-text-update"></span>,
+                    </span>
+                    <span class="users-item-name-age">
+                      <span class="users-item-name-age-text"></span>
+                     {{{ Lang::get('letssnap.years') }}}
+                     </span>
+                  </div>
+
+                  <div class="users-item-description">
+                    <p></p>
+                  </div>
                 </div>
-                <div class="users-item-description">
-                    <p>
-                    </p>
+
+
+                <div class="col-xs-12 no-padding">
+                  <ul class="users-item-usernames users-item-usernames-1 row">
+
+                    <li class="users-item-usernames-snapchat">
+                      <a href="#">
+                        <i class="icon icon-snapchaticon"></i>
+                      </a>
+                    </li>
+
+                    <li class="users-item-usernames-kik hidden">
+                      <a href="#">
+                        <i class="icon icon-kikicon"></i>
+                      </a>
+                    </li>
+
+                    <li class="users-item-usernames-instagram hidden">
+                      <a href="#">
+                        <i class="icon icon-instagramicon"></i>
+                      </a>
+                    </li>
+
+                  </ul>
                 </div>
+
+
+              </div>
             </div>
         </div>
     </div>
