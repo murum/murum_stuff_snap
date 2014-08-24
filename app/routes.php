@@ -21,6 +21,11 @@ Route::post('search', array(
     'uses' => 'SearchController@search'
 ));
 
+Route::get('update', array(
+	'as' => 'static.update',
+	'uses' => 'StaticController@update'
+));
+
 Route::get('about', array(
     'as' => 'static.about',
     'uses' => 'StaticController@about'

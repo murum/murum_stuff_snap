@@ -2,6 +2,10 @@
 
 class StaticController extends BaseController
 {
+	public function update()
+	{
+		return View::make('static.update');
+	}
 
     public function about()
     {

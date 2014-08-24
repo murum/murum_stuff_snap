@@ -73,7 +73,8 @@ return array(
         'about' => "About Let's snap",
         'create_card' => 'Add a card to the wall',
         'bump' => 'Bump your card',
-        'filter_cards' => 'Filter cards'
+        'filter_cards' => 'Filter cards',
+		'news_one' => 'Update 24th August',
     ),
     'messages' => array(
         'no_search_result' => 'No snapchatters within your criteria, please try to search once again.',
@@ -87,6 +88,11 @@ return array(
         'submit' => 'Bump it!',
         'info' => 'When you bump your card it\'ll be the first card, you can bump your card once 24h',
     ),
+	'update' => array(
+		'news_one_paragraph_one' => 'Let\'s Snap have just been having a big facelift, We\'ve remade the card layout to make it even easier to get in touch with the users with direct links to their profiles. We\'ve also remade the way of how you create cards, now we\'re using the KIK profile picture instead of an own creted image uploader with cropping.',
+		'news_one_paragraph_two' => 'What\'s your thoughts on this remake? Please get in touch through contact@letssnap.com',
+		'notice' => 'Big update of Let\s snap, read more...',
+	),
     'about' => array(
         'paragraph_one' => "Let's snap is a new website to find and get in touch with new Snapchat friends.",
         'paragraph_two' => 'To use our service you simple just create a card on the website or search for friend matching your criteria.',

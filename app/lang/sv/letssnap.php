@@ -73,7 +73,8 @@ return array(
         'about' => "Om Let's snap",
         'create_card' => 'Skapa ett kort till Let\'s snap',
         'bump' => 'Bumpa ditt kort till startsidan',
-        'filter_cards' => 'Filtrera kort'
+        'filter_cards' => 'Filtrera kort',
+		'news_one' => 'Uppdatering 24 Augusti',
     ),
     'messages' => array(
         'no_search_result' => 'Inga snappare hittades för dina kriterier, vänligen sök igen.',
@@ -87,6 +88,11 @@ return array(
         'submit' => 'Bumpa',
         'info' => 'När du bumpar ditt kort så hamnar det först av alla, man kan bumpa max en gång om dagen',
     ),
+	'update' => array(
+		'news_one_paragraph_one' => 'Let\'s Snap har under senaste veckan genomgått en rejäl uppdatering i form av en helt ny design av korten, den främsta anledningen till varför vi valde att göra om designen på korten är för att man på ett enklare sätt skall kunna ta kontakt med användaren bakom kortet, därför har vi nu lyft ut användarnamnen och istället skapa användarvänliga knappar för att nå personen. Vi har även gjort om så att man nu längre inte skall behöva ladda upp kort utan istället använder vi oss av användarens profilbild på KIK.',
+		'news_one_paragraph_two' => 'Vad tycker ni? Skriv gärna till oss genom contact@letssnap.com',
+		'notice' => 'Stor uppdatering av Let\'s snap, läs mer...',
+	),
     'about' => array(
         'paragraph_one' => "Let's snap är en ny webbplats för att hitta och komma i kontakt med nya Snapchat vänner.",
         'paragraph_two' => 'För att använda vår sida så är det bara att skapa ett kort på sidan eller söka efter vänner som matchar just dina kriterier.',
