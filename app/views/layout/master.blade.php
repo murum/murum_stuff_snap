@@ -67,7 +67,7 @@
         ga('create', 'UA-53331685-1', 'auto');
         ga('send', 'pageview');
     </script>
-@elseif(URL::to('/') == 'http://www.letssnap.com' || URL::to('/') == 'http://letssnap.com')
+@elseif ( URL::to('/') == 'http://www.letssnap.com' || URL::to('/') == 'http://letssnap.com')
     <!-- Google Analytics -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
