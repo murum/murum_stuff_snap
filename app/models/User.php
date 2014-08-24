@@ -15,7 +15,8 @@ class User extends Eloquent {
     }
 
     public function has_picture_or_kik() {
-        return (!empty($this->picture) || !empty($this->kik));
+        //return (!empty($this->picture) || !empty($this->kik));
+		return ( !empty($this->kik) );
     }
 
     public function get_age() {
@@ -44,10 +45,13 @@ class User extends Eloquent {
 	}
 
     public function get_image() {
+		/*
         if($this->picture) {
             return $this->picture;
-        } elseif( $this->kik ) {
-			return $this->kik_picture;
+        } else
+		*/
+		if( $this->kik ) {
+            return $this->kik_picture;
         } else {
             return false;
         }

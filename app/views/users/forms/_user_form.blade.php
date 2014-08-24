@@ -1,4 +1,5 @@
 <div class="user-create-forms">
+    {{--
     {{ Form::open(['route' => ['images.store'], 'files' => true, 'class' => 'form form-horizontal image-form']) }}
     <div class="form-group">
         <div class="col-xs-12 col-sm-8">
@@ -13,6 +14,7 @@
         </div>
     </div>
     {{ Form::close() }}
+    --}}
 
     {{ Form::open(['route' => ['users.store'], 'files' => true, 'class' => 'form form-horizontal form-user-create']) }}
     <div class="form-group">
@@ -32,11 +34,10 @@
             {{ Form::text('age', null, ['class' => 'form-control', 'required' => true]) }}
             {{ $errors->first('age', '<span class="text-danger">:message</span>') }}
         </div>
-        {{-- Instagram user --}}
         <div class="col-xs-12 col-sm-8">
-            {{ Form::label('instagram', Lang::get('letssnap.label_instagram') . ' ' . Lang::get('letssnap.optional'), ['class' => 'control-label']) }}
-            {{ Form::text('instagram', null, ['class' => 'form-control', 'maxlength' => '30']) }}
-            {{ $errors->first('instagram', '<span class="text-danger">:message</span>') }}
+            {{ Form::label('kik', Lang::get('letssnap.label_kik') . ' ' . Lang::get('letssnap.profile_pic_from_kik'), ['class' => 'control-label']) }}
+            {{ Form::text('kik', null, ['class' => 'form-control']) }}
+            {{ $errors->first('kik', '<span class="text-danger">:message</span>') }}
         </div>
 
         {{-- Gender --}}
@@ -63,11 +64,14 @@
                 </div>
             </div>
         </div>
+
+        {{-- Instagram user --}}
         <div class="col-xs-12 col-sm-8">
-            {{ Form::label('kik', Lang::get('letssnap.label_kik') . ' ' . Lang::get('letssnap.optional'), ['class' => 'control-label']) }}
-            {{ Form::text('kik', null, ['class' => 'form-control']) }}
-            {{ $errors->first('kik', '<span class="text-danger">:message</span>') }}
+            {{ Form::label('instagram', Lang::get('letssnap.label_instagram') . ' ' . Lang::get('letssnap.optional'), ['class' => 'control-label']) }}
+            {{ Form::text('instagram', null, ['class' => 'form-control', 'maxlength' => '30']) }}
+            {{ $errors->first('instagram', '<span class="text-danger">:message</span>') }}
         </div>
+
         <div class="col-xs-12">
             {{ Form::label('description', Lang::get('letssnap.label_about'), ['class' => 'control-label']) }}
             <span class="text-danger">*</span>

@@ -50,6 +50,11 @@ class UsersController extends BaseController {
 
                 if (Input::has('kik')) {
                     $user->kik = Input::get('kik');
+
+					$html = new Htmldom('http://kik.com/u/'.$user->kik);
+					foreach($html->find('img') as $element) {
+						$user->kik_picture = $element->src;
+					}
                 }
 
                 if (Input::has('instagram')) {

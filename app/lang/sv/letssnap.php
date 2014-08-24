@@ -29,6 +29,9 @@ return array(
     'previous' => 'Föregående',
     'next' => 'Nästa',
 
+	'image_provided_by_kik' => 'Let\'s Snap använder profilbilden ifrån kik.',
+	'profile_pic_from_kik' => '(profilbild används)',
+
     'nav' => array(
         'add' => 'Skapa',
         'bump' => 'Bumpa',
