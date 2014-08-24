@@ -15,7 +15,7 @@
 
     <title>{{ Lang::get('letssnap.meta.title') }}</title>
     {{ HTML::style('/css/libs.css') }}
-    {{ HTML::style('/css/main.css?v=1_1') }}
+    {{ HTML::style('/css/main.css?v=2') }}
 
     {{ HTML::script('//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js') }}
 </head>
@@ -54,8 +54,7 @@
 @include('layout.includes.footer')
 
 {{ HTML::script('/js/libs.js') }}
-<script src="http://cdn.kik.com/kik/1.0.9/kik.js"></script>
-{{ HTML::script('/js/main.js') }}
+{{ HTML::script('/js/main.js?v=2') }}
 
 @if ( URL::to('/') == 'http://letssnap.se' || URL::to('/') == 'http://www.letssnap.se' )
     <!-- Google Analytics -->
