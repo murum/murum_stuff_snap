@@ -36,6 +36,13 @@ class User extends Eloquent {
         return 'not_applicable';
     }
 
+	public function get_usernames_amount() {
+		$usernames = 1;
+		if (!empty($this->kik)) $usernames++;
+		if (!empty($this->instagram)) $usernames++;
+		return $usernames;
+	}
+
     public function get_image() {
         if($this->picture) {
             return $this->picture;
