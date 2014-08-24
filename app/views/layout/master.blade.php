@@ -56,7 +56,7 @@
 {{ HTML::script('/js/libs.js') }}
 {{ HTML::script('/js/main.js?v=2') }}
 
-@if ( URL::to('/') == 'http://letssnap.se' || URL::to('/') == 'http://www.letssnap.se' )
+@if ( URL::to('/') == 'http://letssnap.se' || URL::to('/') == 'http://www.letssnap.se' || URL::to('/') == 'http://www.letssnap.com' || URL::to('/') == 'http://letssnap.com' )
     <!-- Google Analytics -->
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
