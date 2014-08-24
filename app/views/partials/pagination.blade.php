@@ -5,6 +5,7 @@
     ?>
 
     @if ($paginator->getLastPage() > 1)
+    {{--
     <span class="hidden-xs">
         <ul class="pagination">
                 <li class="{{ ($paginator->getCurrentPage() == 1) ? 'disabled' : '' }}">
@@ -21,8 +22,9 @@
 
         </ul>
     </span>
+    --}}
 
-    <span class="visible-xs">
+    <span class="visible-xs visible-sm visible-md visible-lg">
         <ul class="pagination">
             <li class="{{ ($paginator->getCurrentPage() == 1) ? 'disabled' : '' }}">
                 <a href="{{ $paginator->getUrl(1) }}" class="item">
