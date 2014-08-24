@@ -5,6 +5,7 @@ Route::get('users/create', array('as' => 'users.create', 'uses' => 'UsersControl
 Route::get('skapa', array('uses' => 'UsersController@create') );
 Route::get('user/{username}', array('as' => 'users.show', 'uses' => 'UsersController@show') );
 Route::post('users/create', array('as' => 'users.store', 'uses' => 'UsersController@store') );
+Route::post('kik_image', array('as' => 'users.kik.image', 'uses' => 'UsersController@kik_image'));
 Route::get('users/bump', array('as' => 'users.bump', 'uses' => 'UsersController@get_bump') );
 Route::post('users/bump', array('as' => 'users.bump', 'uses' => 'UsersController@post_bump') );
 

@@ -86,6 +86,24 @@ class UsersController extends BaseController {
         }
     }
 
+	public function kik_image() {
+		$kik = Input::get('kik');
+
+		$html = new Htmldom('http://kik.com/u/'.$kik);
+		foreach($html->find('img') as $element) {
+
+			return Response::json(array(
+				'success' => true,
+				'source' => $element->src
+			));
+		}
+
+		return Response::json(array(
+			'success' => false,
+			'source' => '/images/placeholder_sv.png',
+		));
+	}
+
     public function get_bump() {
         return View::make('bump.bump');
     }

@@ -180,6 +180,19 @@ $(function() {
         $('ul.users-item-usernames').addClass('users-item-usernames-'+amount);
     });
 
+    $('input[name="kik"]').on('focusout', function() {
+        var kik = $(this).val();
+        $.ajax({
+            url: '/kik_image/',
+            type: 'post',
+            data: {'kik': kik},
+            dataType: 'json',
+            success: function(data) {
+                $('div.users-item-image img#image-preview').attr('src', data.source);
+            }
+        })
+    });
+
     $('input[name="kik"]').on('keyup', function() {
         var amount = check_usernames_amount();
 
