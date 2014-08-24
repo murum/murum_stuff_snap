@@ -5,6 +5,7 @@ return array(
     'message' => 'Message',
     'send' => 'Send',
     'age' => 'Age',
+	'years' => 'y/o',
     'male' => 'Male',
     'female' => 'Female',
     'rules_text' => 'Rules',

@@ -5,6 +5,7 @@ return array(
     'message' => 'Meddelande',
     'send' => 'Skicka',
     'age' => 'Ålder',
+	'years' => 'År',
     'male' => 'Kille',
     'female' => 'Tjej',
     'rules_text' => 'reglerna',

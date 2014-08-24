@@ -1,4 +1,4 @@
-<div class="col-xs-12 col-sm-4 col-md-3">
+<div class="col-xs-12 col-md-4 col-lg-3">
   <div class="users-item users-item-{{ rand(1,4) }}">
     <div class="row">
       <div class="col-xs-5 col-sm-12">
@@ -13,7 +13,8 @@
       <div class="col-xs-7 col-sm-12">
         <div class="users-item-name">
           <i class="icon icon-{{ $user->get_gender() }}"></i>
-          <span class="users-item-name-text">{{{ $user->snapname }}}</span>
+          <span class="users-item-name-text">{{{ $user->snapname }}}, </span>
+          <span class="users-item-name-age">{{{ $user->age }}} {{{ Lang::get('letssnap.years') }}}</span>
         </div>
 
         {{--
