@@ -29,11 +29,11 @@ class User extends Eloquent {
     }
 
     public function get_gender() {
-        if ( $this->sex == 0 ) return 'unknown';
-        if ( $this->sex == 1 ) return 'male';
-        if ( $this->sex == 2 ) return 'female';
+        if ( $this->sex == 0 ) return 'transgender';
+        if ( $this->sex == 1 ) return 'boysymbol';
+        if ( $this->sex == 2 ) return 'girlsymbol';
 
-        return 'not_applicable';
+        return 'transgender';
     }
 
 	public function get_usernames_amount() {
@@ -47,10 +47,7 @@ class User extends Eloquent {
         if($this->picture) {
             return $this->picture;
         } elseif( $this->kik ) {
-            $html = new Htmldom('http://kik.com/u/'.$this->kik);
-            foreach($html->find('img') as $element) {
-                return $element->src;
-            }
+			return $this->kik_picture;
         } else {
             return false;
         }

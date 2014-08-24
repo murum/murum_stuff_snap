@@ -1,7 +1,7 @@
 function showPreview(coords)
 {
-    var rx = 255 / coords.w;
-    var ry = 172 / coords.h;
+    var rx = 160 / coords.w;
+    var ry = 160 / coords.h;
     var imgHeight = $('img#image-cropper').height();
     var imgWidth = $('img#image-cropper').width();
 
@@ -77,7 +77,7 @@ $(function() {
             $('img#image-cropper').Jcrop({
                 onChange: showPreview,
                 onSelect: showPreview,
-                aspectRatio: 255/172
+                aspectRatio: 160/160
             });
 
             $('img#image-cropper').css({width: '100%', height: 'auto'});

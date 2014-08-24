@@ -11,7 +11,10 @@
         </div>
       </div>
       <div class="col-xs-7 col-sm-12">
-        <div class="users-item-name">{{{ $user->snapname }}}</div>
+        <div class="users-item-name">
+          <i class="icon icon-{{ $user->get_gender() }}"></i>
+          <span class="users-item-name-text">{{{ $user->snapname }}}</span>
+        </div>
 
         {{--
         <div class="users-item-gender {{ $user->get_gender() }}">
