@@ -42,9 +42,9 @@
 
 
                 <div class="col-xs-12 no-padding">
-                  <ul class="users-item-usernames users-item-usernames-1 row">
+                  <ul class="users-item-usernames users-item-usernames-0 row">
 
-                    <li class="users-item-usernames-snapchat">
+                    <li class="users-item-usernames-snapchat hidden">
                       <a href="#">
                         <i class="icon icon-snapchaticon"></i>
                       </a>

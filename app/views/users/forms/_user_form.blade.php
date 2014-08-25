@@ -20,24 +20,32 @@
     <div class="form-group">
 
         {{-- Snapchat user --}}
-        <div class="col-xs-12 col-sm-8">
+        <div class="col-xs-12 col-sm-4">
             {{ Form::label('snapname', Lang::get('letssnap.label_snapname'), ['class' => 'control-label']) }}
-            <span class="text-danger">*</span>
-            {{ Form::text('snapname', null, ['class' => 'form-control', 'required' => true, 'maxlength' => '15']) }}
+            {{ Form::text('snapname', null, ['class' => 'form-control', 'maxlength' => '15']) }}
             {{ $errors->first('snapname', '<span class="text-danger">:message</span>') }}
         </div>
 
+
+        <div class="col-xs-12 col-sm-4">
+            {{ Form::label('kik', Lang::get('letssnap.label_kik'), ['class' => 'control-label']) }}
+            {{ Form::text('kik', null, ['class' => 'form-control']) }}
+            {{ $errors->first('kik', '<span class="text-danger">:message</span>') }}
+        </div>
+
+        {{-- Instagram user --}}
+        <div class="col-xs-12 col-sm-4">
+            {{ Form::label('instagram', Lang::get('letssnap.label_instagram'), ['class' => 'control-label']) }}
+            {{ Form::text('instagram', null, ['class' => 'form-control', 'maxlength' => '30']) }}
+            {{ $errors->first('instagram', '<span class="text-danger">:message</span>') }}
+        </div>
+
         {{-- AGE --}}
-        <div class="col-xs-12 col-sm-8 col-md-4">
+        <div class="col-xs-12 col-sm-4">
             {{ Form::label('age', Lang::get('letssnap.label_age'), ['class' => 'control-label']) }}
             <span class="text-danger">*</span>
             {{ Form::text('age', null, ['class' => 'form-control', 'required' => true]) }}
             {{ $errors->first('age', '<span class="text-danger">:message</span>') }}
-        </div>
-        <div class="col-xs-12 col-sm-8">
-            {{ Form::label('kik', Lang::get('letssnap.label_kik') . ' ' . Lang::get('letssnap.profile_pic_from_kik'), ['class' => 'control-label']) }}
-            {{ Form::text('kik', null, ['class' => 'form-control']) }}
-            {{ $errors->first('kik', '<span class="text-danger">:message</span>') }}
         </div>
 
         {{-- Gender --}}
@@ -63,13 +71,6 @@
                     {{ $errors->first('sex', '<span class="text-danger">:message</span>') }}
                 </div>
             </div>
-        </div>
-
-        {{-- Instagram user --}}
-        <div class="col-xs-12 col-sm-8">
-            {{ Form::label('instagram', Lang::get('letssnap.label_instagram') . ' ' . Lang::get('letssnap.optional'), ['class' => 'control-label']) }}
-            {{ Form::text('instagram', null, ['class' => 'form-control', 'maxlength' => '30']) }}
-            {{ $errors->first('instagram', '<span class="text-danger">:message</span>') }}
         </div>
 
         <div class="col-xs-12">
