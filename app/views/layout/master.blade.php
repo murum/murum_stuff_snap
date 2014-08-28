@@ -15,7 +15,7 @@
 
     <title>{{ Lang::get('letssnap.meta.title') }}</title>
     {{ HTML::style('/css/libs.css') }}
-    {{ HTML::style('/css/main.css?v=2') }}
+    {{ HTML::style('/css/main.css?v=2_1') }}
 
     {{ HTML::script('//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js') }}
 </head>
@@ -54,7 +54,7 @@
 @include('layout.includes.footer')
 
 {{ HTML::script('/js/libs.js') }}
-{{ HTML::script('/js/main.js?v=2') }}
+{{ HTML::script('/js/main.js?v=2_1') }}
 
 @if ( URL::to('/') == 'http://letssnap.se' || URL::to('/') == 'http://www.letssnap.se')
     <!-- Google Analytics -->
