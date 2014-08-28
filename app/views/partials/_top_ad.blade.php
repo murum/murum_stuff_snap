@@ -2,14 +2,16 @@
     <div class="row row-margin">
         <div class="col-xs-12">
             <div class="text-center">
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- Let's snap top -->
-                <ins class="adsbygoogle"
-                     style="display:inline-block;width:728px;height:90px"
-                     data-ad-client="ca-pub-6725713569575731"
-                     data-ad-slot="7467491805"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
+                <script type="text/javascript"><!--
+                google_ad_client = "ca-pub-6725713569575731";
+                /* Let&#39;s snap top */
+                google_ad_slot = "7467491805";
+                google_ad_width = 728;
+                google_ad_height = 90;
+                //-->
+                </script>
+                <script type="text/javascript"
+                src="//pagead2.googlesyndication.com/pagead/show_ads.js">
                 </script>
             </div>
         </div>
@@ -21,14 +23,16 @@
     <div class="row row-margin">
         <div class="col-xs-12">
             <div class="text-center">
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- Let's snap top mobile -->
-                <ins class="adsbygoogle"
-                     style="display:inline-block;width:320px;height:50px"
-                     data-ad-client="ca-pub-6725713569575731"
-                     data-ad-slot="1281357408"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
+                <script type="text/javascript"><!--
+                google_ad_client = "ca-pub-6725713569575731";
+                /* Let&#39;s snap top mobile */
+                google_ad_slot = "1281357408";
+                google_ad_width = 320;
+                google_ad_height = 50;
+                //-->
+                </script>
+                <script type="text/javascript"
+                src="//pagead2.googlesyndication.com/pagead/show_ads.js">
                 </script>
             </div>
         </div>
