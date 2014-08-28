@@ -21,6 +21,8 @@ App::before(function($request)
 
 App::after(function($request, $response)
 {
+	$response->headers->unset('X-Frame-Options');
+	return $response;
 });
 
 /*
