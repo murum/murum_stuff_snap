@@ -13,7 +13,13 @@
       <div class="col-xs-7 col-sm-12">
         <div class="users-item-name">
           <i class="icon icon-{{ $user->get_gender() }}"></i>
-          <span class="users-item-name-text">{{{ $user->snapname }}}, </span>
+          <span class="users-item-name-text">
+          @if($user->snapname)
+            {{{ $user->snapname }}},
+          @elseif($user->kik)
+            {{{ $user->kik }}},
+          @endif
+          </span>
           <span class="users-item-name-age">{{{ $user->age }}} {{{ Lang::get('letssnap.years') }}}</span>
         </div>
 
@@ -44,10 +50,14 @@
           @endif
 
           @if($user->kik)
-          <li>
-            <a target="_blank" href="http://kik.com/u/open/{{ $user->kik }}">
-              <i class="icon icon-kikicon"></i>
-            </a>
+            @if( !$user->snapname )
+              <li class="first">
+            @else
+              <li>
+            @endif
+              <a target="_blank" href="http://kik.com/u/open/{{ $user->kik }}">
+                <i class="icon icon-kikicon"></i>
+              </a>
           </li>
           @endif
 
