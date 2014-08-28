@@ -6,12 +6,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
-                    <h3>
-                      {{ Lang::get('letssnap.headers.news_one') }}</h3>
-                    <p class="small">
-                      {{ Lang::get('letssnap.update.news_one_paragraph_one') }}</p>
-                    <p class="small">
-                      {{ Lang::get('letssnap.update.news_one_paragraph_two') }}</p>
+                  <h3>
+                    {{ Lang::get('letssnap.headers.news_two') }}</h3>
+                  <p class="small">
+                    {{ Lang::get('letssnap.update.news_two_paragraph_one') }}</p>
                 </div>
             </div>
         </div>
@@ -20,8 +18,13 @@
     <div class="about-team text-center">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-offset-2 col-sm-8">
-
+                <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+                  <h3>
+                    {{ Lang::get('letssnap.headers.news_one') }}</h3>
+                  <p class="small">
+                    {{ Lang::get('letssnap.update.news_one_paragraph_one') }}</p>
+                  <p class="small">
+                    {{ Lang::get('letssnap.update.news_one_paragraph_two') }}</p>
                 </div>
             </div>
         </div>

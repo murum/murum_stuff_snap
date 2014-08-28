@@ -75,6 +75,7 @@ return array(
         'bump' => 'Bump your card',
         'filter_cards' => 'Filter cards',
 		'news_one' => 'Update 24th August',
+		'news_two' => 'Update 28th August',
     ),
     'messages' => array(
         'no_search_result' => 'No snapchatters within your criteria, please try to search once again.',
@@ -91,7 +92,8 @@ return array(
 	'update' => array(
 		'news_one_paragraph_one' => 'Let\'s Snap have just been having a big facelift, We\'ve remade the card layout to make it even easier to get in touch with the users with direct links to their profiles. We\'ve also remade the way of how you create cards, now we\'re using the KIK profile picture instead of an own creted image uploader with cropping.',
 		'news_one_paragraph_two' => 'What\'s your thoughts on this remake? Please get in touch through contact@letssnap.com',
-		'notice' => 'Big update of Let\'s snap, read more...',
+		'news_two_paragraph_one' => 'Now there\'s no requirement on snapchat name, It\'s enough with a kikname or a snapchatname.',
+		'notice' => 'New update 28th August, read more...',
 	),
     'about' => array(
         'paragraph_one' => "Let's snap is a new website to find and get in touch with new Snapchat friends.",
