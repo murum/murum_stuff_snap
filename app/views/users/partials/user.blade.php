@@ -34,11 +34,14 @@
 
       <div class="col-xs-12 no-padding">
         <ul class="users-item-usernames users-item-usernames-{{ $user->get_usernames_amount() }} row">
+
+          @if($user->snapname)
           <li>
             <a target="_blank" href="https://www.snapchat.com/{{ $user->snapname }}">
               <i class="icon icon-snapchaticon"></i>
             </a>
           </li>
+          @endif
 
           @if($user->kik)
           <li>

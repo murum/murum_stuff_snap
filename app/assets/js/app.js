@@ -191,53 +191,93 @@ $(function() {
                 $('div.users-item-image img#image-preview').attr('src', data.source);
             }
         })
-    });
+    })
 
-    $('input[name="kik"]').on('keyup', function() {
+    $('input[name="snapname"]').on('keyup', function() {
         var amount = check_usernames_amount();
+        var button = $('.users-item-usernames-snapchat');
+        var usernames = $('ul.users-item-usernames');
+        var textUpdate = $('.users-item-name-text-update');
 
-        if($('input[name="kik"]').val() != '') {
-            $('.users-item-usernames-kik').removeClass('hidden');
+        if($('input[name="kik"]').val() == '') {
+            textUpdate.text($(this).val());
+        }
+
+        if($(this).val() != '') {
+            button.removeClass('hidden');
+
+            $('.users-item-usernames-kik').removeClass('first');
 
             if( ! isMobile.phone ) {
-                $('.users-item-usernames-kik').css({
-                    'height': $('.users-item-usernames-snapchat').css('height'),
-                    'line-height': $('.users-item-usernames-snapchat').css('line-height')
+                button.css({
+                    'height': button.width(),
+                    'line-height': button.width()+'px'
                 });
             }
         } else {
-            $('.users-item-usernames-kik').addClass('hidden');
+            button.addClass('hidden');
+        }
+        usernames.removeClass('users-item-usernames-1');
+        usernames.removeClass('users-item-usernames-2');
+        usernames.removeClass('users-item-usernames-3');
+
+        usernames.addClass('users-item-usernames-'+amount);
+    });
+
+
+    $('input[name="kik"]').on('keyup', function() {
+        var amount = check_usernames_amount();
+        var button = $('.users-item-usernames-kik');
+        var usernames = $('ul.users-item-usernames');
+
+        var textUpdate = $('.users-item-name-text-update');
+
+        if($('input[name="snapname"]').val() == '') {
+            textUpdate.text($(this).val());
+            button.addClass('first');
         }
 
-        $('ul.users-item-usernames').removeClass('users-item-usernames-1');
-        $('ul.users-item-usernames').removeClass('users-item-usernames-2');
-        $('ul.users-item-usernames').removeClass('users-item-usernames-3');
+        if($(this).val() != '') {
+            button.removeClass('hidden');
 
-        $('ul.users-item-usernames').addClass('users-item-usernames-'+amount);
+            if( ! isMobile.phone ) {
+                button.css({
+                    'height': button.width(),
+                    'line-height': button.width()+'px'
+                });
+            }
+        } else {
+            button.addClass('hidden');
+        }
+        usernames.removeClass('users-item-usernames-1');
+        usernames.removeClass('users-item-usernames-2');
+        usernames.removeClass('users-item-usernames-3');
+
+        usernames.addClass('users-item-usernames-'+amount);
     });
 
     $('input[name="instagram"]').on('keyup', function() {
         var amount = check_usernames_amount();
-
-        $('ul.users-item-usernames').removeClass('users-item-usernames-1');
-        $('ul.users-item-usernames').removeClass('users-item-usernames-2');
-        $('ul.users-item-usernames').removeClass('users-item-usernames-3');
-
-        $('ul.users-item-usernames').addClass('users-item-usernames-'+amount);
+        var button = $('.users-item-usernames-instagram');
+        var usernames = $('ul.users-item-usernames');
 
         if($('input[name="instagram"]').val() != '') {
-            $('.users-item-usernames-instagram').removeClass('hidden');
+            button.removeClass('hidden');
 
             if( ! isMobile.phone ) {
-                $('.users-item-usernames-instagram').css({
-                    'height': $('.users-item-usernames-snapchat').css('height'),
-                    'line-height': $('.users-item-usernames-snapchat').css('line-height')
+                button.css({
+                    'height': button.width(),
+                    'line-height': button.width()+'px'
                 });
             }
-
         } else {
-            $('.users-item-usernames-instagram').addClass('hidden');
+            button.addClass('hidden');
         }
+        usernames.removeClass('users-item-usernames-1');
+        usernames.removeClass('users-item-usernames-2');
+        usernames.removeClass('users-item-usernames-3');
+
+        usernames.addClass('users-item-usernames-'+amount);
     });
 
     $('input[name="age"]').on('keyup', function() {
