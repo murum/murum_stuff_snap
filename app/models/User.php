@@ -39,7 +39,8 @@ class User extends Eloquent {
     }
 
 	public function get_usernames_amount() {
-		$usernames = 1;
+		$usernames = 0;
+		if (!empty($this->snapname)) $usernames++;
 		if (!empty($this->kik)) $usernames++;
 		if (!empty($this->instagram)) $usernames++;
 		return $usernames;
