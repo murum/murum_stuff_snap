@@ -34,10 +34,10 @@ class CardsController extends BaseController {
     }
 
     public function store() {
-	    if ( ! $this->_isAllowedToStore(Input::all()) ) {
-		    $card = Common::getUserByBusyIP();
-		    Flash::error( Lang::get('messages.error.ip_used') . ' ' .$card->created_at->modify('+1 day'));
-		    Log::info("Card id: $card->id snapname: $card->snapname must wait before adding new card");
+	    if ( ! $this->_isAllowedToStore() ) {
+		    $user = Common::getUserByBusyIP();
+		    Flash::error( Lang::get('messages.error.ip_used') . ' ' .$user->created_at->modify('+1 day'));
+		    Log::info("User id: $user->id snapname: $user->snapname must wait before adding new card");
 		    return Redirect::home();
 	    }
 
@@ -135,7 +135,7 @@ class CardsController extends BaseController {
         }
         return Redirect::to('/');
     }
-	private function _isAllowedToStore(array $inputAll) {
+	private function _isAllowedToStore() {
 		if (App::environment("local")) {
 			Log::debug("Always allow cards to be stored when running local environment");
 			return true;
