@@ -34,56 +34,57 @@ class UsersController extends BaseController {
     }
 
     public function store() {
-        if( Common::ipIsFree() || App::environment("local") ) {
-            $validator = Validator::make(Input::all(), User::$rules);
+	    if ( ! $this->_isAllowedToStore(Input::all()) ) {
+		    $user = Common::getUserByBusyIP();
+		    Flash::error( Lang::get('messages.error.ip_used') . ' ' .$user->created_at->modify('+1 day'));
+		    Log::info("User id: $user->id snapname: $user->snapname must wait before adding new card");
+		    return Redirect::home();
+	    }
 
-            if ($validator->passes()) {
-                $user = new User;
+	    $validator = Validator::make(Input::all(), User::$rules);
 
-                $user->snapname = Input::get('snapname');
-                $user->description = Input::get('description');
-                $user->ip_address = Request::getClientIp();
+	    if ($validator->passes()) {
+		    $user = new User;
 
-                if (Input::has('age')) {
-                    $user->age = Input::get('age');
-                }
+		    $user->snapname = Input::get('snapname');
+		    $user->description = Input::get('description');
+		    $user->ip_address = Request::getClientIp();
 
-                if (Input::has('kik')) {
-                    $user->kik = Input::get('kik');
+		    if (Input::has('age')) {
+			    $user->age = Input::get('age');
+		    }
 
-					$html = new Htmldom('http://kik.com/u/'.$user->kik);
-					foreach($html->find('img') as $element) {
-						$user->kik_picture = $element->src;
-					}
-                }
+		    if (Input::has('kik')) {
+			    $user->kik = Input::get('kik');
 
-                if (Input::has('instagram')) {
-                    $user->instagram = Input::get('instagram');
-                }
+			    $html = new Htmldom('http://kik.com/u/'.$user->kik);
+			    foreach($html->find('img') as $element) {
+				    $user->kik_picture = $element->src;
+			    }
+		    }
 
-                if( Input::has('sex') ) {
-                    $user->sex = Input::get('sex');
-                }
+		    if (Input::has('instagram')) {
+			    $user->instagram = Input::get('instagram');
+		    }
 
-                if (Input::has('image')) {
-                    $user->picture = Input::get('image');
-                }
+		    if( Input::has('sex') ) {
+			    $user->sex = Input::get('sex');
+		    }
 
-                if( $user->save() ) {
-                    Flash::success(Lang::get('messages.success.created_card'));
-                    return Redirect::to('/');
-                } else {
-                    Flash::error(Lang::get('message.error.create_card_fail_save'));
-                    return Redirect::back()->withInput();
-                }
-            }
-            Flash::error(Lang::get('messages.error.validation'));
-            return Redirect::back()->withInput()->withErrors($validator);
-        } else {
-            $user = Common::getUserByBusyIP();
-            Flash::error( Lang::get('messages.error.ip_used') . ' ' .$user->created_at->modify('+1 day'));
-            return Redirect::home();
-        }
+		    if (Input::has('image')) {
+			    $user->picture = Input::get('image');
+		    }
+
+		    if( $user->save() ) {
+			    Flash::success(Lang::get('messages.success.created_card'));
+			    return Redirect::to('/');
+		    } else {
+			    Flash::error(Lang::get('message.error.create_card_fail_save'));
+                return Redirect::route("users.create")->withInput();
+		    }
+	    }
+	    Flash::error(Lang::get('messages.error.validation'));
+	    return Redirect::route("users.create")->withInput()->withErrors($validator);
     }
 
 	public function kik_image() {
@@ -134,4 +135,17 @@ class UsersController extends BaseController {
         }
         return Redirect::to('/');
     }
+	private function _isAllowedToStore(array $inputAll) {
+		if (App::environment("local")) {
+			Log::debug("Always allow user to store when running local environment");
+			return true;
+		}
+
+		$date = (new DateTime)->modify('-1 day');
+
+		return ! User::whereIpAddress(Request::getClientIp())
+			->where('created_at', '>=', $date)
+			->whereSnapname(Input::get('snapname'))
+			->exists();
+	}
 }
