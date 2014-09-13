@@ -1,13 +1,13 @@
 {
-  "name": "letssnap",
-  "dependencies": {
-    "jquery": "~2.1.1",
-    "bootstrap": "~3.1.1",
-    "fontawesome": "~4.1.0",
-    "jcrop": "~0.9.12",
-    "bootstrap-fileinput": "~1.8.0",
-    "bootstrap-select": "~1.5.4",
-    "jquery-infinite-scroll": "~2.0.2",
-    "isMobile": "~0.3.2"
-  }
+"name": "letssnap",
+"dependencies": {
+"jquery": "~2.1.1",
+"bootstrap": "~3.1.1",
+"fontawesome": "~4.1.0",
+"jcrop": "~0.9.12",
+"bootstrap-fileinput": "~1.8.0",
+"bootstrap-select": "~1.5.4",
+"jquery-infinite-scroll": "~2.0.2",
+"isMobile": "~0.3.2"
+}
 }

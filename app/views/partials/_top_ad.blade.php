@@ -2,7 +2,6 @@
     <div class="row row-margin">
         <div class="col-xs-12">
             <div class="text-center">
-                @if($app->getLocale() == 'sv')
                   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                   <!-- Let's snap top -->
                   <ins class="adsbygoogle"
@@ -12,17 +11,6 @@
                   <script>
                   (adsbygoogle = window.adsbygoogle || []).push({});
                   </script>
-                @else
-                  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                  <!-- letssnap.com top -->
-                  <ins class="adsbygoogle"
-                       style="display:inline-block;width:728px;height:90px"
-                       data-ad-client="ca-pub-6725713569575731"
-                       data-ad-slot="7807935400"></ins>
-                  <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({});
-                  </script>
-                @endif
             </div>
         </div>
     </div>
@@ -33,7 +21,6 @@
     <div class="row row-margin">
         <div class="col-xs-12">
             <div class="text-center">
-              @if($app->getLocale() == 'sv')
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                 <!-- Let's snap top mobile -->
                 <ins class="adsbygoogle"
@@ -43,17 +30,6 @@
                 <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
-              @else
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- letssnap.com top mobile -->
-                <ins class="adsbygoogle"
-                     style="display:inline-block;width:320px;height:50px"
-                     data-ad-client="ca-pub-6725713569575731"
-                     data-ad-slot="1761401809"></ins>
-                <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-              @endif
             </div>
         </div>
     </div>
