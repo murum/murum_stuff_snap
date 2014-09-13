@@ -17,7 +17,7 @@
 
                 @else 
 
-                <a href="http://www.SingleParentMatch.com/i/af19049475-pr" target="_blank"><img src="https://secure.successfulmatch.com/images/spd/fbanner2.gif" border="0" alt="SingleParentMatch.com - the best dating site for single parents!"/></a>
+                <a href="http://chaturbate.com/affiliates/in/IsSO/cdB74/?track=default" target="_blank"><img src="https://ssl-ccstatic.highwebmedia.com/affiliates/banners/cb_s728x90_01b.jpg" border="0" alt="ChatUrBate - THE ACT OF MASTURBATING WHILE CHATTING ONLINE!"/></a>
 
                 @endif
             </div>
@@ -45,7 +45,7 @@
                 @else
 
                 <a href="http://www.SingleParentMatch.com/i/af19049475-pr" target="_blank"><img src="https://secure.successfulmatch.com/images/spd/fbanner1.gif" border="0" alt="SingleParentMatch.com - the best dating site for single parents!"/></a>
-                
+
                 @endif
             </div>
         </div>
