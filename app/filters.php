@@ -21,7 +21,6 @@ App::before(function($request)
 
 App::after(function($request, $response)
 {
-	App::forgetMiddleware('Illuminate\Http\FrameGuard');
 });
 
 /*
