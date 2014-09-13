@@ -42,7 +42,7 @@ class ImagesController extends BaseController
                     // move uploaded file from temp to uploads directory
                     $extension = Input::file('image')->getClientOriginalExtension();
 
-                    $fileName = md5(uniqid(rand(), true) . date('Y-m-d H:i:s')) . '.' . $extension;
+                    $fileName = md5(uniqid(rand(), true) . date(Common::STANDARD_DATETIME_FORMAT)) . '.' . $extension;
 
                     $destination_path = base_path() . '/card_images';
                     $url = '/uploads/'.$fileName;

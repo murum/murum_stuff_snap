@@ -1,6 +1,9 @@
 <?php
 
 class Common {
+
+	const STANDARD_DATETIME_FORMAT='Y-m-d H:i:s';
+
     /*
     * Method to strip tags globally.
     */

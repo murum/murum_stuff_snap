@@ -116,7 +116,7 @@ class UsersController extends BaseController {
             // If the bump were made with 1 day... there's to early for a bump
             $next_bump = $user->updated_at->modify('+1 day');
             $now = new DateTime();
-            if($next_bump >= $now->format('Y-m-d H:i:s')) {
+            if($next_bump >= $now->format(Common::STANDARD_DATETIME_FORMAT)) {
                 Flash::error(Lang::get('messages.bump.already_bumped') . $next_bump);
                 return Redirect::to('/');
             }
