@@ -61,3 +61,37 @@ Route::get(
     '/uploads/{file}',
     'ImagesController@get_image'
 );
+
+/*
+ * Admin section
+ */
+
+Route::filter("admin_ip_allowed", function() {
+    if ( ! in_array(Request::getClientIp(), [
+        "127.0.0.1",
+        "::1",
+    ])) {
+        App::abort(404);
+    };
+});
+
+Route::filter("admin", function() {
+    if ( ! Auth::check() ) {
+        App::abort(404);
+    }
+});
+
+Route::group(["before" => "admin_ip_allowed"], function() {
+    Route::get("___admin/login", ["as" => "admin.login", "uses" => "AdminController@getLogin"]);
+    Route::post("___admin/login", ["as" => "admin.login", "uses" => "AdminController@postLogin"]);
+});
+
+Route::group(["before" => "admin|admin_ip_allowed"], function() {
+    Route::get("___/admin/", ["as" => "admin.dashboard", "uses" => "AdminController@getDashboard"]);
+    Route::get("___/admin/handle_cards", ["as" => "admin.handle_cards", "uses" => "AdminController@getHandleCards"]);
+    Route::get("___/admin/delete_card/{id}", ["as" => "admin.delete_card", "uses" => "AdminController@getDeleteCard"]);
+    Route::get("___/admin/delete_card_block_ip/{id}", ["as" => "admin.delete_card_block_ip", "uses" => "AdminController@getDeleteCardBlockIp"]);
+    Route::get("___/admin/logout", ["as" => "admin.logout", "uses" => "AdminController@getLogout"]);
+});
+
+

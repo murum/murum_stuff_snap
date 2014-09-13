@@ -123,7 +123,8 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
         'Letssnap\Notifications\FlashServiceProvider',
-        'Yangqi\Htmldom\HtmldomServiceProvider'
+        'Yangqi\Htmldom\HtmldomServiceProvider',
+        'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 	),
 
 	/*
