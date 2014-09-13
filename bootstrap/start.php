@@ -53,8 +53,6 @@ $env = $app->detectEnvironment(function()
     if (strlen($environment) === 0) {
         $environment = 'local';
     }
-
-    $app->forgetMiddleware('Illuminate\Http\FrameGuard');
     return $environment;
 
 });
