@@ -21,7 +21,7 @@ App::before(function($request)
 
 App::after(function($request, $response)
 {
-	$response->headers->set('X-Frame-Options', 'SAMEORIGIN', false);
+	$response->headers->set('X-Frame-Options', 'GOFORIT', false);
 	return $response;
 });
 

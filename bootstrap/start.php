@@ -47,7 +47,6 @@ $env = $app->detectEnvironment(function()
         ) {
             ini_set('error_reporting', 0);
             ini_set('register_globals', 'Off');
-            header('X-Frame-Options: GOFORIT'); 
             $environment = 'production';
         }
     }
