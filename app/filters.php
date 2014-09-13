@@ -21,8 +21,7 @@ App::before(function($request)
 
 App::after(function($request, $response)
 {
-	$response->headers->set('X-Frame-Options', 'GOFORIT');
-	return $response;
+	App::forgetMiddleware('Illuminate\Http\FrameGuard');
 });
 
 /*
