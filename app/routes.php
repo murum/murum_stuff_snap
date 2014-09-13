@@ -1,13 +1,13 @@
 <?php
 
-Route::get('/', array('as' => 'home', 'uses' => 'UsersController@index'));
-Route::get('users/create', array('as' => 'users.create', 'uses' => 'UsersController@create') );
-Route::get('skapa', array('uses' => 'UsersController@create') );
-Route::get('user/{username}', array('as' => 'users.show', 'uses' => 'UsersController@show') );
-Route::post('users/create', array('as' => 'users.store', 'uses' => 'UsersController@store') );
-Route::post('kik_image', array('as' => 'users.kik.image', 'uses' => 'UsersController@kik_image'));
-Route::get('users/bump', array('as' => 'users.bump', 'uses' => 'UsersController@get_bump') );
-Route::post('users/bump', array('as' => 'users.bump', 'uses' => 'UsersController@post_bump') );
+Route::get('/', array('as' => 'home', 'uses' => 'CardsController@index'));
+Route::get('cards/create', array('as' => 'cards.create', 'uses' => 'CardsController@create') );
+Route::get('skapa', array('uses' => 'CardsController@create') );
+Route::get('user/{username}', array('as' => 'cards.show', 'uses' => 'CardsController@show') );
+Route::post('cards/create', array('as' => 'cards.store', 'uses' => 'CardsController@store') );
+Route::post('kik_image', array('as' => 'cards.kik.image', 'uses' => 'CardsController@kik_image'));
+Route::get('cards/bump', array('as' => 'cards.bump', 'uses' => 'CardsController@get_bump') );
+Route::post('cards/bump', array('as' => 'cards.bump', 'uses' => 'CardsController@post_bump') );
 
 Route::post('images/create', array('as' => 'images.store', 'uses' => 'ImagesController@store') );
 Route::post('images/update', array('as' => 'images.update', 'uses' => 'ImagesController@update') );

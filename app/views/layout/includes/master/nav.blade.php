@@ -19,21 +19,21 @@
                 @else
                 @endif
                 <li class="nav-item-add">
-                    <a href="{{ route('users.create') }}">
+                    <a href="{{ route('cards.create') }}">
                       <i class="icon icon-addcardsymbol"></i>
                       {{ Lang::get('letssnap.nav.add') }}
                     </a>
                 </li>
 
                 <li class="hidden-xs hidden-sm nav-item-bump">
-                    <a href="{{ route('users.bump') }}">
+                    <a href="{{ route('cards.bump') }}">
                       <i class="icon icon-bumpsymbol"></i>
                       {{ Lang::get('letssnap.nav.bump') }}
                     </a>
                 </li>
 
                 <li class="visible-xs visible-sm nav-item-bump-mobile">
-                    <a href="{{ route('users.bump') }}">
+                    <a href="{{ route('cards.bump') }}">
                     <i class="icon icon-bumpsymbol"></i>
                         {{ Lang::get('letssnap.nav.bump') }}
                     </a>

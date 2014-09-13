@@ -1,4 +1,4 @@
-{{ Form::open(['route' => ['users.bump'], 'class' => 'form form-inline']) }}
+{{ Form::open(['route' => ['cards.bump'], 'class' => 'form form-inline']) }}
 <div class="row">
     <div class="col-sm-12 col-md-6">
         <p>

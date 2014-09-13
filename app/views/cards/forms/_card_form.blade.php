@@ -1,4 +1,4 @@
-<div class="user-create-forms">
+<div class="card-create-forms">
     {{--
     {{ Form::open(['route' => ['images.store'], 'files' => true, 'class' => 'form form-horizontal image-form']) }}
     <div class="form-group">
@@ -16,10 +16,10 @@
     {{ Form::close() }}
     --}}
 
-    {{ Form::open(['route' => ['users.store'], 'files' => true, 'class' => 'form form-horizontal form-user-create']) }}
+    {{ Form::open(['route' => ['cards.store'], 'files' => true, 'class' => 'form form-horizontal form-card-create']) }}
     <div class="form-group">
 
-        {{-- Snapchat user --}}
+        {{-- Snapchat card --}}
         <div class="col-xs-12 col-sm-4">
             {{ Form::label('snapname', Lang::get('letssnap.label_snapname'), ['class' => 'control-label']) }}
             {{ Form::text('snapname', null, ['class' => 'form-control', 'maxlength' => '15']) }}
@@ -81,7 +81,7 @@
         </div>
     </div>
 
-    <div class="form-group user-form-rules">
+    <div class="form-group card-form-rules">
         <div class="col-xs-12">
             <label>
                 <span class="text">

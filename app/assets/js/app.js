@@ -64,7 +64,7 @@ $(function() {
 
     $('button#modify-image').on('click', function() {
         $('div.image-cropper').removeClass('hidden');
-        $('div.user-create-forms').addClass('hidden');
+        $('div.card-create-forms').addClass('hidden');
 
 
         var JcropAPI = $('img#image-cropper').data('Jcrop');
@@ -171,13 +171,13 @@ $(function() {
     $('input[name="snapname"]').on('keyup', function() {
         var amount = check_usernames_amount();
 
-        $('span.users-item-name-text-update').text($(this).val());
+        $('span.cards-item-name-text-update').text($(this).val());
 
-        $('ul.users-item-usernames').removeClass('users-item-usernames-1');
-        $('ul.users-item-usernames').removeClass('users-item-usernames-2');
-        $('ul.users-item-usernames').removeClass('users-item-usernames-3');
+        $('ul.cards-item-usernames').removeClass('cards-item-usernames-1');
+        $('ul.cards-item-usernames').removeClass('cards-item-usernames-2');
+        $('ul.cards-item-usernames').removeClass('cards-item-usernames-3');
 
-        $('ul.users-item-usernames').addClass('users-item-usernames-'+amount);
+        $('ul.cards-item-usernames').addClass('cards-item-usernames-'+amount);
     });
 
     $('input[name="kik"]').on('focusout', function() {
@@ -188,16 +188,16 @@ $(function() {
             data: {'kik': kik},
             dataType: 'json',
             success: function(data) {
-                $('div.users-item-image img#image-preview').attr('src', data.source);
+                $('div.cards-item-image img#image-preview').attr('src', data.source);
             }
         })
     })
 
     $('input[name="snapname"]').on('keyup', function() {
         var amount = check_usernames_amount();
-        var button = $('.users-item-usernames-snapchat');
-        var usernames = $('ul.users-item-usernames');
-        var textUpdate = $('.users-item-name-text-update');
+        var button = $('.cards-item-usernames-snapchat');
+        var usernames = $('ul.cards-item-usernames');
+        var textUpdate = $('.cards-item-name-text-update');
 
         if($('input[name="kik"]').val() == '') {
             textUpdate.text($(this).val());
@@ -206,7 +206,7 @@ $(function() {
         if($(this).val() != '') {
             button.removeClass('hidden');
 
-            $('.users-item-usernames-kik').removeClass('first');
+            $('.cards-item-usernames-kik').removeClass('first');
 
             if( ! isMobile.phone ) {
                 button.css({
@@ -217,20 +217,20 @@ $(function() {
         } else {
             button.addClass('hidden');
         }
-        usernames.removeClass('users-item-usernames-1');
-        usernames.removeClass('users-item-usernames-2');
-        usernames.removeClass('users-item-usernames-3');
+        usernames.removeClass('cards-item-usernames-1');
+        usernames.removeClass('cards-item-usernames-2');
+        usernames.removeClass('cards-item-usernames-3');
 
-        usernames.addClass('users-item-usernames-'+amount);
+        usernames.addClass('cards-item-usernames-'+amount);
     });
 
 
     $('input[name="kik"]').on('keyup', function() {
         var amount = check_usernames_amount();
-        var button = $('.users-item-usernames-kik');
-        var usernames = $('ul.users-item-usernames');
+        var button = $('.cards-item-usernames-kik');
+        var usernames = $('ul.cards-item-usernames');
 
-        var textUpdate = $('.users-item-name-text-update');
+        var textUpdate = $('.cards-item-name-text-update');
 
         if($('input[name="snapname"]').val() == '') {
             textUpdate.text($(this).val());
@@ -249,17 +249,17 @@ $(function() {
         } else {
             button.addClass('hidden');
         }
-        usernames.removeClass('users-item-usernames-1');
-        usernames.removeClass('users-item-usernames-2');
-        usernames.removeClass('users-item-usernames-3');
+        usernames.removeClass('cards-item-usernames-1');
+        usernames.removeClass('cards-item-usernames-2');
+        usernames.removeClass('cards-item-usernames-3');
 
-        usernames.addClass('users-item-usernames-'+amount);
+        usernames.addClass('cards-item-usernames-'+amount);
     });
 
     $('input[name="instagram"]').on('keyup', function() {
         var amount = check_usernames_amount();
-        var button = $('.users-item-usernames-instagram');
-        var usernames = $('ul.users-item-usernames');
+        var button = $('.cards-item-usernames-instagram');
+        var usernames = $('ul.cards-item-usernames');
 
         if($('input[name="instagram"]').val() != '') {
             button.removeClass('hidden');
@@ -273,39 +273,39 @@ $(function() {
         } else {
             button.addClass('hidden');
         }
-        usernames.removeClass('users-item-usernames-1');
-        usernames.removeClass('users-item-usernames-2');
-        usernames.removeClass('users-item-usernames-3');
+        usernames.removeClass('cards-item-usernames-1');
+        usernames.removeClass('cards-item-usernames-2');
+        usernames.removeClass('cards-item-usernames-3');
 
-        usernames.addClass('users-item-usernames-'+amount);
+        usernames.addClass('cards-item-usernames-'+amount);
     });
 
     $('input[name="age"]').on('keyup', function() {
-        $('span.users-item-name-age-text').text($(this).val());
+        $('span.cards-item-name-age-text').text($(this).val());
     });
 
     $('textarea[name="description"]').on('keyup', function() {
-        $('div.users-item-description p').text($(this).val());
+        $('div.cards-item-description p').text($(this).val());
     });
 
     $('input[name="sex"]').on('change', function() {
-        $('div.users-item-name i.icon').removeClass('icon-transgender');
+        $('div.cards-item-name i.icon').removeClass('icon-transgender');
 
         switch($(this).val()) {
             case '1':
-                $('div.users-item-name i.icon').addClass('icon-boysymbol');
-                $('div.users-item-name i.icon').removeClass('icon-girlsymbol');
+                $('div.cards-item-name i.icon').addClass('icon-boysymbol');
+                $('div.cards-item-name i.icon').removeClass('icon-girlsymbol');
                 break;
             case '2':
-                $('div.users-item-name i.icon').addClass('icon-girlsymbol');
-                $('div.users-item-name i.icon').removeClass('icon-boysymbol');
+                $('div.cards-item-name i.icon').addClass('icon-girlsymbol');
+                $('div.cards-item-name i.icon').removeClass('icon-boysymbol');
                 break;
         };
     });
 
     $("button.skip-crop").on('click', function() {
         $('div.image-cropper').addClass('hidden');
-        $('div.user-create-forms').removeClass('hidden');
+        $('div.card-create-forms').removeClass('hidden');
         $('div.image-form-modify').removeClass('hidden');
     });
 
@@ -324,7 +324,7 @@ $(function() {
             type: method,
             success: function(data) {
                 $('div.image-cropper').addClass('hidden');
-                $('div.user-create-forms').removeClass('hidden');
+                $('div.card-create-forms').removeClass('hidden');
                 $('div.image-form-modify').addClass('hidden');
             },
             // Form data
@@ -334,7 +334,7 @@ $(function() {
 
     // Set of card usernames boxes
     if( ! isMobile.phone ) {
-        $('ul.users-item-usernames li').each(function () {
+        $('ul.cards-item-usernames li').each(function () {
             $(this).css({
                 "height": (parseInt($(this).width()) + parseInt($(this).css('padding-left')) + parseInt($(this).css('padding-right'))),
                 "line-height": (parseInt($(this).width()) + parseInt($(this).css('padding-left')) + parseInt($(this).css('padding-right'))) + 'px',
@@ -342,7 +342,7 @@ $(function() {
         });
 
         $(window).resize(function () {
-            $('ul.users-item-usernames li').each(function () {
+            $('ul.cards-item-usernames li').each(function () {
                 $(this).css({
                     "height": (parseInt($(this).width()) + parseInt($(this).css('padding-left')) + parseInt($(this).css('padding-right'))),
                     "line-height": (parseInt($(this).width()) + parseInt($(this).css('padding-left')) + parseInt($(this).css('padding-right'))) + 'px',

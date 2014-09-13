@@ -1,10 +1,10 @@
 <?php
 
-class UsersController extends BaseController {
+class CardsController extends BaseController {
 
     public function index() {
-        $users = User::orderBy('updated_at', 'DESC')->paginate(12);
-        return View::make('users.index')->with('users', $users);
+        $cards = Card::orderBy('updated_at', 'DESC')->paginate(12);
+        return View::make('cards.index')->with('cards', $cards);
     }
 
     public function create() {
@@ -25,66 +25,66 @@ class UsersController extends BaseController {
             return Redirect::to('/');
         }
 
-        return View::make('users.create');
+        return View::make('cards.create');
     }
 
     public function show($username) {
-        $user = User::where('snapname', '=', $username)->firstOrFail();
-        return View::make('users.show')->with('user', $user);
+        $card = Card::where('snapname', '=', $username)->firstOrFail();
+        return View::make('cards.show')->with('user', $card);
     }
 
     public function store() {
 	    if ( ! $this->_isAllowedToStore(Input::all()) ) {
-		    $user = Common::getUserByBusyIP();
-		    Flash::error( Lang::get('messages.error.ip_used') . ' ' .$user->created_at->modify('+1 day'));
-		    Log::info("User id: $user->id snapname: $user->snapname must wait before adding new card");
+		    $card = Common::getUserByBusyIP();
+		    Flash::error( Lang::get('messages.error.ip_used') . ' ' .$card->created_at->modify('+1 day'));
+		    Log::info("Card id: $card->id snapname: $card->snapname must wait before adding new card");
 		    return Redirect::home();
 	    }
 
-	    $validator = Validator::make(Input::all(), User::$rules);
+	    $validator = Validator::make(Input::all(), Card::$rules);
 
 	    if ($validator->passes()) {
-		    $user = new User;
+		    $card = new Card;
 
-		    $user->snapname = Input::get('snapname');
-		    $user->description = Input::get('description');
-		    $user->ip_address = Request::getClientIp();
+		    $card->snapname = Input::get('snapname');
+		    $card->description = Input::get('description');
+		    $card->ip_address = Request::getClientIp();
 
 		    if (Input::has('age')) {
-			    $user->age = Input::get('age');
+			    $card->age = Input::get('age');
 		    }
 
 		    if (Input::has('kik')) {
-			    $user->kik = Input::get('kik');
+			    $card->kik = Input::get('kik');
 
-			    $html = new Htmldom('http://kik.com/u/'.$user->kik);
+			    $html = new Htmldom('http://kik.com/u/'.$card->kik);
 			    foreach($html->find('img') as $element) {
-				    $user->kik_picture = $element->src;
+				    $card->kik_picture = $element->src;
 			    }
 		    }
 
 		    if (Input::has('instagram')) {
-			    $user->instagram = Input::get('instagram');
+			    $card->instagram = Input::get('instagram');
 		    }
 
 		    if( Input::has('sex') ) {
-			    $user->sex = Input::get('sex');
+			    $card->sex = Input::get('sex');
 		    }
 
 		    if (Input::has('image')) {
-			    $user->picture = Input::get('image');
+			    $card->picture = Input::get('image');
 		    }
 
-		    if( $user->save() ) {
+		    if( $card->save() ) {
 			    Flash::success(Lang::get('messages.success.created_card'));
 			    return Redirect::to('/');
 		    } else {
 			    Flash::error(Lang::get('message.error.create_card_fail_save'));
-                return Redirect::route("users.create")->withInput();
+                return Redirect::route("cards.create")->withInput();
 		    }
 	    }
 	    Flash::error(Lang::get('messages.error.validation'));
-	    return Redirect::route("users.create")->withInput()->withErrors($validator);
+	    return Redirect::route("cards.create")->withInput()->withErrors($validator);
     }
 
 	public function kik_image() {
@@ -111,11 +111,11 @@ class UsersController extends BaseController {
 
     public function post_bump() {
         $snapname = Input::get('bump_snapname');
-        $user = User::whereSnapname($snapname)->get()->last();
+        $card = Card::whereSnapname($snapname)->get()->last();
 
-        if($user) {
+        if($card) {
             // If the bump were made with 1 day... there's to early for a bump
-            $next_bump = $user->updated_at->modify('+1 day');
+            $next_bump = $card->updated_at->modify('+1 day');
             $now = new DateTime();
             if($next_bump >= $now->format(Common::STANDARD_DATETIME_FORMAT)) {
                 Flash::error(Lang::get('messages.bump.already_bumped') . $next_bump);
@@ -123,8 +123,8 @@ class UsersController extends BaseController {
             }
 
 
-            $user->bumps += 1;
-            if($user->save()){
+            $card->bumps += 1;
+            if($card->save()){
                 Flash::success(Lang::get('messages.bump.success'));
                 return Redirect::to('/');
             } else {
@@ -137,13 +137,13 @@ class UsersController extends BaseController {
     }
 	private function _isAllowedToStore(array $inputAll) {
 		if (App::environment("local")) {
-			Log::debug("Always allow user to store when running local environment");
+			Log::debug("Always allow cards to be stored when running local environment");
 			return true;
 		}
 
 		$date = (new DateTime)->modify('-1 day');
 
-		return ! User::whereIpAddress(Request::getClientIp())
+		return ! Card::whereIpAddress(Request::getClientIp())
 			->where('created_at', '>=', $date)
 			->whereSnapname(Input::get('snapname'))
 			->exists();
