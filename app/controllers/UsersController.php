@@ -34,7 +34,7 @@ class UsersController extends BaseController {
     }
 
     public function store() {
-        if( Common::ipIsFree() ) {
+        if( Common::ipIsFree() || App::environment("local") ) {
             $validator = Validator::make(Input::all(), User::$rules);
 
             if ($validator->passes()) {
