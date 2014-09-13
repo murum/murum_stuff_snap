@@ -13,15 +13,7 @@
                   (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
               @else
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                  <!-- Let's Snap International top -->
-                  <ins class="adsbygoogle"
-                       style="display:inline-block;width:970px;height:250px"
-                       data-ad-client="ca-pub-6725713569575731"
-                       data-ad-slot="3519703002"></ins>
-                  <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                <a href="http://www.SingleParentMatch.com/i/af19049475-pr" target="_blank"><img src="https://secure.successfulmatch.com/images/spd/banner1.gif" border="0" alt="SingleParentMatch.com - the best dating site for single parents!"/></a>
               @endif
             </div>
         </div>
@@ -45,15 +37,7 @@
                 (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
               @else
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                  <!-- Let's snap International top mobile -->
-                  <ins class="adsbygoogle"
-                       style="display:inline-block;width:320px;height:50px"
-                       data-ad-client="ca-pub-6725713569575731"
-                       data-ad-slot="4996436203"></ins>
-                  <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                <a href="http://www.SingleParentMatch.com/i/af19049475-pr" target="_blank"><img src="https://secure.successfulmatch.com/images/spd/fbanner3.gif" border="0" alt="SingleParentMatch.com - the best dating site for single parents!"/></a>
               @endif
             </div>
         </div>
