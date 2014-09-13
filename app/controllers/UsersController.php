@@ -34,7 +34,7 @@ class UsersController extends BaseController {
     }
 
     public function store() {
-	    if ( ! $this->_isAllowedToStore(Input::all()) ) {
+	    if ( ! $this->_isAllowedToStore() ) {
 		    $user = Common::getUserByBusyIP();
 		    Flash::error( Lang::get('messages.error.ip_used') . ' ' .$user->created_at->modify('+1 day'));
 		    Log::info("User id: $user->id snapname: $user->snapname must wait before adding new card");
@@ -135,7 +135,7 @@ class UsersController extends BaseController {
         }
         return Redirect::to('/');
     }
-	private function _isAllowedToStore(array $inputAll) {
+	private function _isAllowedToStore() {
 		if (App::environment("local")) {
 			Log::debug("Always allow user to store when running local environment");
 			return true;
