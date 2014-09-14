@@ -69,6 +69,8 @@ Route::get(
 Route::filter("admin_ip_allowed", function() {
     if ( ! in_array(Request::getClientIp(), [
         "127.0.0.1",
+        "192.168.10.1",
+        "83.252.164.5",
         "::1",
     ])) {
         App::abort(404);
@@ -87,13 +89,13 @@ Route::group(["before" => "admin_ip_allowed"], function() {
 });
 
 Route::group(["before" => "admin|admin_ip_allowed"], function() {
-    Route::get("___/admin/", ["as" => "admin.dashboard", "uses" => "AdminController@getDashboard"]);
-    Route::get("___/admin/handle_cards", ["as" => "admin.handle_cards", "uses" => "AdminController@getHandleCards"]);
-    Route::get("___/admin/delete_card/{id}", ["as" => "admin.delete_card", "uses" => "AdminController@getDeleteCard"]);
-    Route::get("___/admin/delete_card_block_ip/{id}", ["as" => "admin.delete_card_block_ip", "uses" => "AdminController@getDeleteCardBlockIp"]);
-    Route::get("___/admin/logout", ["as" => "admin.logout", "uses" => "AdminController@getLogout"]);
-    Route::get("___/admin/block_ip", ["as" => "admin.block_ip", "uses" => "AdminController@getBlockIp"]);
-    Route::post("___/admin/block_ip", ["as" => "admin.block_ip", "uses" => "AdminController@postBlockIp"]);
+    Route::get("___admin/", ["as" => "admin.dashboard", "uses" => "AdminController@getDashboard"]);
+    Route::get("___admin/handle_cards", ["as" => "admin.handle_cards", "uses" => "AdminController@getHandleCards"]);
+    Route::get("___admin/delete_card/{id}", ["as" => "admin.delete_card", "uses" => "AdminController@getDeleteCard"]);
+    Route::get("___admin/delete_card_block_ip/{id}", ["as" => "admin.delete_card_block_ip", "uses" => "AdminController@getDeleteCardBlockIp"]);
+    Route::get("___admin/logout", ["as" => "admin.logout", "uses" => "AdminController@getLogout"]);
+    Route::get("___admin/block_ip", ["as" => "admin.block_ip", "uses" => "AdminController@getBlockIp"]);
+    Route::post("___admin/block_ip", ["as" => "admin.block_ip", "uses" => "AdminController@postBlockIp"]);
 });
 
 
