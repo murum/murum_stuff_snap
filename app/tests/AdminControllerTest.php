@@ -20,6 +20,9 @@ class AdminControllerTest extends TestCase {
         $admin->role = implode(",", [Admin::ROLE_CAN_DELETE_CARD, Admin::ROLE_CAN_BLOCK_IP]);
         $this->be($admin);
 
+        // Visit dashboard first so we can Redirect::back() to it
+        $this->call("GET", route("admin.dashboard"));
+
         $this->call("GET", route("admin.delete_card_block_ip", [$card->id]));
         $this->assertTrue(BlockedIp::whereIp(self::UNIT_TEST_IP)->exists());
         $this->assertFalse(Card::whereId($card->id)->exists());

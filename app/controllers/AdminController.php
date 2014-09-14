@@ -24,10 +24,9 @@ class AdminController extends BaseController {
     }
     public function getDeleteCard($id) {
         $this->_checkHasRole(Admin::ROLE_CAN_DELETE_CARD);
-
         Card::findOrFail($id)->delete();
         Log::info("Admin: " . Auth::getUser()->username . " deleted card id: " . $id);
-        return $this->_redirectBackToDashboard();
+        return Redirect::back();
     }
     public function getDeleteCardBlockIp($id) {
         $this->_checkHasRole(Admin::ROLE_CAN_BLOCK_IP);
@@ -35,7 +34,7 @@ class AdminController extends BaseController {
         $this->getDeleteCard($id);
         BlockedIp::updateOrCreate(["ip" => $cardIp]);
         Log::info("Admin: " . Auth::getUser()->username . " blocked IP: " . $cardIp);
-        return $this->_redirectBackToDashboard();
+        return Redirect::back();
     }
     public function getLogout() {
         Auth::logout();
@@ -45,13 +44,6 @@ class AdminController extends BaseController {
         $roles = explode(",", Auth::getUser()->role);
         if ( ! in_array($role, $roles) ) {
             throw new Exception("Admin does not have role: " . $role);
-        }
-    }
-    private function _redirectBackToDashboard() {
-        if (Request::header("referer")) {
-            return Redirect::back();
-        } else {
-            return Redirect::route("admin.dashboard");
         }
     }
 }
