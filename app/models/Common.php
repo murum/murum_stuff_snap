@@ -45,7 +45,7 @@ class Common {
         $date = new DateTime();
         $date->modify('-1 day');
 
-        $users = User::whereIpAddress(Request::getClientIp())->where('created_at', '>=', $date)->get();
+        $users = Card::whereIpAddress(Request::getClientIp())->where('created_at', '>=', $date)->get();
 
         return (count($users) > 0) ? false : true;
     }
@@ -54,6 +54,6 @@ class Common {
         $date = new DateTime();
         $date->modify('-1 day');
 
-        return User::whereIpAddress(Request::getClientIp())->where('created_at', '>=', $date)->get()->last();
+        return Card::whereIpAddress(Request::getClientIp())->where('created_at', '>=', $date)->get()->last();
     }
 }
