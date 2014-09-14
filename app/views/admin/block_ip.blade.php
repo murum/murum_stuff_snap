@@ -2,23 +2,30 @@
 
 @section('content')
 
-<h1>Block IP</h1>
+	<h1>Block IP</h1>
 
-{{ Form::open() }}
+	{{ Form::open() }}
 
-{{ Form::text("ip", null, ["placeholder" => "IP"]) }}
+	<div class="form-group">
+		{{ Form::label("ip", "Ip") }}
+		{{ Form::text("ip", null, ["placeholder" => "IP", "class" => "form-control"]) }}
+	</div>
 
-{{ Form::submit("Block") }}
+	<div class="form-group">
+		{{ Form::submit("Block", ["class" => 'btn btn-success']) }}
+	</div>
 
-{{ Form::close() }}
+	{{ Form::close() }}
 
 
-<h2>Blocked IPs</h2>
+	@if($blockedIps->count() > 0)
+		<h2>Blocked IPs</h2>
 
-<ul>
-@foreach ($blockedIps as $blockedIp)
-   <li>{{{ $blockedIp->ip }}}
-@endforeach
-</ul>
+		<ul class="list-group">
+			@foreach ($blockedIps as $blockedIp)
+			   <li class="list-group-item">{{{ $blockedIp->ip }}}
+			@endforeach
+		</ul>
+	@endif
 
 @stop

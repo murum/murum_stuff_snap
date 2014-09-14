@@ -85,6 +85,17 @@ return array(
     /**
      * PAGE SPECIFIC TEXTS
      **/
+    'admin' => array(
+        'username' => 'Användarnamn',
+        'password' => 'Lösenord',
+        'submit' => 'Logga in',
+        'welcome' => 'Välkommen',
+        'handle_cards' => 'Hantera kort',
+        'block_ip' => 'Blockera IP',
+        'logout' => 'Logga ut',
+        'delete_card' => 'Ta bort',
+        'delete_card_block_ip' => 'Ta bort och blockera IP',
+    ),
     'bump' => array(
         'submit' => 'Bumpa',
         'info' => 'När du bumpar ditt kort så hamnar det först av alla, man kan bumpa max en gång om dagen',
