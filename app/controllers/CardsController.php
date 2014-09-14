@@ -8,23 +8,10 @@ class CardsController extends BaseController {
     }
 
     public function create() {
-        if(
-            Request::getClientIp() == '109.58.145.73'
-            ||
-            Request::getClientIp() == '78.72.85.42'
-            ||
-            Request::getClientIp() == '46.195.125.40'
-            ||
-            Request::getClientIp() == '90.141.181.66'
-            ||
-            Request::getClientIP() == '193.138.219.229'
-            ||
-            Request::getClientIP() == '213.64.97.73'
-        ) {
+        if ( BlockedIp::isBlocked() ) {
             Flash::error(Lang::get('messages.error.create_banned'));
             return Redirect::to('/');
         }
-
         return View::make('cards.create');
     }
 

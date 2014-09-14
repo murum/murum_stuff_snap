@@ -23,18 +23,35 @@ class AdminController extends BaseController {
         return View::make("admin.handle_cards")->with("cards", $cards);
     }
     public function getDeleteCard($id) {
+        $this->_checkHasRole(Admin::ROLE_CAN_DELETE_CARD);
+
         Card::findOrFail($id)->delete();
         Log::info("Admin: " . Auth::getUser()->username . " deleted card id: " . $id);
-        return Redirect::back();
+        return $this->_redirectBackToDashboard();
     }
     public function getDeleteCardBlockIp($id) {
-        throw new Exception("TODO implement IP block");
-
-        //$this->getDeleteCard($id);
-        return Redirect::back();
+        $this->_checkHasRole(Admin::ROLE_CAN_BLOCK_IP);
+        $cardIp = Card::findorFail($id)->ip_address;
+        $this->getDeleteCard($id);
+        BlockedIp::updateOrCreate(["ip" => $cardIp]);
+        Log::info("Admin: " . Auth::getUser()->username . " blocked IP: " . $cardIp);
+        return $this->_redirectBackToDashboard();
     }
     public function getLogout() {
         Auth::logout();
         return Redirect::route("admin.login");
+    }
+    private function _checkHasRole($role) {
+        $roles = explode(",", Auth::getUser()->role);
+        if ( ! in_array($role, $roles) ) {
+            throw new Exception("Admin does not have role: " . $role);
+        }
+    }
+    private function _redirectBackToDashboard() {
+        if (Request::header("referer")) {
+            return Redirect::back();
+        } else {
+            return Redirect::route("admin.dashboard");
+        }
     }
 }

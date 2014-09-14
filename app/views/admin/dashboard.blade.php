@@ -1,6 +1,8 @@
-<p>
-Welcome {{{ $admin->username }}}
-</p>
+@extends('layout.master')
+
+@section('content')
+
+<h1>Welcome {{{ $admin->username }}}</h1>
 
 <p>
 <a href="{{ route("admin.handle_cards") }}">Handle cards</a>
@@ -10,3 +12,4 @@ Welcome {{{ $admin->username }}}
 <a href="{{ route("admin.logout") }}">Logout</a>
 </p>
 
+@stop
