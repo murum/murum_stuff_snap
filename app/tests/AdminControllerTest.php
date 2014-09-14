@@ -15,10 +15,7 @@ class AdminControllerTest extends TestCase {
         $card->ip_address = self::UNIT_TEST_IP;
         $card->save();
 
-        $admin = new Admin;
-        $admin->username = self::UNIT_TEST_CARD;
-        $admin->role = implode(",", [Admin::ROLE_CAN_DELETE_CARD, Admin::ROLE_CAN_BLOCK_IP]);
-        $this->be($admin);
+        $this->_becomeAdmin();
 
         // Visit dashboard first so we can Redirect::back() to it
         $this->call("GET", route("admin.dashboard"));
@@ -26,6 +23,20 @@ class AdminControllerTest extends TestCase {
         $this->call("GET", route("admin.delete_card_block_ip", [$card->id]));
         $this->assertTrue(BlockedIp::whereIp(self::UNIT_TEST_IP)->exists());
         $this->assertFalse(Card::whereId($card->id)->exists());
+    }
+    public function test_block_ip_manually() {
+        $this->_becomeAdmin();
+
+        BlockedIp::whereIp(self::UNIT_TEST_IP)->delete();
+
+        $this->call("POST", route("admin.block_ip", ["ip" => self::UNIT_TEST_IP]));
+        $this->assertTrue(BlockedIp::whereIp(self::UNIT_TEST_IP)->exists());
+    }
+    private function _becomeAdmin() {
+        $admin = new Admin;
+        $admin->username = self::UNIT_TEST_CARD;
+        $admin->role = implode(",", [Admin::ROLE_CAN_DELETE_CARD, Admin::ROLE_CAN_BLOCK_IP]);
+        $this->be($admin);
     }
 }
 

@@ -92,6 +92,8 @@ Route::group(["before" => "admin|admin_ip_allowed"], function() {
     Route::get("___/admin/delete_card/{id}", ["as" => "admin.delete_card", "uses" => "AdminController@getDeleteCard"]);
     Route::get("___/admin/delete_card_block_ip/{id}", ["as" => "admin.delete_card_block_ip", "uses" => "AdminController@getDeleteCardBlockIp"]);
     Route::get("___/admin/logout", ["as" => "admin.logout", "uses" => "AdminController@getLogout"]);
+    Route::get("___/admin/block_ip", ["as" => "admin.block_ip", "uses" => "AdminController@getBlockIp"]);
+    Route::post("___/admin/block_ip", ["as" => "admin.block_ip", "uses" => "AdminController@postBlockIp"]);
 });
 
 

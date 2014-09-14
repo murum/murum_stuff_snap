@@ -9,6 +9,10 @@
 </p>
 
 <p>
+<a href="{{ route("admin.block_ip") }}">Block IP</a>
+</p>
+
+<p>
 <a href="{{ route("admin.logout") }}">Logout</a>
 </p>
 

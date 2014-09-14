@@ -40,6 +40,17 @@ class AdminController extends BaseController {
         Auth::logout();
         return Redirect::route("admin.login");
     }
+    public function getBlockIp() {
+        return View::make("admin.block_ip")
+            ->with("blockedIps", BlockedIp::orderBy("updated_at", "desc")->get());
+    }
+    public function postBlockIp() {
+        $this->_checkHasRole(Admin::ROLE_CAN_BLOCK_IP);
+        $ip = Input::get("ip");
+        BlockedIp::updateOrCreate(["ip" => $ip]);
+        Log::info("Admin: " . Auth::getUser()->username . " blocked IP: $ip");
+        return Redirect::route("admin.block_ip");
+    }
     private function _checkHasRole($role) {
         $roles = explode(",", Auth::getUser()->role);
         if ( ! in_array($role, $roles) ) {
