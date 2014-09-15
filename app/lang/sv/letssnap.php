@@ -95,6 +95,7 @@ return array(
         'logout' => 'Logga ut',
         'delete_card' => 'Ta bort',
         'delete_card_block_ip' => 'Ta bort och blockera IP',
+        'ip_was_blocked' => 'Ip-addressen: :ip blockerades.',
     ),
     'bump' => array(
         'submit' => 'Bumpa',
