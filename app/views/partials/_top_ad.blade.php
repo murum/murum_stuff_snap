@@ -12,8 +12,6 @@
                   <script>
                   (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
-              @else
-                <a href="http://chaturbate.com/affiliates/in/IsSO/cdB74/?track=default" target="_blank"><img src="https://ssl-ccstatic.highwebmedia.com/affiliates/banners/cb_s728x90_01b.jpg" border="0" alt="ChatUrBate - THE ACT OF MASTURBATING WHILE CHATTING ONLINE!"/></a>
               @endif
             </div>
         </div>
