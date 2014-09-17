@@ -47,8 +47,12 @@ class AdminController extends BaseController {
     public function postBlockIp() {
         $this->_checkHasRole(Admin::ROLE_CAN_BLOCK_IP);
         $ip = Input::get("ip");
-        BlockedIp::updateOrCreate(["ip" => $ip]);
+        $reason = Input::get("reason", null);
+        $blockedIp = BlockedIp::firstOrNew(["ip" => $ip]);
+        $blockedIp->reason = $reason ? $reason : null;
+        $blockedIp->save();
         Log::info("Admin: " . Auth::getUser()->username . " blocked IP: $ip");
+        Flash::success(Lang::get('letssnap.admin.ip_was_blocked', ["ip" => $ip]));
         return Redirect::route("admin.block_ip");
     }
     private function _checkHasRole($role) {
