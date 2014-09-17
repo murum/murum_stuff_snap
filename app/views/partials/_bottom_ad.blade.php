@@ -2,9 +2,6 @@
     <div class="row row-margin">
         <div class="col-xs-12">
             <div class="text-center">
-
-                @if($app->getLocale() == 'sv')
-
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- Let's snap bottom -->
                     <ins class="adsbygoogle"
@@ -14,12 +11,6 @@
                     <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
-
-                @else 
-
-                <a href="http://chaturbate.com/affiliates/in/IsSO/cdB74/?track=default" target="_blank"><img src="https://ssl-ccstatic.highwebmedia.com/affiliates/banners/cb_s728x90_01b.jpg" border="0" alt="ChatUrBate - THE ACT OF MASTURBATING WHILE CHATTING ONLINE!"/></a>
-
-                @endif
             </div>
         </div>
     </div>

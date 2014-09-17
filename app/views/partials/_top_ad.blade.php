@@ -2,19 +2,15 @@
     <div class="row row-margin">
         <div class="col-xs-12">
             <div class="text-center">
-              @if ($app->getLocale() == 'sv')
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                  <!-- Let's snap top -->
-                  <ins class="adsbygoogle"
-                       style="display:inline-block;width:728px;height:90px"
-                       data-ad-client="ca-pub-6725713569575731"
-                       data-ad-slot="7467491805"></ins>
-                  <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-              @else
-                <a href="http://chaturbate.com/affiliates/in/IsSO/cdB74/?track=default" target="_blank"><img src="https://ssl-ccstatic.highwebmedia.com/affiliates/banners/cb_s728x90_01b.jpg" border="0" alt="ChatUrBate - THE ACT OF MASTURBATING WHILE CHATTING ONLINE!"/></a>
-              @endif
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Let's snap top -->
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:728px;height:90px"
+                     data-ad-client="ca-pub-6725713569575731"
+                     data-ad-slot="7467491805"></ins>
+                <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
             </div>
         </div>
     </div>
