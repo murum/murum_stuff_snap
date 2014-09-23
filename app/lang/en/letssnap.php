@@ -85,6 +85,18 @@ return array(
     /**
      * PAGE SPECIFIC TEXTS
      **/
+    'admin' => array(
+        'username' => 'Username',
+        'password' => 'Password',
+        'submit' => 'Log in',
+        'welcome' => 'Welcome',
+        'handle_cards' => 'Handle cards',
+        'block_ip' => 'Block IP',
+        'logout' => 'Log Out',
+        'delete_card' => 'Delete',
+        'delete_card_block_ip' => 'Delete and block IP',
+        'ip_was_blocked' => 'Ip address: :ip was blocked.',
+    ),
     'bump' => array(
         'submit' => 'Bump it!',
         'info' => 'When you bump your card it\'ll be the first card, you can bump your card once 24h',

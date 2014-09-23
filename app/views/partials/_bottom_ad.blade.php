@@ -2,9 +2,6 @@
     <div class="row row-margin">
         <div class="col-xs-12">
             <div class="text-center">
-
-                @if($app->getLocale() == 'sv')
-
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- Let's snap bottom -->
                     <ins class="adsbygoogle"
@@ -14,8 +11,6 @@
                     <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
-
-                @endif
             </div>
         </div>
     </div>

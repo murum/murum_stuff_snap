@@ -1,13 +1,13 @@
 <?php
 
-Route::get('/', array('as' => 'home', 'uses' => 'UsersController@index'));
-Route::get('users/create', array('as' => 'users.create', 'uses' => 'UsersController@create') );
-Route::get('skapa', array('uses' => 'UsersController@create') );
-Route::get('user/{username}', array('as' => 'users.show', 'uses' => 'UsersController@show') );
-Route::post('users/create', array('as' => 'users.store', 'uses' => 'UsersController@store') );
-Route::post('kik_image', array('as' => 'users.kik.image', 'uses' => 'UsersController@kik_image'));
-Route::get('users/bump', array('as' => 'users.bump', 'uses' => 'UsersController@get_bump') );
-Route::post('users/bump', array('as' => 'users.bump', 'uses' => 'UsersController@post_bump') );
+Route::get('/', array('as' => 'home', 'uses' => 'CardsController@index'));
+Route::get('cards/create', array('as' => 'cards.create', 'uses' => 'CardsController@create') );
+Route::get('skapa', array('uses' => 'CardsController@create') );
+Route::get('user/{username}', array('as' => 'cards.show', 'uses' => 'CardsController@show') );
+Route::post('cards/create', array('as' => 'cards.store', 'uses' => 'CardsController@store') );
+Route::post('kik_image', array('as' => 'cards.kik.image', 'uses' => 'CardsController@kik_image'));
+Route::get('cards/bump', array('as' => 'cards.bump', 'uses' => 'CardsController@get_bump') );
+Route::post('cards/bump', array('as' => 'cards.bump', 'uses' => 'CardsController@post_bump') );
 
 Route::post('images/create', array('as' => 'images.store', 'uses' => 'ImagesController@store') );
 Route::post('images/update', array('as' => 'images.update', 'uses' => 'ImagesController@update') );
@@ -61,3 +61,42 @@ Route::get(
     '/uploads/{file}',
     'ImagesController@get_image'
 );
+
+/*
+ * Admin section
+ */
+
+Route::filter("admin_ip_allowed", function() {
+    if ( ! in_array(Request::getClientIp(), [
+        "127.0.0.1",
+        "192.168.10.1",
+        "83.252.164.5",
+        "195.67.132.74",
+        "::1",
+    ])) {
+        App::abort(404);
+    };
+});
+
+Route::filter("admin", function() {
+    if ( ! Auth::check() ) {
+        App::abort(404);
+    }
+});
+
+Route::group(["before" => "admin_ip_allowed"], function() {
+    Route::get("___admin/login", ["as" => "admin.login", "uses" => "AdminController@getLogin"]);
+    Route::post("___admin/login", ["as" => "admin.login", "uses" => "AdminController@postLogin"]);
+});
+
+Route::group(["before" => "admin|admin_ip_allowed"], function() {
+    Route::get("___admin/", ["as" => "admin.dashboard", "uses" => "AdminController@getDashboard"]);
+    Route::get("___admin/handle_cards", ["as" => "admin.handle_cards", "uses" => "AdminController@getHandleCards"]);
+    Route::get("___admin/delete_card/{id}", ["as" => "admin.delete_card", "uses" => "AdminController@getDeleteCard"]);
+    Route::get("___admin/delete_card_block_ip/{id}", ["as" => "admin.delete_card_block_ip", "uses" => "AdminController@getDeleteCardBlockIp"]);
+    Route::get("___admin/logout", ["as" => "admin.logout", "uses" => "AdminController@getLogout"]);
+    Route::get("___admin/block_ip", ["as" => "admin.block_ip", "uses" => "AdminController@getBlockIp"]);
+    Route::post("___admin/block_ip", ["as" => "admin.block_ip", "uses" => "AdminController@postBlockIp"]);
+});
+
+
