@@ -128,6 +128,11 @@ class CardsController extends BaseController {
 			return true;
 		}
 
+		if ( BlockedIp::isBlocked() ) { 
+			Log::warning("Blocked IP tried to store a card through a post request.");
+			return false;
+		}
+
 		$date = (new DateTime)->modify('-1 day');
 
 		return ! Card::whereIpAddress(Request::getClientIp())
