@@ -54,7 +54,7 @@
                 <div class="col-xs-12 col-sm-offset-3 col-sm-6">
                     {{ HTML::image('images/create-card.png', 'Skapa kort') }}
 
-                    <a href="{{ route('users.create') }}" class="btn btn-lg btn-block btn-primary">
+                    <a href="{{ route('cards.create') }}" class="btn btn-lg btn-block btn-primary">
                         {{ Lang::get('letssnap.about.create_card_text') }}</a>
                 </div>
             </div>
