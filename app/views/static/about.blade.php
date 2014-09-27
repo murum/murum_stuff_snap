@@ -38,9 +38,9 @@
                             <h5>ui / ux designer</h5>
                         </div>
                         <div class="about-team-person">
-                            {{ HTML::image('images/john.png', 'John', ['class' => 'img-responsive']) }}
+                            {{ HTML::image('images/john.png', 'Daniel', ['class' => 'img-responsive']) }}
 
-                            <h4>John</h4>
+                            <h4>Daniel</h4>
                             <h5>back-end developer</h5>
                         </div>
                     </div>
