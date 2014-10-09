@@ -105,7 +105,7 @@ return array(
 		'news_one_paragraph_one' => 'Let\'s Snap har under senaste veckan genomgått en rejäl uppdatering i form av en helt ny design av korten, den främsta anledningen till varför vi valde att göra om designen på korten är för att man på ett enklare sätt skall kunna ta kontakt med användaren bakom kortet, därför har vi nu lyft ut användarnamnen och istället skapa användarvänliga knappar för att nå personen. Vi har även gjort om så att man nu längre inte skall behöva ladda upp kort utan istället använder vi oss av användarens profilbild på KIK.',
 		'news_one_paragraph_two' => 'Vad tycker ni? Skriv gärna till oss genom contact@letssnap.com',
 		'news_two_paragraph_one' => 'Det räcker nu att du har ett kiknamn, det räcker alltså att du anger ett kiknamn och snapchat är inte längre obligatoriskt.',
-		'notice' => 'Nu kan du filtrera på kort igen, ber om ursäkt för nedtiden. PSST, du har väl inte glömt att följa oss på Facebook.',
+		'notice' => 'Nu kan du filtrera på kort igen. PSST, du har väl inte glömt att följa oss på',
 	),
     'about' => array(
         'paragraph_one' => "Let's snap är en ny webbplats för att hitta och komma i kontakt med nya Snapchat vänner.",

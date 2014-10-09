@@ -30,7 +30,7 @@
     @include('partials/_top_ad')
 
     <div class="alert alert-info">
-      {{ Lang::get('letssnap.update.notice') }}
+      {{ Lang::get('letssnap.update.notice') }} <a target="_blank" href="https://www.facebook.com/letssnapofficial">Facebook.</a>
     </div>
 
     <div class="row content">
