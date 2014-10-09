@@ -8,7 +8,7 @@ class SearchController extends BaseController {
 
     public function search() {
 
-        $query = User::query();
+        $query = Card::query();
 
         if (Input::has('minAge') && Input::has('maxAge')) {
             $query->whereBetween('age', array(Input::get('minAge'), Input::get('maxAge')));
