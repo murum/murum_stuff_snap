@@ -9,16 +9,16 @@
 <h1>
     {{ Lang::get('letssnap.headers.search_result') }}
 </h1>
-@if($users->count() > 0)
+@if($cards->count() > 0)
     <div class="row">
-        <div class="users">
-            @foreach($users as $user)
-                @include('users.partials.user')
+        <div class="cards">
+            @foreach($cards as $card)
+                @include('cards.partials.card')
             @endforeach
         </div>
     </div>
     <div class="row">
-        <div class="users-links text-center">
+        <div class="cards-links text-center">
         </div>
     </div>
 @else

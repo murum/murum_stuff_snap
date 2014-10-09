@@ -22,9 +22,9 @@ class SearchController extends BaseController {
             $query->where('sex', '=', Input::get('sex'));
         }
 
-        $users = $query->paginate(15);
+        $cards = $query->paginate(15);
 
-        return View::make('search.result', compact('users'));
+        return View::make('search.result', compact('cards'));
 
     }
 }
