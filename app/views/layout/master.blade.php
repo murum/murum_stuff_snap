@@ -29,11 +29,9 @@
 
     @include('partials/_top_ad')
 
-<!--
     <div class="alert alert-info">
-      {{ link_to_route('static.update', Lang::get('letssnap.update.notice'), null, array('target' => '_blank')) }}
+      {{ Lang::get('letssnap.update.notice') }}
     </div>
--->
 
     <div class="row content">
         <div class="col-xs-12">
