@@ -82,7 +82,7 @@ class CardsController extends BaseController {
 
 			return Response::json(array(
 				'success' => true,
-				'source' => $element->src
+				'source' => '/images/placeholder_sv.png'
 			));
 		}
 
