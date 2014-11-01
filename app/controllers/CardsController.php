@@ -77,12 +77,12 @@ class CardsController extends BaseController {
 	public function kik_image() {
 		$kik = Input::get('kik');
 
-		$html = new Htmldom('http://kik.com/u/'.$kik);
+		$html = new Htmldom('http://kik.com/u/open/'.$kik);
 		foreach($html->find('img') as $element) {
 
 			return Response::json(array(
 				'success' => true,
-				'source' => '/images/placeholder_sv.png'
+				'source' => $element->src
 			));
 		}
 
