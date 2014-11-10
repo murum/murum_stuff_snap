@@ -44,7 +44,7 @@ class CardsController extends BaseController {
 		    if (Input::has('kik')) {
 			    $card->kik = Input::get('kik');
 
-			    $html = new Htmldom('http://kik.com/u/'.$card->kik);
+			    $html = new Htmldom('http://kik.com/u/open/'.$card->kik);
 			    foreach($html->find('img') as $element) {
 				    $card->kik_picture = $element->src;
 			    }
@@ -79,7 +79,6 @@ class CardsController extends BaseController {
 
 		$html = new Htmldom('http://kik.com/u/open/'.$kik);
 		foreach($html->find('img') as $element) {
-
 			return Response::json(array(
 				'success' => true,
 				'source' => $element->src
