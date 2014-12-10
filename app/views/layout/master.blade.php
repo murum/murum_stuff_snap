@@ -20,36 +20,50 @@
     {{ HTML::script('//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js') }}
 </head>
 <body>
-@include('layout.includes.master.nav')
-@include('layout.includes.master.bump')
+@if(URL::to('/') != 'http://www.letssnap.com' || URL::to('/') != 'http://letssnap.com')
+    @include('layout.includes.master.nav')
+    @include('layout.includes.master.bump')
+    <div class="container">
+        @include('partials/_flash')
+        @include('partials/_errors')
 
-<div class="container">
-    @include('partials/_flash')
-    @include('partials/_errors')
+        @include('partials/_top_ad')
 
-    @include('partials/_top_ad')
+        {{--
+        <div class="alert alert-info">
+          {{ Lang::get('letssnap.update.notice') }} <a target="_blank" href="https://www.facebook.com/letssnapofficial">Facebook.</a>
+        </div>
+        --}}
 
-    <div class="alert alert-info">
-      {{ Lang::get('letssnap.update.notice') }} <a target="_blank" href="https://www.facebook.com/letssnapofficial">Facebook.</a>
+        <div class="row content">
+            <div class="col-xs-12">
+                @yield('content')
+            </div>
+        </div>
     </div>
 
-    <div class="row content">
-        <div class="col-xs-12">
-            @yield('content')
+    <div class="content-full">
+        @yield('content_full')
+    </div>
+
+    <div class="container">
+        @include('partials/_bottom_ad')
+        <div class="row">
+            <div class="col-xs-12"></div>
+        </div>
+    </div>
+@else
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h1>Let's snap update</h1>
+            <p>We've got a request by Snapchat to shutdown our service due to Trademark rights of their name and Ghost logo.</p>
+            <p>We also want to be clear to all our users that our site is not sponsored, affiliated or endorsed by Snapchat, Inc.</p>
+            <p>The team of Let's snap apoligize to Snapchat, Inc. For any kind of false accosiation with the Snapchat app.</p>
         </div>
     </div>
 </div>
-
-<div class="content-full">
-    @yield('content_full')
-</div>
-
-<div class="container">
-    @include('partials/_bottom_ad')
-    <div class="row">
-        <div class="col-xs-12"></div>
-    </div>
-</div>
+@endif
 
 @include('layout.includes.footer')
 
