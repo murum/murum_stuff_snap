@@ -26,7 +26,7 @@
             <h1>Let's snap update</h1>
             <p>We've got a request by Snapchat to shutdown our service due to Trademark rights of their name and Ghost logo.</p>
             <p>We also want to be clear to all our users that our site is not sponsored, affiliated or endorsed by Snapchat, Inc.</p>
-            <p>The team of Let's snap apoligize to Snapchat, Inc. For any kind of false accosiation with the Snapchat app.</p>
+            <p>The team of Let's snap apoligize to Snapchat, Inc. For any kind of false accosiation with Snapchat, Inc.</p>
             <p>For more information you can send us an email [info@letssnap.com]</p>
         </div>
     </div>
