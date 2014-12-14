@@ -42,8 +42,9 @@
                             <p>Varför just vi har blivit anmälda är därför vi inte har varit tillräckligt tydliga med att vi inte är sponsrade eller godkända av Snapchat och att vår logotyp är spökliknande..</p>
                             <p>För att få driva vidare vår underbara samlingsplattform för er tvingas vi att byta namn och bygga upp vår sida på nytt. Efter hårt slit mot denna advokatbyrå har vi tappat mycket motivation av att driva Let's snap och en sak som skulle glädja oss otroligt mycket är en liten donation.</p>
                             <p>Teamet bakom Let's snap ber så om ursäkt för det inträffade mot Snapchat och våra medlemmar.</p>
-                            <p>Vi önskar att ni alla tillsammans samlar in 1000kr på följande länk för att vi skall bygga upp denna sida på nytt under ett annat namn!</p>
+                            <p>Vi önskar att ni alla tillsammans samlar in 1000kr på följande länk för att vi skall bygga upp denna sida på nytt under ett annat namn. Sidan kommer att stängas ner vid årsskiftet om vi inte får in tillräckligt med pengar via denna donationsknapp.</p>
                             <p><a class="btn btn-success" href="http://www.donation-tracker.com/u/letssnap">Donera till Let's snap</a></p>
+                            <p>Vill ni donera på annat sätt så hänvisar vi er att maila till oss genom kontaktformuläret! Tack på förhand!</p>
                         </div>
                     </div>
                 @else
