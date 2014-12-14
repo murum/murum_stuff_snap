@@ -20,29 +20,44 @@
     {{ HTML::script('//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js') }}
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 text-center">
-            <h1>Let's snap update</h1>
-            <p>We've got a request by Snapchat to shutdown our service due to Trademark rights of their name and Ghost logo.</p>
-            <p>We also want to be clear to all our users that our site is not sponsored, affiliated or endorsed by Snapchat, Inc.</p>
-            <p>The team of Let's snap apoligize to Snapchat, Inc. For any kind of false accosiation with Snapchat, Inc.</p>
-            <p>For more information you can send us an email [info@letssnap.com]</p>
-        </div>
-    </div>
-</div>
-{{--
     @include('layout.includes.master.nav')
     @include('layout.includes.master.bump')
     <div class="container">
         @include('partials/_flash')
         @include('partials/_errors')
 
-        @include('partials/_top_ad')
-
         {{--
         <div class="alert alert-info">
           {{ Lang::get('letssnap.update.notice') }} <a target="_blank" href="https://www.facebook.com/letssnapofficial">Facebook.</a>
+        </div>
+        --}}
+
+        <div class="container">
+            <div class="alert alert-danger">
+                @if (Config::get('app.locale') == 'sv')
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <h2>Stor uppdatering av Let's snap</h2>
+                            <p>Vi har fått mail från en advokatbyrå som jobbar för Snapchat angående deras varumärke och dess rättigheter.</p>
+                            <p>Varför just vi har blivit anmälda är därför vi inte har varit tillräckligt tydliga med att vi inte är sponsrade eller godkända av Snapchat och att vår logotyp är spökliknande..</p>
+                            <p>För att få driva vidare vår underbara samlingsplattform för er tvingas vi att byta namn och bygga upp vår sida på nytt. Efter hårt slit mot denna advokatbyrå har vi tappat mycket motivation av att driva Let's snap och en sak som skulle glädja oss otroligt mycket är en liten donation.</p>
+                            <p>Teamet bakom Let's snap ber så om ursäkt för det inträffade mot Snapchat och våra medlemmar.</p>
+                            <p>Vi önskar att ni alla tillsammans samlar in 1000kr på följande länk för att vi skall bygga upp denna sida på nytt under ett annat namn!</p>
+                            <p><a class="btn btn-success" href="http://www.donation-tracker.com/u/letssnap">Donera till Let's snap</a></p>
+                        </div>
+                    </div>
+                @else
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <h2>Let's snap update</h2>
+                            <p>We've got a request by Snapchat to shutdown our service due to Trademark rights of their name and Ghost logo.</p>
+                            <p>We also want to be clear to all our users that our site is not sponsored, affiliated or endorsed by Snapchat, Inc.</p>
+                            <p>The team of Let's snap apoligize to Snapchat, Inc. For any kind of false accosiation with Snapchat, Inc.</p>
+                            <p>For more information you can send us an email [info@letssnap.com]</p>
+                        </div>
+                    </div>
+                @endif
+            </div>
         </div>
 
         <div class="row content">
@@ -56,14 +71,7 @@
         @yield('content_full')
     </div>
 
-    <div class="container">
-        @include('partials/_bottom_ad')
-        <div class="row">
-            <div class="col-xs-12"></div>
-        </div>
-    </div>
 @include('layout.includes.footer')
---}}
 
 {{ HTML::script('/js/libs.js') }}
 {{ HTML::script('/js/main.js?v=2_1') }}
