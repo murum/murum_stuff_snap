@@ -29,25 +29,35 @@ class StaticController extends BaseController
 
     public function send_feedback()
     {
-        $message_text = Input::get('message');
-        $email = Input::get('email');
-        $data = array(
-            'email' => $email,
-            'message_text' => $message_text,
-        );
-
-        Mail::send('emails.feedback', $data, function($message) use ($email, $message_text)
+        $rules =  array('captcha' => array('required', 'captcha'));
+        $validator = Validator::make(Input::all(), $rules);
+        if ($validator->fails())
         {
-            $message->from($email, $email);
-            $message->to('contact@letssnap.com', 'Let\'s Snap')->subject('Feedback Message');
-        });
-
-        if(count(Mail::failures()) > 0){
-            Flash::error(Lang::get('messages.error.mail'));
+            Flash::error('Captcha var felaktigt inskriven.');
             return Redirect::back()->withInput();
         }
+        else
+        {
+            $message_text = Input::get('message');
+            $email = Input::get('email');
+            $data = array(
+                'email' => $email,
+                'message_text' => $message_text,
+            );
 
-        Flash::success(Lang::get('messages.success.feedback_mail'));
-        return Redirect::back();
+            Mail::send('emails.feedback', $data, function($message) use ($email, $message_text)
+            {
+                $message->from($email, $email);
+                $message->to('contact@letssnap.com', 'Let\'s Snap')->subject('Feedback Message');
+            });
+
+            if(count(Mail::failures()) > 0){
+                Flash::error(Lang::get('messages.error.mail'));
+                return Redirect::back()->withInput();
+            }
+
+            Flash::success(Lang::get('messages.success.feedback_mail'));
+            return Redirect::back();
+        }
     }
 }

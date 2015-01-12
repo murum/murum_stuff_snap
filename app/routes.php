@@ -101,4 +101,31 @@ Route::group(["before" => "admin|admin_ip_allowed"], function() {
     Route::post("___admin/block_ip", ["as" => "admin.block_ip", "uses" => "AdminController@postBlockIp"]);
 });
 
+// Captcha
+Route::any('/captcha-test', function()
+{
+
+    if (Request::getMethod() == 'POST')
+    {
+        $rules =  array('captcha' => array('required', 'captcha'));
+        $validator = Validator::make(Input::all(), $rules);
+        if ($validator->fails())
+        {
+            echo '<p style="color: #ff0000;">Incorrect!</p>';
+        }
+        else
+        {
+            echo '<p style="color: #00ff30;">Matched :)</p>';
+        }
+    }
+
+    $content = Form::open(array(URL::to(Request::segment(1))));
+    $content .= '<p>' . HTML::image(Captcha::img(), 'Captcha image') . '</p>';
+    $content .= '<p>' . Form::text('captcha') . '</p>';
+    $content .= '<p>' . Form::submit('Check') . '</p>';
+    $content .= '<p>' . Form::close() . '</p>';
+    return $content;
+
+});
+
 

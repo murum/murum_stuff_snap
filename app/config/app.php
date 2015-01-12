@@ -125,6 +125,7 @@ return array(
         'Letssnap\Notifications\FlashServiceProvider',
         'Yangqi\Htmldom\HtmldomServiceProvider',
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+		'Mews\Captcha\CaptchaServiceProvider',
 	),
 
 	/*
@@ -193,7 +194,8 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
         'Debugbar'        => 'Barryvdh\Debugbar\Facade',
         'Flash'           => 'Letssnap\Notifications\Flash',
-        'Htmldom'         => 'Yangqi\Htmldom\Htmldom'
+        'Htmldom'         => 'Yangqi\Htmldom\Htmldom',
+		'Captcha'           => 'Mews\Captcha\Facades\Captcha',
 	),
 
 );

@@ -28,6 +28,14 @@
 
 <div class="form-group">
     <div class="col-xs-12">
+        {{ Form::label('captcha', 'Captcha') }} <br />
+        {{ HTML::image(Captcha::img(), 'Captcha image') }}<br /><br />
+        {{ Form::text('captcha', null, array('placeholder' => 'Captcha kod', 'class' => 'form-control')) }}
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-xs-12">
         {{ Form::submit(Lang::get('letssnap.send'), array('class' => 'btn btn-lg btn-success')) }}
     </div>
 </div>
