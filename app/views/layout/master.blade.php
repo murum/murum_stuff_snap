@@ -37,14 +37,8 @@
                 @if (Config::get('app.locale') == 'sv')
                     <div class="row">
                         <div class="col-xs-12 text-center">
-                            <h2>Let's snap lägger ner</h2>
-                            <p>Vi har tyvärr inte fått in tillräckligt med pengar för att driva vidare vår underbara sajt.</p>
-                            <p>Ifall någon av våra underbara besökare vill hjälpa oss med en donation så driver vi gärna vidare sajten. Kontakta oss för mer information.</p>
-                            <p>Annars kommer sidan att läggas ner vid månadsskiftet till Februari eller tidigare.</p>
-                            <p></p><p></p>
-                            <p>Vi har fått mail från en advokatbyrå som jobbar för Snapchat angående deras varumärke och dess rättigheter.</p>
-                            <p>Varför just vi har blivit anmälda är därför vi inte har varit tillräckligt tydliga med att vi inte är sponsrade eller godkända av Snapchat och att vår logotyp är spökliknande..</p>
-                            <p>Teamet bakom Let's snap ber så om ursäkt för det inträffade mot Snapchat och våra medlemmar.</p>
+                            <h2>Let's snap återuppstår och blir "Twinkli"</h2>
+                            <p>Mer information kommer snart. Stay tuned!</p>                            
                         </div>
                     </div>
                 @else
